@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codespace</title>
 </head>
+
 <body>
     <!-- esto es un comentario-->
     <h1>esta es mi pagina cheatsheet</h1>
@@ -15,14 +17,12 @@
 
     <!-- enlace interno -->
     <a href="folder/blog.html">esto es un blog</a>
-    
+
     <!-- Espacio en blanco  -->
     <br>
     <a href="index.html">ir a index</a>
-    
-    <!-- linea separadora -->
-    <hr>
-    
+
+
     <!-- titulos / headings -->
     <h1>Título 1</h1>
     <h2>Título 2</h2>
@@ -31,5 +31,200 @@
     <h5>Título 5</h5>
     <h6>Título 6</h6>
 
+    <!-- linea separadora -->
+    <hr>
+
+    <!-- parrafos -->
+    <p>esto es un párrafo</p>
+
+    <!-- el parrafo "destrozado" no me lo transforma en la pagina web, lo mantiene todo en un parrafo y en bloque -->
+    <p>
+        <!-- el elemento b simplemente pone el texto en negrita -->
+        Lorem ipsum dolor sit amet <b> consectetur adipisicing</b> elit. Accusantium excepturi itaque nostrum quasi sunt
+        quod
+        dolore officia ducimus. Liber
+        o dolore
+        cum, debitis magna m eveniet maiores, sapiente
+
+
+        quam eos voluptates
+        <!-- strong pone el texto en negrita y le da contexto semantico de mas importancia -->
+        <strong>inventore sunt </strong> suscipit, repellat repel
+        lendus laborum quas numquam. Velit, ducimu
+        <!-- em pone el texto en cursiva -->
+        s, eum <em>quod ipsa</em> minus impedit
+        <!-- s tacha el texto -->
+        commodi nulla facere quibusdam <s>aliquam inve</s>
+
+        ntore?
+    </p>
+
+    <!-- con el elemento "pre" respeta todos los destrozos que le haga al texto -->
+    <pre>
+
+        Lorem ipsum dolor sit amet <b> consectetur adipisicing</b> elit. Accusantium excepturi itaque nostrum quasi sunt quod
+        dolore officia ducimus. Liber
+          o dolore 
+        cum, debitis magna   m eveniet    maiores, sapiente
+        
+        
+        quam eos voluptates
+        <strong>inventore sunt </strong> suscipit,    repellat repel
+        lendus laborum    quas numquam. Velit, ducimu
+        
+        s, eum quod ipsa minus impedit
+        commodi nulla facere quibusdam aliquam inve
+        
+        ntore?
+    </pre>
+
+    <p>
+        <!-- span junto con atributos puede englobar distintos textos -->
+        <span class="categoria"> Lorem ipsum dolor sit</span>, amet consectetur adipisicing elit. Ipsum mollitia assumenda deserunt ipsam, itaque
+        delectus qui laudantium <span class="categoria"> autem repellat</span> inventore?
+    </p>
+
+    <p>
+        H<sub>2</sub>O, CO<sub>2</sub>
+    </p>
+
+    <p>El teorema de pitagoras es:</p>
+    <p><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></p>
+
+
+    <p>Las clases del Bootcamp empiezas a las <time datetime="09:30">09:30</time></p>
+    <p>el primer dia fue el <time datetime="2021-02-01">1 de febrero</time></p>
+
+    <br><hr><br>
+
+    <!-- CONTENEDORES / CONTAINERS  -->
+
+    <!-- nav es la barra de navegacion de nuestra web -->
+    <nav>
+        <a href="">Enlace</a>
+        <a href="">Enlace</a>
+        <a href="">Enlace</a>
+    </nav>
+
+    <!-- section engloba contenido que tiene que uno con otro -->
+    <section>
+        <article>
+            <h1>Titulo del articulo</h1>
+            <p>contenido del articulo</p>
+        </article>
+        <a href="">Leer mas</a>
+    </section>
+
+    <!-- similar a section pero generalmente se visualizan en un lateral -->
+    <aside>
+        <p>menu generalmente lateral</p>
+    </aside>
+
+    <!-- footer es nuestro pie de pagina  -->
+    <footer>
+        <p>pie de pagina</p>
+        <address>
+            malaga, 29007
+        </address>
+    </footer>
+
+    <!-- div es el contenedor generico y por tanto el mas utilizado -->
+    <div class="container">
+        <p>contenedor generico</p>
+    </div>
+
+    <br><hr><br>
+
+    <!-- listas / listas  -->
+
+    <!-- ul son listas desordenadas -->
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>elemento 5</li>
+    </ul>
+
+    <!-- ol son listas ordenadas  -->
+    <ol>
+        <li>elemento</li>
+        <li>elemento
+            <!-- una lista dentro de otra lista debe estar dentro de un elemento li, sino puede dar errores  -->
+            <ul>
+                <li>elemento 1</li>
+                <li>elemento 2</li>
+                <li>elemento 3</li>
+            </ul>
+        </li>
+        <li>elemento</li>
+        <li>elemento</li>
+        <li>elemento</li>
+    </ol>
+
+    <ol start="500">
+        <li>elemento</li>
+        <li>elemento</li>
+        <li>elemento</li>
+        <li>elemento</li>
+        <li>elemento</li>
+    </ol>
+
+    <br><hr><br>
+
+    <!-- Tablas / tables  -->
+
+    <table>
+        <!-- la cabecera de nuestra tabla -->
+        <thead>
+            <!-- la fila de la cabecera  -->
+            <tr>
+                <!-- los nombres de nuestra cabecera  -->
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <!-- el cuerpo de nuestra tabla, los datos en si  -->
+        <tbody>
+            <!-- las filas para nuestros datos  -->
+            <tr>
+                <!-- los datos por cada fila  -->
+                <td>Daniel</td>
+                <td>32</td>
+                <td>test@example.com</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>24</td>
+                <td>example@test.com</td>
+            </tr>
+        </tbody>
+        <!-- el pie de nuestra tablas  -->
+        <tfoot>
+            <!-- la fila de nuestro pie de tabla  -->
+            <tr>
+                <!-- los nombres de nuestro pie de tabla  -->
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Email</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br><hr><br>
+
+    <!-- Formularios / Forms  -->
+
+    <form action="" method="">
+
+    </form>
+
+
+    <br><br><br><br><br><br>
+
+        
+
 </body>
+
 </html>
