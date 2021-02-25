@@ -216,8 +216,13 @@
 
     <!-- Formularios / Forms  -->
 
-    <form action="" method="">
-
+    <!-- indicamos si queremos metodo GET para recibir informacion, o POST para enviar informacion del usuario  -->
+    <form action="" method="GET">
+        <!-- utilizamos for para relacionarla con el id del input. deben coincidir los nombres  -->
+        <label for="name_input">Nombre:</label>
+        <!-- type para indicar el tipo de informacion, id para relacionarlo con el label,
+        name (importante) para nombrar el valor a una variable que pueda manejar nuestro backend  -->
+        <input type="text" id="name_input" name="userName" placeholder="introduce tu nombre">
     </form>
 
 
