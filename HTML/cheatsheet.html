@@ -218,11 +218,49 @@
 
     <!-- indicamos si queremos metodo GET para recibir informacion, o POST para enviar informacion del usuario  -->
     <form action="" method="GET">
-        <!-- utilizamos for para relacionarla con el id del input. deben coincidir los nombres  -->
-        <label for="name_input">Nombre:</label>
-        <!-- type para indicar el tipo de informacion, id para relacionarlo con el label,
-        name (importante) para nombrar el valor a una variable que pueda manejar nuestro backend  -->
-        <input type="text" id="name_input" name="userName" placeholder="introduce tu nombre">
+        <div class="inputBlock">
+            <!-- utilizamos for para relacionarla con el id del input. deben coincidir los nombres  -->
+            <label for="name_input">Nombre:</label><br>
+            <!-- type para indicar el tipo de informacion, id para relacionarlo con el for de nuestro label,
+            name (importante) para nombrar el valor a una variable que pueda manejar nuestro backend  -->
+            <input type="text" name="userName" id="name_input" placeholder="introduce tu nombre">
+        </div><br>
+
+        <div class="inputBlock">
+            <label for="surename_input">Apellido:</label><br>
+            <input type="text" name="userSurename" id="surename_input" placeholder="introduce tu apellido">
+        </div><br>
+
+        <div class="inputBlock">
+            <label for="email_input">Email:</label><br>
+            <input type="email" name="userEmail" id="email_input" placeholder="introduce tu email">
+        </div><br>
+
+        <div class="inputBlock">
+            <label for="password_input">Password:</label><br>
+            <input type="password" name="userPassword" id="password_input" placeholder="introduce tu contraseña">
+        </div><br>
+
+        <div class="inputBlock">
+            <label for="text_input">Texto:</label><br>
+            <textarea name="userMensaje" id="text_input" cols="30" rows="10"></textarea>
+        </div><br>
+
+        <div class="inputBlock">
+            <label for="sexInput">Genero:</label><br>
+            <select name="sexInput" id="sexInput">
+                <option value="" hidden></option>
+                <!-- value es la informacion que reciba nuestro backend, independientemente 
+                del nombre asignado despues (por ejemplo, si esta puesto en otro idioma, el valor sera el mismo para nosotros) -->
+                <option value="female">femenino</option>
+                <option value="male">masculino</option>
+                <option value="other">otro</option>
+            </select>
+        </div>
+
+        <input type="submit" value="guardar">
+
+        </form>
     </form>
 
 
