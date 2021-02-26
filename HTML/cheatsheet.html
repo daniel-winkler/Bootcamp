@@ -238,7 +238,8 @@
 
         <div class="inputBlock">
             <label for="password_input">Password:</label><br>
-            <input type="password" name="userPassword" id="password_input" placeholder="introduce tu contraseña">
+            <!-- required para que sea obligatorio rellenarlo antes de guardar/enviar  -->
+            <input required type="password" name="userPassword" id="password_input" placeholder="introduce tu contraseña">
         </div><br>
 
         <div class="inputBlock">
@@ -249,6 +250,7 @@
         <div class="inputBlock">
             <label for="sexInput">Genero:</label><br>
             <select name="sexInput" id="sexInput">
+                <!-- hidden para que salga como predeterminado pero no sea posible seleccionarlo  -->
                 <option value="" hidden></option>
                 <!-- value es la informacion que reciba nuestro backend, independientemente 
                 del nombre asignado despues (por ejemplo, si esta puesto en otro idioma, el valor sera el mismo para nosotros) -->
