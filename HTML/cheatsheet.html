@@ -214,7 +214,7 @@
 
     <br><hr><br>
 
-    <!-- Formularios / Forms  -->
+    <!-- FORMULARIOS / FORMS  -->
 
     <!-- indicamos si queremos metodo GET para recibir informacion, o POST para enviar informacion del usuario  -->
     <form action="#" method="GET">
@@ -260,20 +260,107 @@
             </select>
         </div><br>
 
-        <input type="number" name="numberInput" id="number_input" value="10"><br>
-
-        <input type="date"><br>
-
-        <input type="submit" value="guardar">
-
-        </form>
-    </form>
-
-
-    <br><br><br><br><br><br>
+        <div class="inputBlock">
+            <label for="number_input">Edad:</label>
+            <input type="number" name="numberInput" id="number_input" min="18" max="65"><br><br>
+    
+            <label for="birthdayInput">Fecha de nacimiento:</label>
+            <input type="date" name="birthdayInput" id="birthdayInput"><br><br>
+        </div>
 
         
+        <div class="inputBlock">
+            <label for="carBrandInput">La marca de tu coche:</label>
+            <!-- el atributo list tiene que coincidir con el atributo id de la datalist que sigue  -->
+            <input type="text" id="carBrandInput" name="carBrandInput" list="carBrandList">
+            <datalist id="carBrandList">
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="audi">Audi</option>
+            </datalist>
+        </div><br><br>
 
+        <!-- disabled dejara el fieldset sin poder editar por el usuario  -->
+        <fieldset disabled>
+            <legend>Informacion de tu pareja</legend>
+            <div class="inputBlock">
+                <label for="name_input">Nombre:</label><br>
+                <input type="text" name="userName" id="name_input" placeholder="introduce tu nombre">
+            </div><br>
+            
+            <div class="inputBlock">
+                <label for="surename_input">Apellido:</label><br>
+                <input type="text" name="userSurename" id="surename_input" placeholder="introduce tu apellido">
+            </div>
+        </fieldset><br><br>
+
+        <fieldset>
+            <legend>Estado civil</legend>
+            <div>
+                <!-- name debe ser igual entre todas las opciones para que así solo se pueda elegir uno, que sera el input que recibira el server  -->
+                <input type="radio" name="civilState" id="marriedInput">
+                <label for="marriedInput">Casado</label>
+            </div>
+            <div>
+                <input type="radio" name="civilState" id="singleInput">
+                <label for="singleInput">Soltero</label>
+            </div>
+            <div>
+                <input type="radio" name="civilState" id="divorcedInput">
+                <label for="divorcedInput">Divorciado</label>
+            </div>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Productos</legend>
+            <div>
+                <!-- los name deben ser distintos ya que los checkbox son multiseleccion, y por tanto en cada opcion debe enviar al servidor la informacion adecuada  -->
+                <input type="checkbox" name="iphoneProduct" id="iphoneProduct">
+                <label for="iphoneProduct">iPhone</label>
+            </div>
+            <div>
+                <input type="checkbox" name="macbookProduct" id="macbookProduct">
+                <label for="macbookProduct">Macbook</label>
+            </div>
+            <div>
+                <input type="checkbox" name="ipadProduct" id="ipadProduct">
+                <label for="ipadProduct">iPad</label>
+            </div>
+        </fieldset>
+
+        <br><br>
+        
+        <label for="rangeInput">Seleccione cantidad de elementos:</label>
+        <input type="range" id="rangeInput" name="rangeInput">
+        
+        <br><br>
+        
+        <label for="fuelLevel">Cantidad de gasolina:</label>
+        <meter min="0" max="100" low="33" high="66" id="fuelLevel" value="60"></meter>
+        
+        <br><br>
+        
+        <label for="progressLevel">Progreso:</label>
+        <progress max="100" value="33" name="progressLevel" id="progressLevel"></progress><br><br>
+
+        <!-- los botones responderan respecto a los datos introducidos dentro del elemento form en el que se encuentre. fuera de un form no respondera a nada  -->
+        
+        <label for="fileInput">Subir un archivo:</label>
+        <input type="file" name="fileInput" id="fileInput"><br><br>
+        
+        <input type="submit" value="guardar">
+        <input type="reset" value="vaciar"><br><br>
+
+    </form>
+    
+
+    <br><br><br><br><br><br>
+    
+    
+    
 </body>
 
 </html>
