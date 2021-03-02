@@ -80,7 +80,8 @@
 
     <p>
         <!-- span junto con atributos puede englobar distintos textos -->
-        <span class="categoria"> Lorem ipsum dolor sit</span>, amet consectetur adipisicing elit. Ipsum mollitia assumenda deserunt ipsam, itaque
+        <span class="categoria"> Lorem ipsum dolor sit</span>, amet consectetur adipisicing elit. Ipsum mollitia
+        assumenda deserunt ipsam, itaque
         delectus qui laudantium <span class="categoria"> autem repellat</span> inventore?
     </p>
 
@@ -95,7 +96,8 @@
     <p>Las clases del Bootcamp empiezas a las <time datetime="09:30">09:30</time></p>
     <p>el primer dia fue el <time datetime="2021-02-01">1 de febrero</time></p>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- CONTENEDORES / CONTAINERS  -->
 
@@ -133,7 +135,8 @@
         <p>contenedor generico</p>
     </div>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- listas / listas  -->
 
@@ -170,7 +173,8 @@
         <li>elemento</li>
     </ol>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- Tablas / tables  -->
 
@@ -214,7 +218,8 @@
         </tfoot>
     </table>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- FORMULARIOS / FORMS  -->
 
@@ -241,7 +246,8 @@
         <div class="inputBlock">
             <label for="password_input">Password:</label><br>
             <!-- required para que sea obligatorio rellenarlo antes de guardar/enviar  -->
-            <input required type="password" name="userPassword" id="password_input" placeholder="introduce tu contraseña">
+            <input required type="password" name="userPassword" id="password_input"
+                placeholder="introduce tu contraseña">
         </div><br>
 
         <div class="inputBlock">
@@ -265,12 +271,12 @@
         <div class="inputBlock">
             <label for="number_input">Edad:</label>
             <input type="number" name="numberInput" id="number_input" min="18" max="65"><br><br>
-    
+
             <label for="birthdayInput">Fecha de nacimiento:</label>
             <input type="date" name="birthdayInput" id="birthdayInput"><br><br>
         </div>
 
-        
+
         <div class="inputBlock">
             <label for="carBrandInput">La marca de tu coche:</label>
             <!-- el atributo list tiene que coincidir con el atributo id de la datalist que sigue  -->
@@ -290,7 +296,7 @@
                 <label for="name_input">Nombre:</label><br>
                 <input type="text" name="userName" id="name_input" placeholder="introduce tu nombre">
             </div><br>
-            
+
             <div class="inputBlock">
                 <label for="surename_input">Apellido:</label><br>
                 <input type="text" name="userSurename" id="surename_input" placeholder="introduce tu apellido">
@@ -334,47 +340,97 @@
         </fieldset>
 
         <br><br>
-        
+
         <label for="rangeInput">Seleccione cantidad de elementos:</label>
         <input type="range" id="rangeInput" name="rangeInput">
-        
+
         <br><br>
-        
+
         <label for="fuelLevel">Cantidad de gasolina:</label>
         <meter min="0" max="100" low="33" high="66" id="fuelLevel" value="60"></meter>
-        
+
         <br><br>
-        
+
         <label for="progressLevel">Progreso:</label>
         <progress max="100" value="33" name="progressLevel" id="progressLevel"></progress><br><br>
 
         <!-- los botones responderan respecto a los datos introducidos dentro del elemento form en el que se encuentre. fuera de un form no respondera a nada  -->
-        
+
         <label for="fileInput">Subir un archivo:</label>
         <input type="file" name="fileInput" id="fileInput"><br><br>
-        
+
         <input type="submit" value="guardar">
         <input type="reset" value="vaciar"><br><br>
 
     </form>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- MULTIMEDIA -->
 
     <img src="images/sample_image.jpeg" alt="sample image" width="300" height="200"><br><br>
 
     <!-- este codigo se consigue integro desde la pagina youtube del video (embedded code)  -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/rJdHvKWvk3Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OgIRAjnnJzI" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     <br><br>
 
-    <button>Pulsa aquí</button>
-    
+    <!-- iframe se utiliza para incrustar un elemento previsualizable dentro de la pagina (videos, pdfs, otras webs, etc)  -->
+    <iframe src="https://www.abc.es/" width="800px" height="400px" frameborder="0"></iframe>
+    <br><br>
 
+    <iframe src="https://www.juntadeandalucia.es/boja/2021/40/BOJA21-040-00012_00003686.pdf" width="800px"
+        height="400px" frameborder="0"></iframe>
+    <br><br>
+
+    <!-- object es un plugin parecido a iframe pero es menos comun  -->
+    <object data="https://www.juntadeandalucia.es/boja/2021/40/BOJA21-040-00012_00003686.pdf"
+        type="application/pdf"></object>
+
+    <br><br>
+
+    <!-- Citas / Quotations  -->
+    <h3>Citas / Quotations</h3>
+
+    <!-- blockquote automaticamente tabula nuestro texto al ser considerado como una cita  -->
+    <blockquote>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et pariatur quos ducimus nam ut a vitae. Ducimus illo
+        sequi saepe in quae nemo ea iure pariatur beatae magni deserunt soluta voluptatibus accusamus, cupiditate rem
+        velit provident? Repellat eligendi quis, similique temporibus expedita itaque nesciunt voluptates asperiores
+        assumenda suscipit incidunt blanditiis a quasi velit quisquam saepe enim quidem ullam aperiam. Natus deleniti
+        sit perferendis non, reprehenderit dolores, aperiam, asperiores fugit et quos maiores ratione accusamus. Facilis
+        ullam cumque eum, unde, sed assumenda debitis dolor magnam est nisi vero ex molestiae accusantium nam ad
+        reprehenderit? Id necessitatibus nulla non odit voluptate, et rem excepturi sit numquam. Unde sit dignissimos,
+        repudiandae nostrum placeat commodi at optio quibusdam aspernatur magni quidem praesentium explicabo quod quis
+        soluta in dolorem assumenda similique suscipit, impedit totam. Illum accusantium fugit dolor obcaecati
+        repudiandae numquam, et tempora cupiditate eius, earum impedit, repellat provident nihil alias voluptatum omnis
+        hic voluptatibus.
+    </blockquote>
+
+    <q>Soy programador. <abbr title="Formacion Profesional">FP</abbr></q>
+
+    <br><br>
+
+    <!-- SCRIPTING -->
     
-    
-    
+    <!-- script siempre lo escribiremos al final de nuestro body y lo enlacaremos con un archivo javascript que queramos ejectuar -->
+   <script src="#"></script>
+
+   <script>document.write("Escribiendo esto desde JS")</script>
+
+   <!-- noscript escribira un mensaje de error en el caso que el navegador no soporte javascript, lo cual es muy poco comun -->
+   <noscript>Error. Tu navegador no soporta JavaScript</noscript>
+
+    <br><br>
+    <button>Pulsa aquí</button>
+
+
+    <br><br><br><br><br><br>
+
+
+
 </body>
 
 </html>
