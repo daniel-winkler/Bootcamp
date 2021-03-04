@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
+    <!-- siempre preferiremos usar un archivo css aparte y enlazarlo con nuestros archivos html  -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- podemos usar style dentro de nuestro head si queremos diseños especificos solo en este archivo html  -->
     <style>
-        div {
+        .segundo {
             background-color: #277a27;
-            height: 500px;
+            height: 100px;
             }
     </style>
 </head>
 <body>
-    <div style="background-color: aquamarine; height: 500px;"></div>
-    <div></div>
+    <!-- tambien podemos añadir style en un elemento muy concreto. intentaremos evitar esta tecnica, ya que es mas dificil de manejar porque que "se pierde" en codigos largos y estara mas hardcodeado  -->
+    <div class="primero" style="background-color: aquamarine; height: 200px;"></div>
+    <div class="segundo"></div>
+    <div class="tercero">
+        <h2>gruezi!</h2>
+    </div>
+    <h1>Titulo uno</h1>
+    <div class="smallimage"></div>
 </body>
 </html>

@@ -1,5 +1,36 @@
-div {
+.tercero {
     height: 50vh;
     background-image: url(images/background.jpeg);
-    background-position: center center;
+    background-position: center center; /* eje x: left center right, eje y: top center bottom */
+    background-attachment: fixed;
+
+    /* Margenes  */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    /* Bordes  */
+    
+    border-bottom: darkmagenta;
+    border-top: darkred;
+    border-width: 10px;
+    border-style: solid;
+}
+
+h1 {
+    color: chocolate;
+    background-color: cyan;
+    border: 5px;
+    border-style: solid;
+
+    /*Padding*/
+    padding: 100px 25px 50px 0px; /* se pueden escribir hasta 4 valores que va cambiando los padding en el sentido de las agujas del reloj, evitando utilizar los atributos para cada lado*/
+}
+
+.smallimage {
+    height: 50vh;
+    background-image: url(images/kitten-small.png);
+    background-repeat: repeat; /* para imagenes mas pequeñas que el contendedor */
+    background-size: contain; /* obliga a que el contenedor muestre la imagen completa */
 }
