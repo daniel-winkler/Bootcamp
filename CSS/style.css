@@ -11,7 +11,6 @@
     margin-right: 25px;
 
     /* Bordes  */
-    
     border-bottom: darkmagenta;
     border-top: darkred;
     border-width: 10px;
@@ -34,3 +33,28 @@ h1 {
     background-repeat: repeat; /* para imagenes mas pequeñas que el contendedor */
     background-size: contain; /* obliga a que el contenedor muestre la imagen completa */
 }
+
+/* POSICIONAMIENTO  */
+/* Tipos de displays: none, inline, block, inline-block */
+
+/* el sombrerito es un atajo que nos permite definir que el atributo empiece por el valor que le demos, independientemente por como acabe  */
+[class^="box"] {
+    background-color: gold;
+}
+
+.box0 {
+    /* display none nos permite ocultar completament elementos. util para controlar distintos dispositivos y tamaños de pantalla  */
+    display: none;
+}
+
+/* tenemos que especificar más ya que tanto p como div son elementos de bloque. así nos representa los elemntos de forma inline correctamente  */
+.box5, .box6, .box5 p, .box6 p {
+    display: inline;
+}
+
+.box3, .box4, .box3 p, .box4 p {
+    /* inline block nos mostrara los elementos de forma inline pero con connotaciones de bloque, como el margen, borde y padding  */
+    display: inline-block;
+}
+
+
