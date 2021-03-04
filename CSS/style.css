@@ -35,6 +35,7 @@ h1 {
 }
 
 /* POSICIONAMIENTO  */
+
 /* Tipos de displays: none, inline, block, inline-block */
 
 /* el sombrerito es un atajo que nos permite definir que el atributo empiece por el valor que le demos, independientemente por como acabe  */
@@ -48,13 +49,32 @@ h1 {
 }
 
 /* tenemos que especificar más ya que tanto p como div son elementos de bloque. así nos representa los elemntos de forma inline correctamente  */
-.box5, .box6, .box5 p, .box6 p {
+.box4, .box5, .box4 p, .box5 p {
     display: inline;
 }
 
-.box3, .box4, .box3 p, .box4 p {
+.box2, .box3, .box2 p, .box3 p {
     /* inline block nos mostrara los elementos de forma inline pero con connotaciones de bloque, como el margen, borde y padding  */
     display: inline-block;
 }
 
+/* por lo general añadiremos estilo al contenedor padre antes que el hijo, ya que el hijo siempre se va a ir adaptando al padre  */
+.parent {
+    background-color: indianred;
+    height: 200px;
+    padding: 20px 10px;
+}
 
+.child {
+    background-color: lightblue;
+    height: 50px;
+}
+
+/* Centrar horizontalmente (eje-x)  */
+.x-centered {
+    background-color: olive;
+    height: 50px;
+    width: 500px;
+
+    margin: auto;
+}
