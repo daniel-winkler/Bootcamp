@@ -185,3 +185,24 @@ h1 {
     width: 100%;
     clear: both;
 }
+
+/* Overflow - Gestion del desbordamiento del contenido */
+[class^="overflow-parent"] {
+    width: 200px;
+    height: 100px;
+    border: 5px dashed;
+    margin-bottom: 50px;
+}
+
+.overflow-parent-1 {
+    overflow: hidden;
+}
+
+.overflow-parent-2 {
+    overflow: visible;
+}
+
+.overflow-parent-3 {
+    overflow: scroll;
+}
+
