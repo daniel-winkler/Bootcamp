@@ -206,3 +206,24 @@ h1 {
     overflow: scroll;
 }
 
+/* Tamaño de cajas (box sizing)  */
+.box-sizing-parent {
+    width: 200px;
+    height: 200px;
+    border: 10px solid salmon;
+}
+
+.box-sizing-child {
+    width: 100%;
+    height: 50px;
+    background-color: sienna;
+    border: 10px solid;
+
+    box-sizing: content-box; /*valor por defecto. se ajusta al contenido, pudiendo excederse como en este caso justamente un borde*/
+}
+
+.border-box {
+    margin-top: 10px;
+
+    box-sizing: border-box; /*se ajusta solo hasta el borde del padre*/
+}
