@@ -17,9 +17,6 @@
     border-style: solid;
 }
 
-h2 {
-    color: #fff;
-}
 
 h1 {
     color: chocolate;
@@ -76,16 +73,103 @@ h1 {
     border-style: dashed;
 }
 
-/* Centrar horizontalmente (eje-x)  */
-.x-centered {
+.rectangle {
     background-color: olive;
     height: 50px;
-    width: 500px;
+    width: 25%;
+}
 
+/* Centrar horizontalmente (eje-x)  */
+.x-centered {
     margin: auto;
 }
 
 .x-centered p {
     color: darkblue;
     font-size: 40px;
+}
+
+/* Posicion relativa  */
+.pos-relative {
+    position: relative;
+    left: 150px;
+    bottom: 50px;
+    /* z index maneja la capa en la que deseas que este ese estilo  */
+    z-index: -1;
+}
+
+/* Posicion absoluta  */
+.pos-absolute-parent {
+    height: 300px;
+    border: 15px solid tomato;
+
+    /* con position relative en el elemento padre, los position absolute que haya en los elementos hijo seran relativos al padre  */
+    position: relative;
+}
+
+.pos-absolute-child {
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+
+    /* position absolute es relativo al html entero. no suele ser comun. para que sea relativo al padre, el elemento padre tiene que ser relative  */
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    /* esto es una correcion, ya que el posicionamiento del 50% lo hace respecto a la esquina superior izquierda. no es comun que lo haga mos asi */
+    margin-right: -25px; /* es la mitad del tamaño del elemento*/
+    margin-top: -25px;
+}
+
+/* Posicion fija / fixed  */
+.pos-fixed {
+    background-color: rgb(52, 228, 36);
+    padding: 20px 30px;
+
+    /* position fixed se fija respecto a la ventana, independientemente del scroll  */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.pos-fixed a {
+    color: crimson;
+    text-decoration: none;
+}
+
+/* Posicion sticky  */
+.pos-sticky {
+    background-color: darkkhaki;
+    padding: 15px 25px;
+
+    position: sticky;
+    top: 0;
+}
+
+.pos-sticky a {
+    color: darkmagenta;
+    text-decoration: none;
+}
+
+/* Posicion flotante  */
+.pos-float-parent {
+    border: 5px solid;
+}
+
+.pos-float-child-1 {
+    background-color: darkorange;
+    height: 100px;
+    width: 33.3%;
+}
+
+.pos-float-child-2 {
+    background-color: tomato;
+    height: 100px;
+    width: 33.3%;
+}
+
+.pos-float-child-3 {
+    background-color: greenyellow;
+    height: 100px;
+    width: 33.3%;
 }
