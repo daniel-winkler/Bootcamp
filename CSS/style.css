@@ -154,22 +154,34 @@ h1 {
 /* Posicion flotante  */
 .pos-float-parent {
     border: 5px solid;
+    overflow: hidden; /*overflow hace que el padre respete todos los hijos, sean flotantes o no*/
 }
 
 .pos-float-child-1 {
     background-color: darkorange;
     height: 100px;
     width: 33.3%;
+
+    float: left;
 }
 
 .pos-float-child-2 {
     background-color: tomato;
     height: 100px;
     width: 33.3%;
+
+    float: right;
 }
 
 .pos-float-child-3 {
     background-color: greenyellow;
+    height: 50px;
+    width: 100%;
+}
+
+.pos-float-child-4 {
+    background-color: cyan;
     height: 100px;
-    width: 33.3%;
+    width: 100%;
+    clear: both;
 }
