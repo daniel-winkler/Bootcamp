@@ -1,0 +1,14 @@
+.barra {
+    background-color: rgb(216, 216, 216);
+    border: 2px rgb(122, 122, 122) solid;
+    height: 30px;
+    width: 400px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* tambien se podria hacer con "position relative" aquí y "position absolute" en el hijo con posicion right  */
+}
+
+.barraSiguiente {
+    float: right;
+}

@@ -116,7 +116,7 @@ h1 {
     position: absolute;
     top: 50%;
     right: 50%;
-    /* esto es una correcion, ya que el posicionamiento del 50% lo hace respecto a la esquina superior izquierda. no es comun que lo haga mos asi */
+    /* esto es una correcion, ya que el posicionamiento del 50% lo hace respecto a la esquina superior izquierda. no es comun que lo hagamos asi */
     margin-right: -25px; /* es la mitad del tamaño del elemento*/
     margin-top: -25px;
 }
