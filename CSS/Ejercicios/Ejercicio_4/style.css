@@ -1,0 +1,59 @@
+.header {
+    border: 2px solid;
+}
+
+.searchbar {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+nav {
+    border: solid 2px;
+    padding: 5px;
+}
+
+.mainSection {
+    padding-top: 5px;
+}
+
+[class^="column"] {
+    border: 2px solid;
+}
+
+.column-1 {
+    width: 20%;
+    height: 800px;
+    
+}
+
+.column-2 {
+    width: 78%;
+    height: 700px;
+    float: right;
+}
+
+.mainArticles {
+    border: 2px solid;
+    height: 99%;
+    width: 78%;
+}
+
+.rightColumn {
+    border: 2px solid;
+    width: 20%;
+    height: 80%;
+    float: right;
+}
+
+footer {
+    border: 2px solid;
+    height: 25Px;
+    margin-top: 20px;
+    padding: 10px 10px;
+}
+
+footer p {
+    float: right;
+    margin: 0;
+}
