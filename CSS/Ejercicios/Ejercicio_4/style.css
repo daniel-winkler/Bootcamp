@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .bordered {
     border: 2px solid;
 }
@@ -32,7 +36,6 @@ nav {
 .mainArticles {
     height: 100%;
     width: 78%;
-    box-sizing: border-box;
     padding: 0px 5px;
     overflow: auto;
 }
@@ -45,9 +48,9 @@ nav {
 }
 
 footer {
-    height: 25px;
     margin-top: 20px;
-    padding: 10px 10px;
+    height: 30px;
+    padding: 5px;
 }
 
 footer p {
