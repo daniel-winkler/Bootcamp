@@ -1,4 +1,4 @@
-.header {
+.bordered {
     border: 2px solid;
 }
 
@@ -9,46 +9,42 @@
 }
 
 nav {
-    border: solid 2px;
     padding: 5px;
 }
 
 .mainSection {
-    padding-top: 5px;
-}
-
-[class^="column"] {
-    border: 2px solid;
+    margin-top: 5px;
 }
 
 .column-1 {
     width: 20%;
     height: 800px;
-    
+    overflow: auto;
+    padding: 0px 5px;
 }
 
 .column-2 {
     width: 78%;
-    height: 700px;
+    height: 720px;
     float: right;
 }
 
 .mainArticles {
-    border: 2px solid;
-    height: 99%;
+    height: 100%;
     width: 78%;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    overflow: auto;
 }
 
 .rightColumn {
-    border: 2px solid;
     width: 20%;
     height: 80%;
     float: right;
 }
 
 footer {
-    border: 2px solid;
-    height: 25Px;
+    height: 25px;
     margin-top: 20px;
     padding: 10px 10px;
 }
@@ -57,3 +53,26 @@ footer p {
     float: right;
     margin: 0;
 }
+
+.links {
+    margin-top: 30px;
+}
+
+.links a {
+    display: block;
+    padding: 2px;
+}
+
+.news, .links {
+    margin-bottom: 20px;
+}
+
+article img {
+    float: left;
+    padding: 5px;
+}
+
+.rightColumn {
+    padding: 0px 5px;
+}
+
