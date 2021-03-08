@@ -6,6 +6,6 @@
     /* tambien se podria hacer con "position relative" aquí y "position absolute" en el hijo con posicion right */
 } 
 
-.barraSiguiente {
+.botonSiguiente {
     float: right;
 }

@@ -1,0 +1,22 @@
+nav {
+    border: 2px solid goldenrod;
+    background-color: yellow;
+    padding: 10px;
+    position: relative; /*nos permite dar posicion absoluta a los hijos*/
+}
+
+nav a {
+    text-decoration: none;
+    color: teal;
+}
+
+nav a:last-child {
+    position: absolute; /*la posicion absoluta se salta el padding del padre, por lo que hay que ajustarlo*/
+    right: 10px;
+}
+
+/* SOLUCION CON POSICION FLOTANTE  */
+
+/* nav a:last-child {
+    float:right;
+} */
