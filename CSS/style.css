@@ -227,3 +227,17 @@ h1 {
 
     box-sizing: border-box; /*se ajusta solo hasta el borde del padre*/
 }
+
+/* Pseudo */
+
+.pseudo:hover {
+    background-color: rgb(233, 163, 233);
+}
+
+.pseudo::first-letter {
+    font-size: 3em;
+}
+
+.pseudo::first-line {
+    color: green;
+}

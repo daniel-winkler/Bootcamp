@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- siempre preferiremos usar un archivo css aparte y enlazarlo con nuestros archivos html  -->
     <link rel="stylesheet" href="style.css">
 
@@ -14,11 +15,17 @@
         .segundo {
             background-color: #277a27;
             height: 100px;
-            }
+        }
     </style>
 </head>
+
 <body>
-    
+
+    <h3>Pseudo</h3>
+    <p class="pseudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum perspiciatis hic quod labore tenetur ea! Dolorem
+        eius, repudiandae aut reprehenderit inventore, iusto nihil provident repellat sunt, fugit odio tenetur
+        distinctio.</p>
+
     <!-- POSICIONAMIENTO  -->
     <h3>Tipos de displays: none, inline, block, inline-block</h3>
     <div class="box0">
@@ -39,7 +46,7 @@
     <div class="box5">
         <p>lorem ipsum 5</p>
     </div>
-    
+
     <h2>Posicion relativa</h2>
     <!-- elementos con posicion realtiva por defecto respeta la posicion del bloque sin mirar el posicionamiento dado al div en nuestro CSS -->
     <div class="pos-relative rectangle"></div><br>
@@ -53,7 +60,7 @@
     <div class="pos-fixed">
         <a href="#">Boton fijo</a>
     </div><br>
-    
+
     <h2>Posicion sticky</h2>
     <div class="pos-sticky">
         <a href="#">Inicio</a>
@@ -72,17 +79,23 @@
 
     <h3>overflow: hidden</h3>
     <div class="overflow-parent-1">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, aspernatur hic! Velit vel deleniti ullam quo laudantium dolore voluptatum ex vitae libero magnam, laborum harum eveniet iste dolorem placeat cumque?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, aspernatur hic! Velit vel deleniti ullam
+            quo laudantium dolore voluptatum ex vitae libero magnam, laborum harum eveniet iste dolorem placeat cumque?
+        </p>
     </div>
 
     <h3>overflow: visible</h3>
     <div class="overflow-parent-2">
-        <p>Impedit deserunt est rem ea facere, nesciunt amet nobis quasi! Temporibus hic blanditiis, nobis quas recusandae accusantium quisquam? Eveniet necessitatibus recusandae magni, autem quasi aperiam. Ut laborum enim rem fuga!</p>
+        <p>Impedit deserunt est rem ea facere, nesciunt amet nobis quasi! Temporibus hic blanditiis, nobis quas
+            recusandae accusantium quisquam? Eveniet necessitatibus recusandae magni, autem quasi aperiam. Ut laborum
+            enim rem fuga!</p>
     </div>
 
     <h3>overflow: scroll</h3>
     <div class="overflow-parent-3">
-        <p>Atque inventore nihil modi iure voluptatum perspiciatis culpa dicta natus, ab officia sequi, maiores nam mollitia exercitationem quasi dignissimos adipisci, dolorem maxime repellendus praesentium neque consectetur iusto a eius. Ducimus!</p>
+        <p>Atque inventore nihil modi iure voluptatum perspiciatis culpa dicta natus, ab officia sequi, maiores nam
+            mollitia exercitationem quasi dignissimos adipisci, dolorem maxime repellendus praesentium neque consectetur
+            iusto a eius. Ducimus!</p>
     </div>
 
     <h2>tamaño de cajas (box sizing)</h2>
@@ -96,13 +109,13 @@
     <div class="parent">
         <div class="child"></div>
     </div>
-    
+
     <h2>Centrar horizontalmente (eje-x)</h2>
     <div class="x-centered rectangle">
         <p>frase test</p>
     </div>
     <br>
-    
+
     <div class="tercero">
         <h2>Gruezi!</h2>
     </div>
@@ -110,11 +123,12 @@
     <h1>Titulo uno</h1>
 
     <div class="smallimage"></div>
-    
+
     <!-- tambien podemos añadir style en un elemento muy concreto. intentaremos evitar esta tecnica, ya que es mas dificil de manejar porque que "se pierde" en codigos largos y estara mas hardcodeado  -->
     <div class="primero" style="background-color: aquamarine; height: 200px;"></div>
 
     <div class="segundo"></div>
 
 </body>
+
 </html>
