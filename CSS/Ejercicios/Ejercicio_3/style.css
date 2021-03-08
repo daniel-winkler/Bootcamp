@@ -1,11 +1,16 @@
 
 li {
-    width: 150px;
-    border: 3px solid;
     background-color: rgb(132, 221, 136);
+    width: 150px;
     border: 1px solid;
     padding: 5px;
     cursor: pointer;
+    border-bottom: none;
+}
+
+/* para evitar que se doblen los bordes internos lo adaptamos así  */
+li:last-child {
+    border-bottom: 1px solid;
 }
 
 li:hover {
@@ -17,6 +22,5 @@ li:hover {
 ul {
     list-style-image: url(images/star.png);
     list-style-position: inside;
-    margin: 0;
     padding: 0;
 }
