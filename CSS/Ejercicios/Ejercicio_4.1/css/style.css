@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px solid;
+    padding: 5px;
+}
+
+/*HEADER*/
+.topBanner {
+    position: relative;
+}
+.searchbar {
+    position: absolute;
+    right: 5px; /*position absolute ignora el padding de .container, por lo que hay que añadirlo extra*/
+    top: 50%;
+    margin-top: -10.4px; /*corregimos con la mitad de la altura del content para ponerlo perfectamente alineado verticalmente*/
+}
+
+nav {
+    margin-bottom: 15px;
+}
+
+/*ASIDE*/
+aside {
+    width: 20%;
+    float: left;
+}
+
+aside>a {
+    display: block;
+}
+
+/*MAIN-CONTENT*/
+section {
+    float: right;
+    width: 78%;
+}
+
+article img {
+    float: left;
+    margin: 10px;
+}
+
+.mainContent {
+    width: 75%;
+    float: left;
+}
+
+/*SIDE-CONTENT*/
+.sideContent {
+    width: 20%;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/*FOOTER*/
+footer {
+    margin-top: 20px;
+}
+
+footer span {
+    float: right;
+}
+
+/* .links {
+    float: left;
+}
+ */
