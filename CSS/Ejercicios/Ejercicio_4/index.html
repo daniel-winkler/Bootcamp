@@ -11,13 +11,13 @@
 
 <body>
     <header>
-        <div class="header bordered">
-            <form action="#" method="GET">
-                <div class="searchbar">
+        <div class="topSection bordered">
+            <div class="searchbar">
+                <form action="#" method="GET">
                     <label for="searchbar">Buscar:</label>
-                    <input type="text">
-                </div>
-            </form>
+                    <input type="text" id="searchbar" name="searchInput">
+                </form>
+            </div>
             <img src="images/spacex.png" alt="logo" width="500px">
         </div>
         <nav class="bordered">
@@ -92,7 +92,7 @@
                 </article>
             </div>
         </div>
-        <div class="column-1 bordered">
+        <aside class="bordered">
             <div class="news">
                 <h3><a href="#">Noticias</a></h3>
                 <p><time datetime="2021-02-01">01/02/2021</time> Lorem ipsum dolor sit amet consectetur adipisicing
@@ -125,7 +125,7 @@
                 </p>
                 <a href="#">Más info</a>
             </div>
-        </div>
+        </aside>
     </div>
 
     <footer class="bordered">

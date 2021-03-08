@@ -6,10 +6,16 @@
     border: 2px solid;
 }
 
+.topSection {
+    position: relative;
+}
+
+/* usamos la siguiente forma para central verticalmente el elemento de busqueda dentro de su elemento padre */
 .searchbar {
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%; /* para centrarlo */
+    margin-top: -17px; /*la mitad del tamaño del elemento para corregirlo verticalmente*/
 }
 
 nav {
@@ -20,7 +26,7 @@ nav {
     margin-top: 5px;
 }
 
-.column-1 {
+aside {
     width: 20%;
     height: 800px;
     overflow: auto;
@@ -73,7 +79,7 @@ footer p {
 
 article img {
     float: left;
-    padding: 5px;
+    margin: 5px;
 }
 
 .rightColumn {
