@@ -60,10 +60,6 @@ aside {
     width: 20%;
 }
 
-.clear {
-    clear: both;
-}
-
 /*Footer*/
 footer {
     text-align: center;
@@ -79,9 +75,7 @@ footer {
         width: 100%;
     }
 
-    footer {
-        margin-top: 10px;
-    }
+   
 
     nav a {
         display: block;
@@ -95,5 +89,8 @@ footer {
 
     .mainIntro {
         font-size: 36px;
+    }
+    .mainBody {
+        margin: 25px 50px;
     }
 }
