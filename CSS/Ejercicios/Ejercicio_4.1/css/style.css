@@ -61,13 +61,15 @@ article img {
 /*FOOTER*/
 footer {
     margin-top: 20px;
+    /* overflow hidden hace que respete los tamaños de los hijos aunque sean flotantes  */
+    overflow: hidden; 
 }
 
 footer span {
     float: right;
 }
 
-/* .links {
+.links {
     float: left;
 }
- */
+
