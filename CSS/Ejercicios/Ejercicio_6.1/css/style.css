@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    box-sizing: border-box; /*para que los float se respeten entre sus bordes*/
+}
+
+a {
+    text-decoration: none;
+    padding: 20px;
+    background-color: salmon;
+    display: block;
+    text-align: center;
+}
+
+a:last-child {
+    display: none; /*para hacer desaparecer Informacion Desktop*/
+}
+
+a:hover {
+    background-color: rgb(253, 52, 30);
+    color: #fff;
+}
+
+@media only screen and (min-width: 600px) {
+    a {
+        float: left; /*se van posicionando horizontalmente y en orden*/
+        width: 25%; /*para rellenar horizontalmente ya que se muestran 4 elementos*/
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    a {
+        width: 20%; /*para rellenar horizontalmente ya que se muestran todos los 5 elementos*/
+    }
+
+    a:last-child {
+        display: inline;
+    }
+}
