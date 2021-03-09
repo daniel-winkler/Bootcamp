@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+.menu {
+    background-color: skyblue;
+    padding: 10px;
+    text-align: center;
+}
+span {
+    display: block;
+    padding: 10px;
+}
+
+span:last-child {
+    display: none;
+}
+
+@media only screen and (min-width: 500px) {
+    span {
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    span:last-child {
+        display:inline;
+    }
+}

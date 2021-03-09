@@ -57,6 +57,7 @@ aside {
     color: #fff;
     width: 20%;
 }
+
 .clear {
     clear: both;
 }
@@ -69,20 +70,23 @@ footer {
     padding: 40px;
 }
 
-
 /*Responsive*/
 @media only screen and (max-width: 768px) {
-    .mainContent {
-        float: none;
-        width: 100%;
-    }
-
-    aside {
+    .mainContent, aside {
         float: none;
         width: 100%;
     }
 
     .mainBody {
         margin: 0;
+    }
+
+    footer {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin-top: 15px;
     }
 }
