@@ -19,14 +19,18 @@ span:last-child {
     display: none;
 }
 
+span:hover {
+    background-color: rgb(58, 190, 241);
+}
+
 @media only screen and (min-width: 500px) {
     span {
-        display: inline;
+        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 700px) {
     span:last-child {
-        display:inline;
+        display:inline-block;
     }
 }
