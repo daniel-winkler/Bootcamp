@@ -34,16 +34,18 @@ nav a {
     color: #fff;
     background-image: url(../images/background.jpeg);
     background-position: center;
+    margin-bottom: 30px;
 }
 
 .mainBody {
-    margin: 20px;
+    margin: 50px 100px;
+    overflow: hidden;
 }
 
 .mainContent {
     float: left;
     width: 80%;
-    padding: 50px 100px;
+    padding-right: 20px;
 }
 
 .mainContent h3 {
@@ -77,10 +79,6 @@ footer {
         width: 100%;
     }
 
-    .mainBody {
-        margin: 0;
-    }
-
     footer {
         margin-top: 10px;
     }
@@ -88,5 +86,14 @@ footer {
     nav a {
         display: block;
         margin-top: 15px;
+    }
+
+    .mainContent {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .mainIntro {
+        font-size: 36px;
     }
 }

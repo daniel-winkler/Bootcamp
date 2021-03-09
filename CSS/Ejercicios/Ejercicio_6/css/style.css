@@ -7,7 +7,6 @@ body {
 }
 .menu {
     background-color: skyblue;
-    padding: 10px;
     text-align: center;
 }
 span {
@@ -23,13 +22,17 @@ span:hover {
     background-color: rgb(58, 190, 241);
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
     span {
         display: inline-block;
+        width: 20%;
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1000px) {
+    span {
+        width: 16.6%;
+    }
     span:last-child {
         display:inline-block;
     }
