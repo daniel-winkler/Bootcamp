@@ -228,7 +228,7 @@ h1 {
     box-sizing: border-box; /*se ajusta solo hasta el borde del padre*/
 }
 
-/* Pseudo */
+/* PSEUDO */
 
 .pseudo:hover {
     background-color: rgb(233, 163, 233);
@@ -240,4 +240,27 @@ h1 {
 
 .pseudo::first-line {
     color: green;
+}
+
+/* MEDIA QUERIES */
+
+/* Escritorio/Desktop */
+.responsive {
+    height: 100px;
+    background-color: aquamarine;
+    width: 30%;
+}
+
+/* Tablet */
+@media only screen and (max-width: 920px) {
+    .responsive {
+        width: 60%;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 100%;
+    }
 }
