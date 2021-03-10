@@ -39,7 +39,7 @@ nav a {
 
 .mainBody {
     margin: 50px 100px;
-    overflow: hidden;
+    overflow: hidden; /*para que respete el tamaño de sus hijos y no haga falta un div.clear al final*/
 }
 
 .mainContent {
@@ -77,11 +77,15 @@ footer {
 
     nav a {
         display: block;
-        padding: 10px;
+        padding-bottom: 20px;
+    }
+
+    nav a:last-child {
+        padding: 0; /*para terminar de cuadrar todo el nav*/
     }
 
     .mainContent {
-        padding: 0;
+        padding: 0; /*ya que el aside no está a la derecha, el padding right no es necesario*/
         margin-bottom: 20px;
     }
 
@@ -89,6 +93,6 @@ footer {
         font-size: 36px;
     }
     .mainBody {
-        margin: 25px 50px;
+        margin: 25px 50px; /*al ser mas pequeño, podemos bajarle el margin general a la pagina*/
     }
 }
