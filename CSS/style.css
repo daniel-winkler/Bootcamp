@@ -234,19 +234,19 @@ h1 {
     display: flex;
     
     flex-direction: row; /*es la direccion flex por defecto*/
-    flex-wrap: wrap; /*nos recoloca verticalmente en el momento en el que no quepan las cajas*/
+    flex-wrap: nowrap; /*nos recoloca verticalmente en el momento en el que no quepan las cajas*/
     /* flex-flow: row wrap; (atajo para combinar direction y wrap)  */
-    justify-content: center;
     justify-content: flex-start;
     justify-content: flex-end;
-    justify-content: space-around;
     justify-content: space-between;
+    justify-content: space-around;
+    justify-content: center;
     
     height: 250px; /*si el padre no tiene altura, align items no reaccionará*/
-    align-items: stretch; /*default*/
-    align-items: center;
     align-items: flex-end;
     align-items: flex-start;
+    align-items: center;
+    align-items: stretch; /*default*/
 }
 
 [class^="flex-child"] {
@@ -263,6 +263,26 @@ h1 {
 .flex-parent > div:nth-child(odd) {
     background-color: #333;
     color: #ddd;
+}
+/* para las siguientes propiedades es necesario que flex-wrap: nowrap  */
+.flex-child-1 {
+    flex-grow: 3;
+    flex-shrink: 2;
+    flex-basis: 250px; /*o auto si se ha definido el tamaño anteriormente*/
+    /* flex: 3 2 auto; (recopila las 3 propiedades anteriores en ese orden) */
+}
+
+.flex-child-2 {
+    flex-grow: 1;
+    flex-shrink: 3;
+    flex-basis: 250px;
+    align-self: center; /*propiedad "parche" que sobreescribe valores anteriores. CUIDADO*/
+}
+
+.flex-child-3 {
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 250px;
 }
 
 /* FIN POSICIONAMIENTO  */
