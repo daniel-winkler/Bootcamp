@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(40, 121, 64);
+    color: #333;
+}
+
+.card {
+    background-color: #ddd;
+    width: 300px;
+    height: 600px;
+    margin: auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.content {
+    width: 100%;
+    flex-grow: 1; /*hace que rellene el espacio en blanco disponible */
+}
+
+.box {
+    background-color: rgb(145, 145, 145);
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.image {
+    background-color: rgb(145, 145, 145);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: rgb(145, 145, 145);
+    height: 25px;
+    border-radius: 10px;
+    width: 100%;
+}

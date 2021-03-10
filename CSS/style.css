@@ -285,6 +285,7 @@ h1 {
     flex-basis: 250px;
 }
 
+/* POSICION ABSOLUTA CON FLEXBOX */
 .absolute-flex-parent {
     height: 300px;
     border: 15px solid tomato;
