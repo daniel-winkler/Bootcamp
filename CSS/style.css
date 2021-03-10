@@ -285,6 +285,22 @@ h1 {
     flex-basis: 250px;
 }
 
+.absolute-flex-parent {
+    height: 300px;
+    border: 15px solid tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.absolute-flex-child {
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+
+}
+
 /* FIN POSICIONAMIENTO  */
 
 /* PSEUDO */
