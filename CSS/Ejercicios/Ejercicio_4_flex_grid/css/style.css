@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px solid;
+    padding: 5px;
+}
+
+/*HEADER*/
+.topBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin-bottom: 15px;
+}
+
+/*MAIN CONTENT*/
+section {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+/*FOOTER*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
