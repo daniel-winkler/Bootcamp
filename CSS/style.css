@@ -302,6 +302,112 @@ h1 {
 
 }
 
+/* CSS GRID con media queries  */
+
+[class^="grid-child"] {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-parent {
+    display: grid;
+
+    gap: 10px;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+    grid-template-rows: 1fr 2fr;
+}
+
+@media only screen and (max-width: 920px) {
+    .grid-parent {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-parent {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CSS GRID por lineas  */
+
+.grid-parent-2 {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr); /*seria  equivalente a 1fr 1fr 1fr*/
+    grid-template-rows: repeat(4, 1fr); /*seria equivalente a 1fr 1fr 1fr 1fr*/
+    gap: 10px;
+}
+
+.grid-parent-2 > .grid-child-1 {
+    grid-column: 1/3; /*indicamos las lineas entre las que queremos que muestre la caja*/
+}
+
+.grid-parent-2 > .grid-child-2 {
+    grid-column: 3; /*es lo mismo que decir 3/4, ya que no salta ninguna linea*/
+    grid-row: 1/3;
+}
+
+.grid-parent-2 > .grid-child-3 {
+    grid-column: 1/3;
+    grid-row: 2/5;
+
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.grid-parent-2 > .grid-child-4 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.grid-parent-2 > .grid-child-5 {
+    grid-column: 2/4;
+    grid-row: 4;
+}
+
+.grid-parent-2 > .grid-child-6 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* CSS GRID por areas  */
+
+.grid-parent-3 {
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+
+    grid-template-areas: "nav nav ."
+                         "content1 content2 content3"
+                         "footer footer footer";
+}
+
+.grid-parent-3 > .grid-child-1 {
+    grid-area: nav;   
+}
+
+.grid-parent-3 > .grid-child-2 {
+    grid-area: content1;
+}
+
+.grid-parent-3 > .grid-child-3 {
+    grid-area: content2;
+}
+
+.grid-parent-3 > .grid-child-4 {
+    grid-area: content3;
+}
+
+.grid-parent-3 > .grid-child-5 {
+    grid-area: footer;
+}
+
 /* FIN POSICIONAMIENTO  */
 
 /* PSEUDO */
