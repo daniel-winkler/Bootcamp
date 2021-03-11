@@ -19,17 +19,26 @@ nav {
 }
 
 /*MAIN CONTENT*/
-section {
+.mainContent {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     gap: 10px;
 }
 
+article img {
+    float: left;
+}
+
+aside a {
+    display: block;
+}
+
 /*FOOTER*/
 footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 15px;
 }
 
