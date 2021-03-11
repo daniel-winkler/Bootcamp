@@ -1,0 +1,43 @@
+.parent {
+    display: grid;
+    gap: 2px;
+
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+
+    grid-template-areas: "nav nav"
+                         "content masthead"
+                         "content sidebar"
+                         "footer footer";
+}
+
+[class^="child"]  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.child-1 {
+    grid-area: nav;
+    background-color: #fcd0a1;
+}
+
+.child-2 {
+    grid-area: content;
+    background-color: #b1b695;
+}
+
+.child-3 {
+    grid-area: masthead;
+    background-color: #a690a4;
+}
+
+.child-4 {
+    grid-area: sidebar;
+    background-color: #5e4b56;
+}
+
+.child-5 {
+    grid-area: footer;
+    background-color: #afd2e9;
+}
