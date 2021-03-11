@@ -3,17 +3,12 @@
     gap: 2px;
 
     grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     grid-template-areas: "nav nav"
                          "content masthead"
                          "content sidebar"
                          "footer footer";
-}
-
-[class^="child"]  {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .child-1 {
