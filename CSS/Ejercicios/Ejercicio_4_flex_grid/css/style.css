@@ -28,10 +28,15 @@ nav {
 
 article img {
     float: left;
+    padding: 5px;
 }
 
 aside a {
     display: block;
+}
+
+.lateral {
+    height: 80%;
 }
 
 /*FOOTER*/
