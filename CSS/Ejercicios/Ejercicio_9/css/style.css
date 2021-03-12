@@ -1,0 +1,50 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+
+    height: 500px;
+    width: 500px;
+}
+
+[class^="box"] {
+    background-color: rgba(126, 160, 68, 1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+[class^="box"]:hover {
+    transform: scale(1.1);
+    background-color: darkolivegreen;
+}
+
+.animation-1 {
+    animation-name: slidein;
+    animation-duration: 0.2s;
+    
+}
+.animation-2 {
+    animation-name: slidein;
+    animation-duration: 0.2s;
+    animation-delay: 0.2s;   
+}
+.animation-3 {
+    animation-name: slidein;
+    animation-duration: 0.2s;
+    animation-delay: 0.4s;   
+}
+.animation-4 {
+    animation-name: slidein;
+    animation-duration: 0.2s;
+    animation-delay: 0.6s;   
+}
+
+@keyframes slidein {
+    from  {
+        background-color: rgba(126, 160, 68, 0);
+    }
+
+    to {
+        background-color: rgba(126, 160, 68, 1);
+    }
+}
