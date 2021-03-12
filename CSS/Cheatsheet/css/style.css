@@ -420,6 +420,35 @@ h1 {
     color: seagreen;
 }
 
+/* GRADIENTS  */
+
+[class^="gradient"] {
+    height: 500px;
+    margin-bottom: 10px;
+}
+
+.gradient-1 {
+    background: linear-gradient(to right, teal, #ddd);
+}
+
+.gradient-2 {
+    background: linear-gradient(to bottom, #ddd, teal 20%, #ddd);
+}
+
+.gradient-3 {
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url(../images/background.jpeg);
+}
+
+.gradient-4 {
+    background: radial-gradient(white, blue, red);
+    width: 50%;
+    box-shadow: 30px 15px 30px black;
+}
+
+/* SHADOWS  */
+
+
+
 /* PSEUDO */
 
 .pseudo:hover {
