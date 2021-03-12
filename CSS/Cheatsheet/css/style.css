@@ -420,7 +420,7 @@ h1 {
     color: seagreen;
 }
 
-/* GRADIENTS  */
+/* GRADIENTS & SHADOWS */
 
 [class^="gradient"] {
     height: 500px;
@@ -445,9 +445,62 @@ h1 {
     box-shadow: 30px 15px 30px black;
 }
 
-/* SHADOWS  */
+/* TRANSFORM  */
 
+.transform {
+    height: 200px;
+    width: 200px;
+    background-color: #333;
 
+    transform: translate(300px, -30px) rotate(45deg) scale(0.8) skew(25deg, 25deg) ;
+}
+
+/* TRANSICIONES  */
+
+.transition {
+    height: 200px;
+    width: 200px;
+    background-color: darkcyan;
+    margin-left: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: darkgray;
+    cursor: pointer;
+
+    /* transition-property: transform;
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+    transition-timing-function: ease-in-out; */
+
+    transition: transform 0.2s ease-in-out
+}
+
+.transition:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* ANIMACIONES  */
+
+.text-animation {
+    animation-name: slidein; /*nombre libre de elegir, no nos referimos a una propiedad*/
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    50% {
+        color: darkmagenta;
+    }
+    to {
+        margin-left: 0;
+    }
+}
 
 /* PSEUDO */
 
