@@ -19,27 +19,118 @@
 }
 
 .animation-1 {
-    animation-name: slidein;
-    animation-duration: 0.2s;
-    
-}
-.animation-2 {
-    animation-name: slidein;
-    animation-duration: 0.2s;
-    animation-delay: 0.2s;   
-}
-.animation-3 {
-    animation-name: slidein;
-    animation-duration: 0.2s;
-    animation-delay: 0.4s;   
-}
-.animation-4 {
-    animation-name: slidein;
-    animation-duration: 0.2s;
-    animation-delay: 0.6s;   
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.1s;
 }
 
-@keyframes slidein {
+.animation-2 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.2s;
+}
+
+.animation-3 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.3s;
+}
+
+.animation-4 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.4s;
+}
+
+.animation-5 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.5s;
+}
+
+.animation-6 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.6s;
+}
+
+.animation-7 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.7s;
+}
+
+.animation-8 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.8s;
+}
+
+.animation-9 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 0.9s;
+}
+
+.animation-10 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1s;
+}
+
+.animation-11 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.1s;
+}
+
+.animation-12 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.2s;
+}
+
+.animation-13 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.3s;
+}
+
+.animation-14 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.4s;
+}
+
+.animation-15 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.5s;
+}
+
+.animation-16 {
+    animation-name: appear;
+    animation-duration: 0.5s;
+    animation-iteration-count: initial;
+    animation-delay: 1.6s;
+}
+
+@keyframes appear {
     from  {
         background-color: rgba(126, 160, 68, 0);
     }
