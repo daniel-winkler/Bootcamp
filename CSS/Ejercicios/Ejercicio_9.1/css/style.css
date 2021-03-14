@@ -1,0 +1,98 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    height: 600px;
+    width: 600px;
+}
+
+[class^="box"] {
+    background-color: salmon;
+    transition: transform 0.3s, background-color 0.3s;
+
+     /*animation (shorthand) syntax: 
+        animation-name | animation-duration | animation-timing-function | animation-delay |
+        animation-iteration-count | animation-direction | animation-fill-mode | animation-playstate*/
+    animation: appear 0.5s ease 1 normal forwards;
+    opacity: 0;
+}
+
+[class^="box"]:hover {
+    transform: scale(1.2);
+    background-color: rgb(255, 75, 55);
+}
+
+.box-1 {
+    animation-delay: 0.2s;
+}
+
+.box-2 {
+    animation-delay: 0.4s;
+}
+
+.box-3 {
+    animation-delay: 0.6s;
+}
+
+.box-4 {
+    animation-delay: 0.8s;
+}
+
+.box-5 {
+    animation-delay: 1s;
+}
+
+.box-6 {
+    animation-delay: 1.2s;
+}
+
+.box-7 {
+    animation-delay: 1.4s;
+}
+
+.box-8 {
+    animation-delay: 1.6s;
+}
+
+.box-9 {
+    animation-delay: 1.8s;
+}
+
+.box-10 {
+    animation-delay: 2s;
+}
+
+.box-11 {
+    animation-delay: 2.2s;
+}
+
+.box-12 {
+    animation-delay: 2.4s;
+}
+
+.box-13 {
+    animation-delay: 2.6s;
+}
+
+.box-14 {
+    animation-delay: 2.8s;
+}
+
+.box-15 {
+    animation-delay: 3s;
+}
+
+.box-16 {
+    animation-delay: 3.2s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
