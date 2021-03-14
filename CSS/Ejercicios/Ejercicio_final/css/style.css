@@ -7,44 +7,86 @@ body {
     background-color: whitesmoke;
 }
 
+/* CARD  */
 .card {
     background-color: white;
     width: 500px;
     height: 700px;
     margin: auto;
-    border-radius: 5%;
-    box-shadow: 3px 3px 50px rgb(204, 204, 204);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-radius: 2%;
+    box-shadow: 3px 3px 50px rgb(204, 204, 204); 
+    overflow: hidden;
 }
 
+/* LOGIN IMAGE  */
 .image {
     width: 100%;
     height: 200px;
     background-image: url(../images/login-image.jpg);
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 }
 
-.emailInput, .passwordInput {
+/* LOGIN FORM  */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+form {
+    width: 100%;
+}
+
+h3 {
+    align-self: flex-start;
 }
 
 input, button {
-    
     margin-bottom: 20px;
     background-color: white;
-    height: 25px;
+    height: 35px;
+    width: 100%;
 }
 
-.submit > input {
+label, input {
+    display: block;
+}
+
+#submit {
     background-color: #6c2bd9;
+    color: white;
+}
+
+.line {
+    border: solid 1px whitesmoke;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 a {
     display: block;
     text-decoration: none;
     margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 1000px) {
+    .card {
+        display: flex;
+        width: 800px;
+        height: 500px;
+    }
+
+    .loginForm {
+        width: 50%;
+    }
+
+    .image {
+        height: 100%;
+        width: 50%;
+    }
 }
