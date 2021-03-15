@@ -20,7 +20,8 @@
 
 [class^="box"]:hover {
     transform: scale(1.2);
-    background-color: rgb(255, 75, 55);
+    background-color: rgb(255, 100, 82);
+    z-index: 1;
 }
 
 .box-1 {
