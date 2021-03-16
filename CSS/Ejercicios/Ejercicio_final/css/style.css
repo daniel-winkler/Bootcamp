@@ -53,6 +53,11 @@ input, button {
     border: rgb(197, 197, 197) 1px solid;
 }
 
+#emailInput,
+#passwordInput {
+    padding-left: 15px;
+}
+
 label, input {
     display: block;
 }
