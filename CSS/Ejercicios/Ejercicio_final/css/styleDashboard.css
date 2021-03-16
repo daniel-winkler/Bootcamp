@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Inter, system-ui, Roboto, Helvetica, Arial;
+}
+
+/* VARIABLES PARA COLORES  */
+:root {
+    --purple-light: #7e3af2;
+    --purple-dark: #6c2bd9;
+    --orange-light: #feecdc;
+    --orange-dark: #ff5a1f;
+    --blue-light: #e1effe;
+    --blue-dark: #3f83f8;
+    --green-light: #def7ec;
+    --green-dark: #0e9f6e;
+    --teal-light: #d5f5f6;
+    --teal-dark: #0694a2;
+    --red-light: #fde8e8;
+    --red-dark: #e02424;
+    --gray-light: #f4f5f7;
+    --gray-dark: #24262d;
+}
+
+/* NAVBAR MOBILE  */
+.fa-bars,
+.fa-search,
+.fa-bell {
+    color: var(--purple-dark);
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 2px 5px gray;
+}
+
+.search > input {
+    border: none;
+    background-color: var(--gray-light);
+    margin-left: 5px;
+    width: 200px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    height: 66%;
+    background-color: var(--gray-light);
+    padding-left: 5px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+
+.profile {
+    background-image: url(../images/profile-avatar.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.dashboard {
+    background-color: var(--gray-light);
+}
+
+/* BANNER */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: var(--purple-dark);
+    border-radius: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* SUMMARY BUTTONS  */
+.gridSummary {
+    display: grid; /* display flex tambien valdria, pero por coherencia con el responsive usamos grid  */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px;
+}
+
+[class^="summary"] {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+[class^="icon"] {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.iconClients {
+    background-color: var(--orange-light);
+    color: var(--orange-dark);
+}
+
+.iconBalance {
+    background-color: var(--green-light);
+    color: var(--green-dark);
+}
+
+.iconSales {
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+}
+
+.iconContacts {
+    background-color: var(--teal-light);
+    color: var(--teal-dark);
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.text > p {
+    padding: 5px
+}
+
+/* ACCOUNTS */
+
+.accounts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 756px) {
+    .gridSummary {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .gridSummary {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+}

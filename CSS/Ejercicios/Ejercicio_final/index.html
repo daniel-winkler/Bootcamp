@@ -5,13 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/styleDashboard.css">
     <script src="https://kit.fontawesome.com/d38cb44a24.js" crossorigin="anonymous"></script>
    
     <title>Ejercicio Final - Index</title>
 </head>
 <body>
-    <div></div>
+    <nav class="navBar">
+        <div class="hamburger"><i class="fas fa-bars fa-lg"></i></div>
+        <div class="search">
+            <i class="fas fa-search fa-lg"></i>
+            <input type="text" placeholder="Search for anything.">
+        </div>
+        <div class="bell"><i class="fas fa-bell fa-lg"></i></div>
+        <div class="profile">
+            <!-- <img src="images/profile-avatar.jpg" alt="profile avatar" height="50px"> -->
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        <div class="banner">
+            <p><i class="fas fa-star fa-lg"></i> See what you´ve missed!</p>
+            <p>View more <i class="fas fa-long-arrow-alt-right fa-lg"></i></p>
+        </div>
+        <div class="gridSummary">
+            <div class="summaryClients">
+                <div class="iconClients"><i class="fas fa-users fa-lg"></i></div>
+                <div class="text">
+                    <p>Total clients</p>
+                    <p>6389</p>
+                </div>
+            </div>
+            <div class="summaryBalance">
+                <div class="iconBalance"><i class="fas fa-money-bill-wave fa-lg"></i></div>
+                <div class="text">
+                    <p>Account balance</p>
+                    <p>$ 46,760.89</p>
+                </div>
+            </div>
+            <div class="summarySales">
+                <div class="iconSales"><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <div class="text">
+                    <p>New sales</p>
+                    <p>376</p>
+                </div>
+            </div>
+            <div class="summaryContacts">
+                <div class="iconContacts"><i class="fas fa-comment-dots fa-lg"></i></div>
+                <div class="text">
+                    <p>Pending contacts</p>
+                    <p>35</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accounts"></div>
+    </div>
 </body>
 </html>
