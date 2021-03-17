@@ -12,56 +12,79 @@
     <title>Ejercicio Final - Index</title>
 </head>
 <body>
-    <nav class="navBar">
-        <div class="hamburger"><i class="fas fa-bars fa-lg"></i></div>
-        <div class="search">
-            <i class="fas fa-search fa-lg"></i>
-            <input type="text" placeholder="Search for anything.">
+    <!-- START SIDEMENU  -->
+    <div class="sideMenu">
+        <div class="menuTitle"><img src="images/shuttle.png" alt=""> CodeSpace Shop</div>
+        <p><i class="fas fa-home fa-lg"></i> Dashboard</p>
+        <p><i class="fas fa-user-friends fa-lg"></i> Clients</p>
+        <p><i class="fas fa-box-open fa-lg"></i> Products</p>
+        <p><i class="fas fa-file-alt fa-lg"></i> Sales</p>
+        <p><i class="fas fa-truck fa-lg"></i> Shipping</p>
+        <p><i class="fas fa-chart-pie fa-lg"></i>Statistics</p>
+        <div class="add">
+            <p>Add product</p>
+            <i class="fas fa-plus"></i>
         </div>
-        <div class="bell"><i class="fas fa-bell fa-lg"></i></div>
-        <div class="profile">
-            <!-- <img src="images/profile-avatar.jpg" alt="profile avatar" height="50px"> -->
-        </div>
-    </nav>
+    </div>
+    <!-- END SIDEMENU  -->
 
-    <div class="dashboard">
-        <h1>Dashboard</h1>
-        <div class="banner">
-            <p><i class="fas fa-star fa-lg"></i> See what you´ve missed!</p>
-            <p>View more <i class="fas fa-long-arrow-alt-right fa-lg"></i></p>
-        </div>
-        <div class="gridSummary">
-            <div class="summaryClients">
-                <div class="iconClients"><i class="fas fa-users fa-lg"></i></div>
-                <div class="text">
-                    <p>Total clients</p>
-                    <p>6389</p>
+    <div class="mainPage">
+        <!-- START NAVBAR  -->
+        <nav class="navBar">
+            <div class="hamburger"><i class="fas fa-bars fa-lg"></i></div>
+            <div class="search">
+                <i class="fas fa-search fa-lg"></i>
+                <input type="text" placeholder="Search for anything.">
+            </div>
+            <div class="bell"><i class="fas fa-bell fa-lg"></i></div>
+            <div class="profile">
+                <!-- <img src="images/profile-avatar.jpg" alt="profile avatar" height="50px"> -->
+            </div>
+        </nav>
+        <!-- END NAVBAR  -->
+        <!-- START DASHBOARD  -->
+        <div class="dashboard">
+            <h1>Dashboard</h1>
+            <div class="banner">
+                <p><i class="fas fa-star fa-lg"></i> See what you´ve missed!</p>
+                <p>View more <i class="fas fa-long-arrow-alt-right fa-lg"></i></p>
+            </div>
+            <div class="gridSummary">
+                <div class="summaryClients">
+                    <div class="iconClients"><i class="fas fa-users fa-lg"></i></div>
+                    <div class="text">
+                        <p>Total clients</p>
+                        <p>6389</p>
+                    </div>
+                </div>
+                <div class="summaryBalance">
+                    <div class="iconBalance"><i class="fas fa-money-bill-wave fa-lg"></i></div>
+                    <div class="text">
+                        <p>Account balance</p>
+                        <p>$ 46,760.89</p>
+                    </div>
+                </div>
+                <div class="summarySales">
+                    <div class="iconSales"><i class="fas fa-shopping-cart fa-lg"></i></div>
+                    <div class="text">
+                        <p>New sales</p>
+                        <p>376</p>
+                    </div>
+                </div>
+                <div class="summaryContacts">
+                    <div class="iconContacts"><i class="fas fa-comment-dots fa-lg"></i></div>
+                    <div class="text">
+                        <p>Pending contacts</p>
+                        <p>35</p>
+                    </div>
                 </div>
             </div>
-            <div class="summaryBalance">
-                <div class="iconBalance"><i class="fas fa-money-bill-wave fa-lg"></i></div>
-                <div class="text">
-                    <p>Account balance</p>
-                    <p>$ 46,760.89</p>
-                </div>
-            </div>
-            <div class="summarySales">
-                <div class="iconSales"><i class="fas fa-shopping-cart fa-lg"></i></div>
-                <div class="text">
-                    <p>New sales</p>
-                    <p>376</p>
-                </div>
-            </div>
-            <div class="summaryContacts">
-                <div class="iconContacts"><i class="fas fa-comment-dots fa-lg"></i></div>
-                <div class="text">
-                    <p>Pending contacts</p>
-                    <p>35</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="accounts"></div>
+            <div class="accounts">
+            </div>
+            
+        </div>
+        <!-- END DASHBOARD  -->
     </div>
 </body>
 </html>

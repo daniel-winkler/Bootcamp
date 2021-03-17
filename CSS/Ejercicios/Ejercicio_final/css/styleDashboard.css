@@ -22,7 +22,63 @@
     --gray-dark: #24262d;
 }
 
-/* NAVBAR MOBILE  */
+body {
+    display: flex;
+}
+
+.mainPage {
+    flex-grow: 1;
+    background-color: var(--gray-light);
+}
+
+/* SIDEMENU  */
+.sideMenu {
+    display: none;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.menuTitle {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.sideMenu > p {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    color: grey;
+}
+
+.add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: var(--purple-dark);
+    border-radius: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+
+.sideMenu i,
+.menuTitle img {
+    padding: 10px;
+}
+
+.sideMenu>p:hover {
+    border-left: solid 5px var(--purple-dark);
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+    color: var(--gray-dark);
+    cursor: pointer;
+}
+
+/* NAVBAR */
 .fa-bars,
 .fa-search,
 .fa-bell {
@@ -34,7 +90,8 @@
     justify-content: space-around;
     align-items: center;
     height: 50px;
-    box-shadow: 0 2px 5px gray;
+    background-color: white;
+    box-shadow: 0 4px 5px -5px black;
 }
 
 .search > input {
@@ -68,6 +125,15 @@
     background-color: var(--gray-light);
 }
 
+/* DASHBOARD  */
+.dashboard {
+    padding: 25px;
+}
+
+.dashboard h1 {
+    margin-bottom: 25px;
+}
+
 /* BANNER */
 .banner {
     display: flex;
@@ -79,6 +145,7 @@
     color: white;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 25px;
 }
 
 /* SUMMARY BUTTONS  */
@@ -146,6 +213,14 @@
 
 /* RESPONSIVE */
 @media only screen and (min-width: 767px) { /*para Tablet*/
+    .sideMenu {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
     .gridSummary {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
