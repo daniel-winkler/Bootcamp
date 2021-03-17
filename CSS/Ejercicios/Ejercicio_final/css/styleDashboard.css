@@ -5,6 +5,7 @@
 }
 
 /* VARIABLES PARA COLORES  */
+
 :root {
     --purple-light: #7e3af2;
     --purple-dark: #6c2bd9;
@@ -32,6 +33,7 @@ body {
 }
 
 /* SIDEMENU  */
+
 .sideMenu {
     display: none;
     width: 250px;
@@ -79,6 +81,7 @@ body {
 }
 
 /* NAVBAR */
+
 .fa-bars,
 .fa-search,
 .fa-bell {
@@ -126,6 +129,7 @@ body {
 }
 
 /* DASHBOARD  */
+
 .dashboard {
     padding: 25px;
 }
@@ -135,6 +139,7 @@ body {
 }
 
 /* BANNER */
+
 .banner {
     display: flex;
     justify-content: space-between;
@@ -149,6 +154,7 @@ body {
 }
 
 /* SUMMARY BUTTONS  */
+
 .gridSummary {
     display: grid; /* display flex tambien valdria, pero por coherencia con el responsive usamos grid  */
     grid-template-columns: 1fr;
@@ -204,14 +210,69 @@ body {
 
 /* ACCOUNTS */
 
-.accounts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+.accounts table {
+   width: 100%;
+   background-color: white;
+   border-radius: 10px;
+   border: 1px solid black;
+   margin-top: 30px;
+
 }
 
+thead {
+    background-color: teal;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+.accountProfile {
+    display: flex;
+    padding: 5px;
+}
+
+[class^="accountImage"] {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.accountImage-1 {
+    background-image: url(../images/dummy-1.jpg);
+}
+
+.accountImage-2 {
+    background-image: url(../images/dummy-2.jpg);
+}
+
+.accountImage-3 {
+    background-image: url(../images/dummy-3.jpg);
+}
+
+.accountImage-4 {
+    background-image: url(../images/dummy-4.jpg);
+}
+
+.accountImage-5 {
+    background-image: url(../images/dummy-5.jpg);
+}
+
+.accountImage-6 {
+    background-image: url(../images/dummy-6.jpg);
+}
+
+.accountImage-7 {
+    background-image: url(../images/dummy-7.jpg);
+}
+
+.accountImage-8 {
+    background-image: url(../images/dummy-8.jpg);
+}
 
 /* RESPONSIVE */
+
 @media only screen and (min-width: 767px) { /*para Tablet*/
     .sideMenu {
         display: block;
