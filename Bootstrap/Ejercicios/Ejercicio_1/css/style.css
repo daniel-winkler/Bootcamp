@@ -1,0 +1,30 @@
+
+/* CAROUSEL  */
+.carouselImage {
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+.carouselImage:first-child {
+    background-image: url(../images/slide-1.jpg);
+}
+
+.carouselImage:nth-child(2) {
+    background-image: url(../images/slide-2.jpg);
+}
+
+.carouselImage:last-child {
+    background-image: url(../images/slide-3.jpg);
+}
+
+.cardBackground {
+    background-image: url(../images/cards.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+}
+
+.contact {
+    display: flex;
+}
