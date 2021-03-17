@@ -1,11 +1,11 @@
 
 /* CAROUSEL  */
 .carouselImage {
-    height: 500px;
-    background-position: center;
+    height: 50vh;
+    background-position: center center;
     background-size: cover;
 }
-.carouselImage:first-child {
+.carouselImage:nth-child(1) {
     background-image: url(../images/slide-1.jpg);
 }
 
@@ -13,18 +13,34 @@
     background-image: url(../images/slide-2.jpg);
 }
 
-.carouselImage:last-child {
+.carouselImage:nth-child(3) {
     background-image: url(../images/slide-3.jpg);
 }
 
-.cardBackground {
-    background-image: url(../images/cards.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 150px;
+/* PAGINATION  */
+.myPagination {
+    display: flex;
+    justify-content: center;
 }
 
+/* LINE  */
+.myLine {
+    border: 1px solid whitesmoke;
+}
+
+/* CONTACT  */
 .contact {
     display: flex;
+}
+
+.contactImage {
+    background-image: url(../images/contact.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* FOOTER  */
+footer {
+    color: white;
 }
