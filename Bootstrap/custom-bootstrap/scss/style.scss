@@ -1,0 +1,19 @@
+// sass --watch --no-source-map scss:css 
+
+// Import only the necesary files
+@import "../bootstrap-4.6.0/scss/functions";
+@import "../bootstrap-4.6.0/scss/variables";
+
+// Begin Customization
+.sized {
+    height: 100px;
+}
+
+$theme-colors: (
+  "primary": violet,
+  "danger": teal
+);
+
+// End Customization 
+
+@import "../bootstrap-4.6.0/scss/bootstrap.scss";

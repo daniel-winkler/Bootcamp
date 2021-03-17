@@ -31,7 +31,7 @@
 
 .navBar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
     box-shadow: 0 2px 5px gray;
@@ -145,14 +145,14 @@
 
 
 /* RESPONSIVE */
-@media only screen and (min-width: 756px) {
+@media only screen and (min-width: 767px) { /*para Tablet*/
     .gridSummary {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) { /*para Desktop*/
     .gridSummary {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
