@@ -17,15 +17,17 @@
     background-image: url(../images/slide-3.jpg);
 }
 
+/* CARDS  */
+/* .cardsFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
 /* PAGINATION  */
 .myPagination {
     display: flex;
     justify-content: center;
-}
-
-/* LINE  */
-.myLine {
-    border: 1px solid whitesmoke;
 }
 
 /* CONTACT  */
