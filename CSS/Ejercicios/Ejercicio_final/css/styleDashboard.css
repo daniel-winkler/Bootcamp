@@ -209,24 +209,69 @@ body {
     padding: 5px
 }
 
-/* ACCOUNTS */
+/* ACCOUNTS / TABLE */
 
 .accounts table {
    width: 100%;
    background-color: white;
+   border-collapse: collapse;
+   /* border-style: hidden; */
+   margin-top: 50px;
    border-radius: 10px;
-   border: 1px solid black;
-   margin-top: 30px;
+   overflow: hidden;
+}
 
+thead {
+    background-color: rgb(221, 221, 221);
+    height: 50px;
 }
 
 tr {
     border-bottom: 1px solid black;
 }
 
+table tfoot {
+    background-color: rgb(221, 221, 221);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+tfoot tr {
+    width: 100%; 
+    border: 0;
+}
+
+.approved {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.308);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.denied {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.253);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.expired {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.336);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.textAccount {
+    margin-left: 10px;
+}
+
 .accountProfile {
     display: flex;
     padding: 5px;
+    align-items: center;
 }
 
 [class^="accountImage"] {
