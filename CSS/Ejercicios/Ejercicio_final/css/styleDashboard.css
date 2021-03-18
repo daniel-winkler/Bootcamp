@@ -215,7 +215,7 @@ body {
    width: 100%;
    background-color: white;
    border-collapse: collapse;
-   /* border-style: hidden; */
+   border-style: hidden;
    margin-top: 50px;
    border-radius: 10px;
    overflow: hidden;
@@ -230,7 +230,7 @@ tr {
     border-bottom: 1px solid black;
 }
 
-table tfoot {
+tfoot {
     background-color: rgb(221, 221, 221);
     height: 50px;
     width: 100%;
@@ -239,7 +239,7 @@ table tfoot {
 }
 
 tfoot tr {
-    width: 100%; 
+    /* width: 100%;  */
     border: 0;
 }
 
