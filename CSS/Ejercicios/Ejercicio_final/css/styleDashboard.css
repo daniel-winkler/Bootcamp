@@ -218,6 +218,7 @@ body {
    border-style: hidden;
    margin-top: 50px;
    border-radius: 10px;
+   box-shadow: 0 0 0 1px grey;
    overflow: hidden;
 }
 
@@ -234,15 +235,18 @@ tfoot {
     background-color: rgb(221, 221, 221);
     height: 50px;
     width: 100%;
-    display: flex;
-    align-items: center;
 }
 
-tfoot tr {
-    /* width: 100%;  */
-    border: 0;
+th span {
+    padding: 10px;
 }
 
+th span:hover {
+    background-color: var(--purple-light);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
 .approved {
     color: green;
     background-color: rgba(0, 128, 0, 0.308);
