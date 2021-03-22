@@ -131,7 +131,7 @@ console.log(str.replace("futuro", "Mundo"));
 console.log(str.replace("Mundo", "futuro")); //solo reemplaza la primera ocurrencia por algun motivo
 //output: Hola futuro.. Adiós mundo.. Adiós mundo.
 
-console.log(str.replaceAll("mundo", "futuro"));
+// console.log(str.replaceAll("mundo", "futuro"));
 //output: Hola futuro.. Adiós futuro.. Adiós futuro.
 
 console.log(str.toLowerCase());

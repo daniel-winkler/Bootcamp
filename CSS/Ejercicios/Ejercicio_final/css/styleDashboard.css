@@ -91,11 +91,13 @@ body {
 
 .navBar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 50px;
     background-color: white;
     box-shadow: 0 4px 5px -5px black;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .search > input {
@@ -115,21 +117,21 @@ body {
     border-radius: 20px;
 }
 
-.profile {
-    background-image: url(../images/profile-avatar.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 80%;
+img {
     border-radius: 50%;
+    margin-left: 15px;
 }
+.profile {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* DASHBOARD  */
 
 .dashboard {
     background-color: var(--gray-light);
 }
-
-/* DASHBOARD  */
 
 .dashboard {
     padding: 25px;
@@ -179,6 +181,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    flex-shrink: 0; /*evita que encojan los iconos con el display*/
 }
 
 .iconClients {
@@ -237,8 +240,18 @@ tfoot {
     width: 100%;
 }
 
+.footer1 {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.footer2 {
+    text-align: right;
+    padding-right: 10px;
+}
+
 th span {
-    padding: 10px;
+    padding: 5px;
 }
 
 th span:hover {
@@ -284,6 +297,7 @@ th span:hover {
     border-radius: 50%;
     background-size: contain;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 .accountImage-1 {
     background-image: url(../images/dummy-1.jpg);
