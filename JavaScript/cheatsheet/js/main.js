@@ -1,10 +1,10 @@
 //-------- USO DE JS EXTERNO --------
 
-function saludo () {
+function saludo() {
     alert("Hola desde un script externo");
     console.log("has hecho click");
 }
-document.getElementsByTagName('a').item(2).addEventListener("click", saludo);
+// document.getElementsByTagName('a').item(2).addEventListener("click", saludo);
 
 //--------- DEPURACION / LOGGING ---------
 // alert("Mensaje");
@@ -12,7 +12,7 @@ document.getElementsByTagName('a').item(2).addEventListener("click", saludo);
 console.log("Mensaje");
 
 //------------- VARIABLES -------------
-// var -> funtion scope 
+// var -> function scope 
 // let / const -> block scope {}
 
 function saludar() {
@@ -151,7 +151,7 @@ console.clear();
 
 //Parsing
 
-let number = Number("asdas"); 
+let number = Number("asdas");
 console.log(number, typeof number);
 //output: NaN number
 
@@ -174,7 +174,7 @@ let person = { //key: value
     blonde: false, //ultimo key sin coma siempre
     walk: function () {
         console.log("Hey, estoy andando.");
-        
+
     }, // Pre ES6
     jump() {
         console.log("Hey, estoy saltando.");
@@ -219,6 +219,118 @@ person.walk();
 //output: Hey, estoy andando.
 
 
+//THIS
+const person2 = {
+    name: "Thomas",
+    talk() {
+        console.log(this);
+        //output: Object { name: "Thomas", talk: talk() }
+        console.log(`Me llamo ${this.name}`); //This siempre hace referencia a la misma variable donde se encuentra.
+        //output: Me llamo Thomas
+    }
+}
+
+const person3 = {
+    name: "Sarah",
+    talk() {
+        console.log(this);
+        //output: Object { name: "Sarah", talk: talk() }
+        console.log(`Me llamo ${this.name}`);
+        //output: Me llamo Sarah
+    }
+}
+
+person2.talk();
+person3.talk();
+
+console.log(this);
+//output: Window http://127.0.0.1:5500/cheatsheet/ (porque no se encuentra dentro de una variable)
+
+
+console.clear();
+
+
+//----------------- ARRAYS --------------------
+
+let selectedColors = ["red", "blue"]; //Arrays de strings
+console.log(selectedColors, selectedColors.length, typeof selectedColors);
+//output: Array [ "red", "blue" ] 2 object
+
+selectedColors[2] = "green"; //accedemos a un indice del array que no existe, por lo tanto nos lo crea.
+console.log(selectedColors, selectedColors.length);
+//output: Array(3) [ "red", "blue", "green" ] 3
+
+selectedColors.push("violet", "white"); //push es una funcion que añade mas indices de array con su contenido correspondiente
+console.log(selectedColors, selectedColors.length);
+//output: Array(5) [ "red", "blue", "green", "violet", "white" ] 5
+
+selectedColors.pop(); //pop elimina sólo el último elemento
+console.log(selectedColors, selectedColors.length);
+//output: Array(4) [ "red", "blue", "green", "violet" ] 4
+
+selectedColors.unshift("white"); //unshift añade un valor nuevo al principio de nuestro array.
+console.log(selectedColors, selectedColors.length);
+//output: Array(5) [ "white", "red", "blue", "green", "violet" ] 5
+
+selectedColors.shift(); //shift elimina el primer valor del array.
+console.log(selectedColors, selectedColors.length);
+//output: Array(4) [ "red", "blue", "green", "violet" ] 4
+
+selectedColors.sort(); //sort por defecto ordena alfabeticamente nuestro array.
+console.log(selectedColors, selectedColors.length);
+//output: Array(4) [ "blue", "green", "red", "violet" ] 4
+
+console.log(selectedColors.indexOf("red")); //indexOf busca el valor que le indique y me devuelve el indice de ese valor.
+//output: 2 
+
+console.log(selectedColors.slice(1, 3)); //slice como con los substrings, coge los elementos del array que indicas como rango de indices (el primero incluido el segundo excluido),
+//output: Array [ "green", "red" ]         PERO NO NOS LOS ELIMINA DEL ARRAY.
+
+console.log("los elementos borrados son: ", selectedColors.splice(1, 3)); //splice elimina un numero de valores que indicas con el segundo numero (3) a partir del indice que indicas con el primer numero (1).
+//output: Array(3) [ "green", "red", "violet" ]
+console.log("el array se ha quedado asi: ", selectedColors); //despues del splice se nos queda solo con un valor.
+//output: Array [ "blue" ]
+
+console.clear();
+
+/*EJERCICIO:  CREAR UN OBJETO 'NIÑO' QUE TENGA LAS PROPIEDADES NOMBRE, ALTURA, GENERO Y AMIGOS.
+AMIGOS ESTARÁ INICIALMENTE VACÍO Y LOS AÑADIREMOS POSTERIORMENTE 3 ELEMENTOS CON LOS NOMBRES.
+DESPUES AÑADIREMOS UNO EXTRA AL INICIO*/
+
+const child = {
+    name: "David",
+    height: 120,
+    gender: "male",
+    friends: [], //añadimos un array vacío
+    loseFriend() {
+        this.friends.pop(); //añadimos una funcion a nuestro objeto que elimine el ultimo amigo
+    } 
+}
+
+console.log(child);
+
+child.friends = ["maria", "pablo", "laura"]; //rellenamos el array vacío acciendo a el por su objeto (child). Si hubiese un array existente y simplemente queremos añadir, usamos .push
+
+console.log(child);
+
+child.friends.unshift("juan"); //añadimos juan al principio con unshift
+
+console.log(child);
+
+child.loseFriend(); //llamamos la funcion para ejecutarla
+
+console.log(child);
 
 
 
+//----------------- CONDICIONALES --------------------
+const randomNumber = 9;
+const guessedNumber = "5";
+
+if (randomNumber === guessedNumber) {
+    console.log("has acertado el numero");
+} else if (randomNumber > guessedNumber) {
+    console.log("el numero secreto es mayor");
+} else {
+    console.log("el numero secreo es menor");
+}
