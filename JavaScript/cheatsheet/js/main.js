@@ -379,7 +379,7 @@ console.clear();
 
 //----------------- FUNCIONES / FUNCTIONS --------------------
 
-//Nombradas
+//NOMBRADAS
 
 function greet(name, lastName) {
     return `Hola, ${name} ${lastName}, ¿qué tal?`; //usamos return para que nos devuelva algo, y con eso podemos comprobarlo usando console.log
@@ -395,7 +395,7 @@ function square(num) {
 console.log("el cuadrado de ", 4, "es ", square(4));
 
 
-//Anónimas
+//ANÓNIMAS
 
 let numbersArray = [5, 51, 1, 15, 2];
 console.log(numbersArray);
@@ -428,3 +428,78 @@ console.log(typeof orderNumbers, typeof function (a, b) {return a - b});
 //output: function function
 
 console.log(numbersArray);
+
+console.clear();
+
+
+//FUNCIONES DE FLECHA / ARROW FUNCTIONS
+
+let perimeterOfSquare = function (side) { //paso a paso de transformar una funcion anónima a una por flechas.
+    return side*4;
+}
+perimeterOfSquare = function (side) {return side*4};
+perimeterOfSquare = (side) => {return side*4};
+perimeterOfSquare = (side) => side*4;
+perimeterOfSquare = side => side*4;
+
+
+perimeterOfSquare = side => 4*side;
+                        //side son los argumentos de la funcion.
+console.log(perimeterOfSquare(5));
+//output: 20
+
+
+
+console.log(typeof function () {});
+//output: function
+console.log(typeof (() => {}));
+//output: function
+
+numbersArray.sort((a, b) => a - b); //transformamos la funcion de ordenar anterior a una funcion por flechas.
+console.log(numbersArray);
+
+
+
+//----------------- BUCLES / LOOPS --------------------
+
+// FOR
+
+for (let i = 0 ; i <= 10 ; i++) {
+    console.log(`Índice: ${i}`);
+}
+
+//definir y rellenar un array con el indice i
+let myArray = [];
+
+for (let i = 0 ; i <= 10 ; i++) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+
+myArray = [];
+
+for (let i = 10 ; i >= 0 ; i--) { //para rellenar el array desde 10 al 0 
+    myArray.push(i);
+}
+
+console.log(myArray);
+
+
+// WHILE
+
+while (true) {
+    break;
+}
+
+
+// FOR EACH 
+
+[].forEach //se aplica siempre a un array, igual que el .sort
+
+console.log(numbersArray);
+numbersArray.forEach(function (item, index) {
+    console.log(`Índice ${index}: ${item}`);
+});
+
+
