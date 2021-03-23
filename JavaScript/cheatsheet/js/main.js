@@ -304,7 +304,7 @@ const child = {
     friends: [], //añadimos un array vacío
     loseFriend() {
         this.friends.pop(); //añadimos una funcion a nuestro objeto que elimine el ultimo amigo
-    } 
+    }
 }
 
 console.log(child);
@@ -334,3 +334,97 @@ if (randomNumber === guessedNumber) {
 } else {
     console.log("el numero secreo es menor");
 }
+
+// Ternary Operator 
+let variable = 12 < 10 ? "el primero es menor" : "el primero es mayor"; // comparacion o booleano ? "si es verdadero" : "si es falso"
+console.log(variable);
+
+let person4 = {
+    name: "Daniel",
+    age: 32,
+    blonde: false,
+    presentarse() {
+        console.log(`Hola, me llamo ${this.name}, tengo ${this.age} años y ${this.blonde ? "soy rubio" : "no soy rubio"}`);
+    }
+}
+
+person4.presentarse();
+
+
+console.log(`Hola, me llamo ${person4.name}, tengo ${person4.age} años y ${person4.blonde ? "soy rubio" : "no soy rubio"}`);
+
+
+// Switch
+let option = 4;
+switch (option) {
+    case 1:
+        //Bloque de código para valor 1
+        console.log("Option vale 1");
+        break;
+    case 2:
+        //Bloque de código para valor 2 
+        console.log("Option vale 2");
+        break;
+    case 3:
+        //Bloque de código para valor 3 etc.
+        console.log("Option vale 3");
+        break;
+    default: //de otro modo (PSeint)
+        console.log("Otra opcion");
+        break; //usar break SIEMPRE
+}
+
+console.clear();
+
+
+//----------------- FUNCIONES / FUNCTIONS --------------------
+
+//Nombradas
+
+function greet(name, lastName) {
+    return `Hola, ${name} ${lastName}, ¿qué tal?`; //usamos return para que nos devuelva algo, y con eso podemos comprobarlo usando console.log
+}   //return se comporta como break, el codigo que haya detras será siempre inalcanzable
+
+console.log(greet());
+console.log(greet("Marcos", "Aurelio"));
+
+function square(num) {
+    return num * num;
+}
+
+console.log("el cuadrado de ", 4, "es ", square(4));
+
+
+//Anónimas
+
+let numbersArray = [5, 51, 1, 15, 2];
+console.log(numbersArray);
+numbersArray.sort(); //asi tal cual ordena segun ASCII
+console.log(numbersArray);
+
+//Function used to determine the order of the elements. It is expected to return a negative value 
+//if first argument is less than second argument, zero if they're equal and a positive value otherwise. 
+//If omitted, the elements are sorted in ascending, ASCII character order.
+
+function orderNumbers (a, b) {
+    if (a < b) {
+        return -1;
+    }  else if (a === b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+function orderNumbersV2 (a, b) {
+    return a - b; //del mismo modo recibe un valor positivo, negativo o nulo (como en la forma anterior)
+}
+
+// numbersArray.sort(orderNumbers);
+
+numbersArray.sort(function (a, b) {return a - b}); //de esta forma anonima, sort recibe la funcion directamente sin tener que nombrarla antes
+
+console.log(typeof orderNumbers, typeof function (a, b) {return a - b});
+//output: function function
+
+console.log(numbersArray);
