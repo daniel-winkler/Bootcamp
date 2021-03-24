@@ -468,7 +468,7 @@ for (let i = 0 ; i <= 10 ; i++) {
     console.log(`Índice: ${i}`);
 }
 
-//definir y rellenar un array con el indice i
+//Miniejercicio: definir y rellenar un array con el indice i
 let myArray = [];
 
 for (let i = 0 ; i <= 10 ; i++) {
@@ -489,17 +489,68 @@ console.log(myArray);
 // WHILE
 
 while (true) {
-    break;
+    break; //para que no entre en bucle infinito
 }
 
-
+console.clear();
 // FOR EACH 
 
 [].forEach //se aplica siempre a un array, igual que el .sort
 
 console.log(numbersArray);
-numbersArray.forEach(function (item, index) {
-    console.log(`Índice ${index}: ${item}`);
+numbersArray.forEach(function (value, index) { //con función anónima
+    console.log(`Índice ${index}: ${value}`);
 });
 
+function myFunction (value, index) { //con función nombrada
+    console.log(`Índice ${index}: ${value}`);
+};
 
+numbersArray.forEach(myFunction); //indicamos la función SIN LLAMARLA, ya que no retorna ningun valor.
+
+
+numbersArray.forEach((value, index) => console.log(`Índice ${index}: ${value}`));
+
+
+//Miniejercicio: copia un array dentro de un array vacío
+
+let otherArray = [];
+
+numbersArray.forEach(value => otherArray.push(value)); //indice a indice, va añadiendo el valor de numbersArray a otherArray.
+
+console.log(otherArray);
+
+
+// FOR OF
+
+for (let item of numbersArray) {
+    console.log(item);
+}
+
+//CONTINUE
+for (let i = 0 ; i < 5 ; i++) {
+    if (i === 3) {
+        continue; //salta a la siguiente iteración, por eso no hace console.log cuando i = 3.
+    }
+    console.log("using continue", i);
+}
+
+//BREAK
+
+let i = 0;
+let k;
+
+mainLoop: while (true) {
+    console.log("Outer loop", i);
+    i++;
+    k = 1;
+    while (true) {
+        console.log("Inner loop", k);
+        k++;
+        if (i === 5 && k === 5) {
+            break mainLoop; //podemos etiquetar un bucle, para poder nombrar el bucle que queremos hacer break.
+        } else if (k === 5) {
+            break; //sale del bucle del que se encuentra, por tanto el bucle padre sigue funcionando.
+        }
+    }
+}
