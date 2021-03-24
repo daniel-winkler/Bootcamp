@@ -495,7 +495,7 @@ while (true) {
 console.clear();
 // FOR EACH 
 
-[].forEach //se aplica siempre a un array, igual que el .sort
+[].forEach //se aplica SIEMPRE a un array, igual que el .sort
 
 console.log(numbersArray);
 numbersArray.forEach(function (value, index) { //con función anónima
@@ -523,7 +523,7 @@ console.log(otherArray);
 
 // FOR OF
 
-for (let item of numbersArray) {
+for (let item of numbersArray) { //donde numbersArray puede ser cualquier iterable, no tiene que ser estrictamente un array.
     console.log(item);
 }
 
@@ -554,3 +554,5 @@ mainLoop: while (true) {
         }
     }
 }
+
+console.clear();
