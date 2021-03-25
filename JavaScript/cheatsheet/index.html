@@ -29,6 +29,10 @@
         .child {
             background-color: khaki;
         }
+
+        .bg-red {
+            background-color: red;
+        }
         
     </style>
 
@@ -43,8 +47,8 @@
 
     <h1>Acceso al DOM</h1>
     <div class="grandparent" id="grandparent">
-        <div class="parent" id="parent-1">
-            <div class="child" id="child-1">Child 1</div>
+        <div class="parent bg-dark d-flex rounded" id="parent-1">
+            <div class="child" id="child-1"><span>Child 1</span></div>
             <div class="child" id="child-2">Child 2</div>
         </div>
         <div class="parent" id="parent-2">
