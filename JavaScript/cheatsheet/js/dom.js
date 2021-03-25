@@ -125,16 +125,17 @@ let myDiv3 = myDiv.cloneNode();
 parent2.before(myDiv3); //before lo añade antes del padre indicado (parent2).
 parent2.after(myDiv.cloneNode()); //after añade despues del elemento padre indicado.
 
-
+console.clear();
 
 //Miniejercicio: crea una funcion que devuelva un nodo nuevo y que reciba etiqueta e ID.
-function newNode(newClass, newId) {
-    let newDiv;
-    newDiv = myDiv.cloneNode(); // INCORRECTO, PIDE LA ETIQUETA
-    newDiv.id = newId;
-    newDiv.classList.add(newClass);
-    return newDiv;
+function newNode(tag, id) {
+    let newDiv2;
+    newDiv2 = document.createElement(tag);
+    newDiv2.id = id;
+    return newDiv2;
 }
 
-newDiv = newNode("newClass", "newId");
-parent1.appendChild(newDiv);
+newDiv2 = newNode("div", "newId");
+parent1.appendChild(newDiv2);
+console.log(newDiv2);
+
