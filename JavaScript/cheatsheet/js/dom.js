@@ -128,14 +128,19 @@ parent2.after(myDiv.cloneNode()); //after añade despues del elemento padre indi
 console.clear();
 
 //Miniejercicio: crea una funcion que devuelva un nodo nuevo y que reciba etiqueta e ID.
-function newNode(tag, id) {
-    let newDiv2;
-    newDiv2 = document.createElement(tag);
-    newDiv2.id = id;
-    return newDiv2;
+function newNode(tag, id, classes) {
+    let newNode;
+    newNode = document.createElement(tag);
+    newNode.id = id;
+    newNode.classList.add(classes);
+    return newNode;
 }
 
-newDiv2 = newNode("div", "newId");
-parent1.appendChild(newDiv2);
-console.log(newDiv2);
+newDiv = newNode("div", "newId", "newClass");
+parent1.appendChild(newDiv);
+console.log(newDiv);
+
+newDiv.classList.add("newClass2","newClass3");
+console.log(newDiv);
+
 
