@@ -20,6 +20,7 @@
             gap: 25px;
             flex-grow: 1;
             padding: 25px;
+            flex-wrap: wrap;
         }
 
         .parent {
@@ -33,12 +34,17 @@
         .bg-red {
             background-color: red;
         }
+
+        #container {
+            height: 100px;
+            border: 3px solid grey;
+        }
         
     </style>
 
 </head>
 <body>
-    
+
     <h1>Procesar JavaScript</h1>
     <a href="#" onclick="console.log('Hola desde un script inline')">Inline Script</a>
     <a href="#">Internal script</a>
@@ -57,6 +63,20 @@
         </div>
     </div>
 
+    <h1>Eventos</h1>
+
+    <div id="container">
+    <button>Cambiar de color</button>
+    </div>
+
+    <label for="emailInput">Introduce tu email</label>
+    <input type="email" name="emailInput" id="emailInput">
+
+    <h1>Coords</h1>
+    
+
+    <div style="height: 1000px"></div>
+
 
     <script>
         // con esto ejecutamos js directamente desde nuestro archivo html (script interno)
@@ -64,7 +84,7 @@
             alert("Hola desde un script interno");
             console.log("has hecho click");
         }
-        document.getElementsByTagName('a').item(1).addEventListener("click", saludo);
+        document.getElementsByTagName('a').item(1).addEventListener("click", saludo); //saludo se pone sin parentesis porque no la estamos llamando, simplemente indicandola como argumento.
     </script>
 
     <!-- con esto enlazamos nuestro archivo js externo (external script)  -->

@@ -125,7 +125,6 @@ let myDiv3 = myDiv.cloneNode();
 parent2.before(myDiv3); //before lo añade antes del padre indicado (parent2).
 parent2.after(myDiv.cloneNode()); //after añade despues del elemento padre indicado.
 
-console.clear();
 
 //Miniejercicio: crea una funcion que devuelva un nodo nuevo y que reciba etiqueta e ID.
 function newNode(tag, id, classes) {
@@ -142,5 +141,63 @@ console.log(newDiv);
 
 newDiv.classList.add("newClass2","newClass3");
 console.log(newDiv);
+
+
+// EVENTS / EVENTOS
+
+const colorButton = document.getElementsByTagName("button")[0] //indicamos [0] porque sino te devuelve un HTML collection, aunque solo sea un elemento.
+
+colorButton.addEventListener("click", function (event) { //event no deja de ser un argumento y no es obligatorio usarlo, pero nos puede ser util.
+    console.log(event); //da informacion del evento "click"
+    console.log(event.target); //informa del elemento que ha disparado el evento
+    // document.body.style.backgroundColor = "green";
+    console.log(event.target.tagName); //nos dice el nombre de la etiqueta del disparador.
+    
+    if (event.ctrlKey) { //entra en el bucle si se hace click manteniendo CTRL pulsado
+        document.body.classList.toggle("bg-red"); //activa y desactiva la clase con nuestro evento click
+    }
+
+    console.log(`X: ${event.clientX} | Y: ${event.clientY}`); //indica las coordenadas del raton respecto al viewport.
+    console.log(`Alt: ${event.altKey} | Shift: ${event.shiftKey} | Ctrl: ${event.ctrlKey}`); //indica el buleano si hemos mantenido pulsado uno de aquellos botones al hacer click
+});
+
+const emailInput = document.getElementById("emailInput"); //con ID siempre te va a devolver un elemento, y no un HTML collection
+console.log(emailInput);
+
+emailInput.addEventListener("focus", inputListener);
+emailInput.addEventListener("blur", inputListener);
+
+
+function inputListener (e) {
+    console.log("Tipo de evento :", e.type);
+    if (e.type === "blur") {
+        e.target.style.borderColor = "red";
+        // e.target.classList.add("bg-red");
+    } else if (e.type === "focus") {
+        e.target.style.borderColor = "green";
+        // e.target.classList.remove("bg-red");
+    }
+}
+
+const changeTitle = e => {
+    document.querySelectorAll("h1")[2].textContent = emailInput.value; //value accede al contenido actual del input
+}
+
+
+emailInput.addEventListener("keydown", inputListener);
+emailInput.addEventListener("keyup", changeTitle);
+
+const container = document.querySelector("#container");
+
+container.addEventListener("mouseover", inputListener);
+container.addEventListener("mouseout", inputListener);
+
+
+function coords(e) {
+    document.querySelectorAll("h1")[3].textContent = `X: ${e.clientX} | Y: ${e.clientY}`;
+};
+
+document.body.addEventListener("mousemove", coords);
+
 
 
