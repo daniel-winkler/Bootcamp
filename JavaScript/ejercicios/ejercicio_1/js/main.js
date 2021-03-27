@@ -1,4 +1,4 @@
-// Apartado 1 - Partimos de un HTML con un div vacío y con JS añadimos
+//Apartado 1 - Partimos de un HTML con un div vacío y con JS añadimos
 //dos elementos p con texto dentro.
 
 const voidDiv = document.getElementsByTagName("div")[0];
@@ -9,14 +9,10 @@ newP.textContent = "this p has text";
 
 const newP2 = newP.cloneNode(true);
 
-
 // voidDiv.appendChild(newP);
 // voidDiv.appendChild(newP2);
 
 voidDiv.append(newP, newP2);
-
-console.log(voidDiv);
-console.log(newP);
 
 //Apartado 2 - Al pulsar un botón, cambiar el color del fondo del cuerpo de HTML.
 
@@ -53,15 +49,90 @@ list.addEventListener("click", function (e){
 
 const changeText = document.getElementsByTagName("button")[1];
 const inputText = document.getElementsByTagName("input")[0];
-const h3 = document.getElementsByTagName("h3")[0];
+// const h3 = document.getElementsByTagName("h3")[0];
 
 changeText.addEventListener("click", function() {
-    h3.textContent = inputText.value;
-})
+    document.getElementsByTagName("h3")[0].textContent = inputText.value;
+});
 
 //Apartado 4.2 - Añadir un nuevo input pero esta vez cambiará el texto con cada 
 //pulsación de tecla del usuario.
 
 const inputText2 = document.getElementsByTagName("input")[1];
 
+inputText2.addEventListener("keyup", function() {
+    document.getElementsByTagName("h3")[1].textContent = this.value;
+});
 
+//Apartado 5 - De forma similar al anterior, pero para un textarea y validará si lo introducido es mayor de 15 caracteres.
+
+const textArea = document.querySelector("#textarea");
+const validarTexto = document.getElementsByTagName("button")[2];
+console.log(textarea);
+
+validarTexto.addEventListener("click", function() {
+    if (textArea.textLength > 15) {
+        alert("el texto tiene mas de 15 caracteres!");
+    } else {
+        alert("todo en orden");
+    }
+});
+
+//Apartado 6 - Añadir un input de tipo texto con leyenda: “ Escribir un número par”.
+//Añadir un botón. Al pulsar el botón nos validará si el número es par o no. 
+//En caso negativo, cambiar los bordes del input a rojo.
+
+const inputPar = document.querySelector("#inputpar");
+const buttonPar = document.querySelector("#buttonpar");
+
+buttonPar.addEventListener("click", function() {
+    if (inputPar.value % 2 === 0) {
+        // alert("el numero es par");
+        inputPar.style.borderColor = "green";
+    } else {
+        inputPar.style.borderColor = "red";
+        // alert("el numero NO es par");
+    }
+});
+
+inputPar.addEventListener("keydown", function() {
+    inputPar.style.borderColor = "revert";
+});
+
+//Apartado 7 - Partiendo de una lista ul , crear 10 li con un texto indicando el número del elemento (“Elemento X”)
+//usando un bucle for
+
+const list2 = document.getElementsByTagName("ul")[1];
+
+const listItem = document.createElement("li");
+
+for (i = 0 ; i <= 9 ; i++) {
+    list2.appendChild(listItem.cloneNode());
+    list2.children[i].textContent = `Elemento ${i+1}`;
+};
+
+//Apartado 8 - Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. Si pulso primero el
+//botón y luego el enlace, se me abre en una nueva pestaña.
+
+const linkGoogle = document.querySelector("#linkgoogle");
+const buttonGoogle = document.querySelector("#buttongoogle");
+let check = false;
+
+buttonGoogle.addEventListener("click", e => check = true);
+
+linkGoogle.addEventListener("click", function() {
+    if (check) {
+        this.setAttribute("target", "_blank");
+    }
+});
+
+//Apartado 9 - Añadir un párrafo y un select con 5 opciones de colores: negro, blanco, rojo, amarillo, verde y azul. Al
+//seleccionar un color del select , cambiar el color del parrafo.
+
+const parrafo = document.getElementsByTagName("p")[0];
+
+const color = document.getElementsByTagName("select")[0];
+
+color.addEventListener("select", function() {
+    console.log(color.target.value);
+})
