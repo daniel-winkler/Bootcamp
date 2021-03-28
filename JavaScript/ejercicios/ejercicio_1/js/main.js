@@ -18,7 +18,7 @@ voidDiv.append(newP, newP2);
 
 const colorButton = document.getElementsByTagName("button")[0];
 
-colorButton.addEventListener("click", function() {
+colorButton.addEventListener("click", function () {
     document.body.classList.toggle("bg-green");
 });
 
@@ -29,7 +29,7 @@ const img = document.getElementsByTagName("img")[0];
 
 const list = document.getElementsByTagName("ul")[0];
 
-list.addEventListener("click", function (e){
+list.addEventListener("click", function (e) {
     // if (e.target === list.children[0]) {
     //     img.setAttribute("src", "https://motor.elpais.com/wp-content/uploads/2019/06/dc5fb47c-2020-bmw-8-series-gran-coupe-12.jpg")
     //     img.setAttribute("height", "300px")
@@ -51,7 +51,7 @@ const changeText = document.getElementsByTagName("button")[1];
 const inputText = document.getElementsByTagName("input")[0];
 // const h3 = document.getElementsByTagName("h3")[0];
 
-changeText.addEventListener("click", function() {
+changeText.addEventListener("click", function () {
     document.getElementsByTagName("h3")[0].textContent = inputText.value;
 });
 
@@ -60,7 +60,7 @@ changeText.addEventListener("click", function() {
 
 const inputText2 = document.getElementsByTagName("input")[1];
 
-inputText2.addEventListener("keyup", function() {
+inputText2.addEventListener("keyup", function () {
     document.getElementsByTagName("h3")[1].textContent = this.value;
 });
 
@@ -70,7 +70,7 @@ const textArea = document.querySelector("#textarea");
 const validarTexto = document.getElementsByTagName("button")[2];
 console.log(textarea);
 
-validarTexto.addEventListener("click", function() {
+validarTexto.addEventListener("click", function () {
     if (textArea.textLength > 15) {
         alert("el texto tiene mas de 15 caracteres!");
     } else {
@@ -85,7 +85,7 @@ validarTexto.addEventListener("click", function() {
 const inputPar = document.querySelector("#inputpar");
 const buttonPar = document.querySelector("#buttonpar");
 
-buttonPar.addEventListener("click", function() {
+buttonPar.addEventListener("click", function () {
     if (inputPar.value % 2 === 0) {
         // alert("el numero es par");
         inputPar.style.borderColor = "green";
@@ -95,7 +95,7 @@ buttonPar.addEventListener("click", function() {
     }
 });
 
-inputPar.addEventListener("keydown", function() {
+inputPar.addEventListener("keydown", function () {
     inputPar.style.borderColor = "revert";
 });
 
@@ -106,9 +106,9 @@ const list2 = document.getElementsByTagName("ul")[1];
 
 const listItem = document.createElement("li");
 
-for (i = 0 ; i <= 9 ; i++) {
+for (i = 0; i <= 9; i++) {
     list2.appendChild(listItem.cloneNode());
-    list2.children[i].textContent = `Elemento ${i+1}`;
+    list2.children[i].textContent = `Elemento ${i + 1}`;
 };
 
 //Apartado 8 - Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. Si pulso primero el
@@ -120,19 +120,49 @@ let check = false;
 
 buttonGoogle.addEventListener("click", e => check = true);
 
-linkGoogle.addEventListener("click", function() {
+linkGoogle.addEventListener("click", function () {
     if (check) {
         this.setAttribute("target", "_blank");
     }
 });
 
-//Apartado 9 - Añadir un párrafo y un select con 5 opciones de colores: negro, blanco, rojo, amarillo, verde y azul. Al
+//Apartado 9 (INCOMPLETO)- Añadir un párrafo y un select con 5 opciones de colores: negro, blanco, rojo, amarillo, verde y azul. Al
 //seleccionar un color del select , cambiar el color del parrafo.
 
 const parrafo = document.getElementsByTagName("p")[0];
 
 const color = document.getElementsByTagName("select")[0];
 
-color.addEventListener("select", function() {
+color.addEventListener("", function () {
     console.log(color.target.value);
-})
+});
+
+console.log(color);
+
+//Apartado 10 - Incluir un botón que al pulsarlo genere un número aleatorio y mantenga en una lista actualiza el número
+//de elementos que se han generado, los que son pares y los que son impares.
+
+const rngButton = document.getElementById("rng");
+const rngInfo = document.querySelector("#rnginfo");
+// const listEven = document.querySelector("#listeven");
+// const listOdd = document.querySelector("#listodd");
+
+let evenArray = [];
+let oddArray = [];
+
+rngButton.addEventListener("click", function () {
+    let randomNum = Math.floor(Math.random() * 10);
+    if (randomNum % 2 === 0) {
+        evenArray.push(randomNum);
+        listEven.appendChild
+    } else {
+        oddArray.push(randomNum);
+    }
+    // console.log(evenArray);
+    // console.log(oddArray);
+    rngInfo.textContent = `Se han generado ${evenArray.length + oddArray.length} números, de los cuales ${evenArray.length} son pares y ${oddArray.length} son impares`;
+});
+
+//Apartado 11 - Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. Al pulsar
+//el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe, lo añadirá al
+//principio.
