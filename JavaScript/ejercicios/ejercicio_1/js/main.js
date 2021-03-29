@@ -154,7 +154,6 @@ rngButton.addEventListener("click", function () {
     let randomNum = Math.floor(Math.random() * 10);
     if (randomNum % 2 === 0) {
         evenArray.push(randomNum);
-        listEven.appendChild
     } else {
         oddArray.push(randomNum);
     }

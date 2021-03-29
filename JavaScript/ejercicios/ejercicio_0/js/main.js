@@ -83,3 +83,21 @@ console.log(lastValue([3,15,76,23,46,19]));
 //frecuentemente, pero tiene tres especies: pollos (2 patas), vacas (4 patas) y cerdos (4 patas). Tu función
 //recibirá la cantidad de animales en ese orden y devolverá la cantidad de patas totales.
 
+let countLegs = (chicken, cows, pigs) => (chicken*2) + (cows*4) + (pigs*4);
+
+console.log(countLegs(5, 2, 8));
+
+//Apartado 10 - Crea una función que determine si dos datos recibidos por argumentos son del mismo tipo.
+
+function checkType(a, b) {
+    if (typeof a === typeof b) {
+        console.log("A y B son del mismo tipo");
+    } else {
+        console.log("A y B NO son del mismo tipo");
+    }
+};
+
+checkType(6, "hola");
+
+//Apartado 11 - Crea una función que reciba un string con una frase y devuelva un array donde cada elemento será una
+//palabra de la frase original. Investigar método existente de los strings para este fin.
