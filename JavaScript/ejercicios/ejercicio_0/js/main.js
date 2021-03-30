@@ -101,3 +101,40 @@ checkType(6, "hola");
 
 //Apartado 11 - Crea una función que reciba un string con una frase y devuelva un array donde cada elemento será una
 //palabra de la frase original. Investigar método existente de los strings para este fin.
+
+let smartSplit = str => str.split(" ");
+
+console.log(smartSplit("The quick brown fox jumps over the lazy dog"));
+
+//Apartado 12 - Inicializa dos objetos, address1 y address2 con las propiedades: provincia, ciudad, municipio, código
+//postal, calle, número, planta, y número de puerta.
+
+const address1 = {
+    provincia: "",
+    ciudad: "",
+    municipio: "",
+    codigopostal: "",
+    calle: "",
+    numero: "",
+    planta: "",
+    puerta: ""
+};
+
+console.log(address1);
+
+const address2 = {
+    provincia: "",
+    ciudad: "",
+    municipio: "",
+    codigopostal: "",
+    calle: "",
+    numero: "",
+    planta: "",
+    puerta: ""
+};
+
+console.log(address2);
+
+//Apartado 13 - Los dominios en la web, se componen del nombre de dominio (codespaceacademy) y de un TLD (top
+//level domain) como, por ejemplo .com / .es / .org, etc. Crea una función que se llame parseDomain() que
+//reciba por argumento un string y devuelva un objeto con dos propiedades: domain y tld. Ejemplo:

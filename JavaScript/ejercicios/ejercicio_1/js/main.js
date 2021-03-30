@@ -144,8 +144,10 @@ console.log(color);
 
 const rngButton = document.getElementById("rng");
 const rngInfo = document.querySelector("#rnginfo");
-// const listEven = document.querySelector("#listeven");
-// const listOdd = document.querySelector("#listodd");
+const listEven = document.querySelector("#listeven");
+const listOdd = document.querySelector("#listodd");
+
+let newNum = document.createElement("li");
 
 let evenArray = [];
 let oddArray = [];
@@ -154,14 +156,31 @@ rngButton.addEventListener("click", function () {
     let randomNum = Math.floor(Math.random() * 10);
     if (randomNum % 2 === 0) {
         evenArray.push(randomNum);
+        listEven.appendChild(newNum.cloneNode());
+        listEven.children[evenArray.length-1].textContent = randomNum;
     } else {
         oddArray.push(randomNum);
+        listOdd.appendChild(newNum.cloneNode());
+        listOdd.children[oddArray.length-1].textContent = randomNum;
     }
-    // console.log(evenArray);
-    // console.log(oddArray);
     rngInfo.textContent = `Se han generado ${evenArray.length + oddArray.length} números, de los cuales ${evenArray.length} son pares y ${oddArray.length} son impares`;
 });
 
 //Apartado 11 - Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. Al pulsar
 //el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe, lo añadirá al
 //principio.
+
+let numList = document.querySelector("#numlist");
+const numButton = document.querySelector("#numbutton");
+const numInput = document.querySelector("#numinput");
+
+let numArray = [];
+
+numButton.addEventListener("click", function() {
+    for (i = 0 ; i < numArray.length ; i++) {
+        if (numInput.value !== numArray.slice(i, i+1)) {
+            numArray.push(numInput.value);
+        }
+    }
+    console.log(numArray);
+});
