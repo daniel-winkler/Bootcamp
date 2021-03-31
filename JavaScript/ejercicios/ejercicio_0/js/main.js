@@ -138,3 +138,93 @@ console.log(address2);
 //Apartado 13 - Los dominios en la web, se componen del nombre de dominio (codespaceacademy) y de un TLD (top
 //level domain) como, por ejemplo .com / .es / .org, etc. Crea una función que se llame parseDomain() que
 //reciba por argumento un string y devuelva un objeto con dos propiedades: domain y tld. Ejemplo:
+
+const website = {
+    domain: "",
+    tld: ""
+};
+
+function parseDomain(str) {
+    let webArray = str.split(".");
+    website.domain = webArray[0];
+    website.tld = webArray[1];
+    return website;
+}
+
+console.log(parseDomain("google.com"));
+
+//Apartado 14 - Nos han prohibido el uso del operador de igualdad estricta (===), pero queremos poder seguir utilizando
+//dicha esa funcionalidad. Crea una función que devuelva true si dos números tienen el mismo valor y el
+//mismo tipo de dato. Debemos usar el operador lógico “&&”. Prueba tu función con dos estos inputs:
+
+function strictEquality(a, b) {
+    if (a == b && a !== b || a != b) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+console.log(strictEquality(10, 8));
+
+//Apartado 15 - Crea una función que reciba dos strings y devuelva true si tienen la misma longitud y false en caso
+//contrario.
+
+function stringLength (str1, str2) {
+    if (str1.length === str2.length) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(stringLength ("hola", "adios"));
+
+//Apartado 16 - Crea una función que reciba un string y determine si está vacío sin utilizar la propiedad length.
+
+function emptyString (str) {
+    if (str === "") {
+        console.log("el string está vacío");
+    } else {
+        console.log(str);
+    }
+};
+
+emptyString("");
+
+//Apartado 17 - Imprimir elemento a elemento el array del apartado 1 de cuatro formas diferentes:
+
+// While
+
+let i = 0;
+while (i < stringArray.length) {
+    console.log("Con bucle 'while':", stringArray[i]);
+    i++;
+};
+
+// For
+
+for (i = 0 ; i < stringArray.length ; i++) {
+    console.log("Con bucle 'for':", stringArray[i]);
+};
+
+// For Of
+
+for (let item of stringArray) {
+    console.log("Con bucle 'for of':", item);
+};
+
+// ForEach
+
+stringArray.forEach(value => console.log("Con bucle 'forEach':", value));
+
+//Apartado 18 - Crea una función que reciba un string y un número N y devuelva el string original repetido N veces.
+
+function repeatString (str, N) {
+    for (i = 0 ; i < N ; i++) {
+        console.log(str);
+    };
+};
+
+repeatString("hola", 4);
+
