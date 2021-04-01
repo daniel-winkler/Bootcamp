@@ -228,3 +228,62 @@ function repeatString (str, N) {
 
 repeatString("hola", 4);
 
+//Apartado 19 - Crea una función que recibe un objeto con dos campos, votos positivos y votos negativos y que devuelva
+//la cuenta final.
+
+let totalVotes = {
+    upVotes: "",
+    downVotes: "",
+    getVoteCount(a, b) {
+        this.upVotes = a;
+        this.downVotes = b;
+        return a - b
+    }
+};
+
+console.log(totalVotes.getVoteCount(25, 15));
+console.log(totalVotes);
+
+//Apartado 20 - Crea una función que recibe un array de tipos de datos mezclados y que devuelva otro array con el tipo
+//de cada uno de los elementos.
+
+function getTypes ([type1, type2, type3, type4, type5]) {
+    let typeArray = [];
+    typeArray.push(typeof type1, typeof type2, typeof type3, typeof type4, typeof type5);
+    return typeArray;
+};
+
+console.log(getTypes(["hola", 56, {}, false, undefined]));
+
+//Apartado 21 - Función que dado un array de números con formato string devuelva un array con los números ya
+//parseados.
+
+function getParsedNumbers ([a, b, c]) {
+    let parsedArray = [];
+    parsedArray.push(Number(a), Number(b), Number(c));
+    return parsedArray;
+};
+
+console.log(getParsedNumbers(["10", "46", "123"]));
+
+//Apartado 22 - Crea una función de flecha que devuelva “Positivo” si el número que recibe por argumento es mayor o
+//igual que cero y “Negativo” en caso contrario. Usa el operador ternario.
+
+let checkPositive = value => value >= 0 ? "Positivo" : "Negativo";
+
+console.log(checkPositive(4));
+
+//Apartado 23 - Crea una función que dado un array cualquiera y un índice, borre el elemento guardado en ese índice.
+
+function deleteIndex (array, index) {
+    let myArray = [];
+    myArray.push(array);
+    myArray.splice(index, 1);
+    return myArray;
+};
+auxArray = [1,2,3,4,5]
+console.log(deleteIndex(auxArray, 3));
+
+//Apartado 24 - Usando la función del apartado anterior, crea otra función que dado un array de números y un número a
+//filtrar, devuelva un array borrando todos las apariciones de dicho número.
+
