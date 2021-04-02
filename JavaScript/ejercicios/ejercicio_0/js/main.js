@@ -247,24 +247,30 @@ console.log(totalVotes);
 //Apartado 20 - Crea una función que recibe un array de tipos de datos mezclados y que devuelva otro array con el tipo
 //de cada uno de los elementos.
 
-function getTypes ([type1, type2, type3, type4, type5]) {
+function getTypes (array) {
     let typeArray = [];
-    typeArray.push(typeof type1, typeof type2, typeof type3, typeof type4, typeof type5);
+    for (i = 0 ; i < array.length ; i++) {
+        typeArray.push(typeof array[i]);
+    }
     return typeArray;
 };
 
-console.log(getTypes(["hola", 56, {}, false, undefined]));
+typesArray =["hola", 6, false, "adios"]
+console.log(getTypes(typesArray));
 
 //Apartado 21 - Función que dado un array de números con formato string devuelva un array con los números ya
 //parseados.
 
-function getParsedNumbers ([a, b, c]) {
+function getParsedNumbers (array) {
     let parsedArray = [];
-    parsedArray.push(Number(a), Number(b), Number(c));
+    for (i = 0 ; i < array.length ; i++) {
+    parsedArray.push(Number(array[i])); 
+    }
     return parsedArray;
 };
 
-console.log(getParsedNumbers(["10", "46", "123"]));
+stringNumbers = ["10", "46", "123", "543"]
+console.log(getParsedNumbers(stringNumbers));
 
 //Apartado 22 - Crea una función de flecha que devuelva “Positivo” si el número que recibe por argumento es mayor o
 //igual que cero y “Negativo” en caso contrario. Usa el operador ternario.
@@ -287,3 +293,56 @@ console.log(deleteIndex(auxArray, 3));
 //Apartado 24 - Usando la función del apartado anterior, crea otra función que dado un array de números y un número a
 //filtrar, devuelva un array borrando todos las apariciones de dicho número.
 
+//Apartado 25 - Crea dos funciones que recibirán un objeto, la primera devolverá un array con los nombres de todas sus
+//propiedades. La segunda devolverá un array con los valores de dichas propiedades.
+
+let person = {
+    name: "Daniel",
+    height: 189,
+    blonde: false
+};
+
+let getKeys = obj => Object.keys(obj);
+let getValues = obj => Object.values(obj);
+
+console.log(getKeys(person));
+console.log(getValues(person));
+
+//Apartado 26 - Crea una función que invierta un string.
+
+function reverseString (str) {
+    return str.split("").reverse().join("")
+};
+
+console.log(reverseString("Hola mundo"));
+
+//Apartado 27 - Crea una función que compare strings sin tener en cuenta las mayúsculas / minúsculas.
+
+function compareStrings (a, b) {
+    if (a.toLowerCase() === b.toLowerCase()) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(compareStrings("HoLa", "hOlA"));
+
+//Apartado 28 - Crea una función que convierta en mayúscula sólo la primera letra de cada palabra de un string dado. El
+//apartado 11 será de ayuda. Investigar cómo unir un array de strings en un unico string.
+
+function capitalize (str) {
+    let splitString = str.split(" ");
+    for (let i = 0 ; i < splitString.length; i++) {
+        splitString[i].split("");
+    }
+    console.log(splitString[0]);
+}
+
+console.log(capitalize("hola futuro hola mundo"));
+
+//Apartado 29 - Crea una función en una única línea que reciba un valor lógico y devuelva el opuesto.
+
+let getOpposite = value => !value;
+
+console.log(getOpposite(false));
