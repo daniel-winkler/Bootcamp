@@ -73,11 +73,11 @@ console.log(yearsToDays(20));
 //de diferentes longitudes.
 
 function lastValue(array) {
-    let newArray = array;
-    return newArray.slice(newArray.length-1);
+    return array.slice(array.length-1);
 }
 
-console.log(lastValue([3,15,76,23,46,19]));
+slicedArray = [3,15,76,23,46,"hola"]
+console.log(lastValue(slicedArray));
 
 //Apartado 9 - Un granjero necesita contar la cantidad de patas de los animales en sus diferentes granjas muy
 //frecuentemente, pero tiene tres especies: pollos (2 patas), vacas (4 patas) y cerdos (4 patas). Tu función
@@ -283,12 +283,14 @@ console.log(checkPositive(4));
 
 function deleteIndex (array, index) {
     let myArray = [];
-    myArray.push(array);
+    for (i = 0 ; i < array.length ; i++) {
+        myArray.push(array[i]);
+    }
     myArray.splice(index, 1);
     return myArray;
 };
-auxArray = [1,2,3,4,5]
-console.log(deleteIndex(auxArray, 3));
+auxArray = [1,2,3,4,5,6,7,8,9]
+console.log(deleteIndex(auxArray, 4));
 
 //Apartado 24 - Usando la función del apartado anterior, crea otra función que dado un array de números y un número a
 //filtrar, devuelva un array borrando todos las apariciones de dicho número.
@@ -332,14 +334,29 @@ console.log(compareStrings("HoLa", "hOlA"));
 //apartado 11 será de ayuda. Investigar cómo unir un array de strings en un unico string.
 
 function capitalize (str) {
-    let splitString = str.split(" ");
-    for (let i = 0 ; i < splitString.length; i++) {
-        splitString[i].split("");
+
+    let words = str.split(" ");
+    // console.log(words);
+
+    for (i = 0 ; i < words.length ; i++) {
+
+        let letters = words[i].split("");
+
+        // console.log(letters);
+
+        letters[0] = letters[0].toUpperCase();
+
+        // console.log(letters.join(""));
+
+        words[i] = letters.join("");
+
+        // console.log(words.join(" "));
     }
-    console.log(splitString[0]);
+
+    return words.join(" ");
 }
 
-console.log(capitalize("hola futuro hola mundo"));
+console.log(capitalize("hola mundo adios mundo que tal estas"));
 
 //Apartado 29 - Crea una función en una única línea que reciba un valor lógico y devuelva el opuesto.
 
