@@ -231,18 +231,17 @@ repeatString("hola", 4);
 //Apartado 19 - Crea una función que recibe un objeto con dos campos, votos positivos y votos negativos y que devuelva
 //la cuenta final.
 
-let totalVotes = {
-    upVotes: "",
-    downVotes: "",
-    getVoteCount(a, b) {
-        this.upVotes = a;
-        this.downVotes = b;
-        return a - b
-    }
+
+function getVoteCount(obj) {
+    return obj.upVotes - obj.downVotes;
 };
 
-console.log(totalVotes.getVoteCount(25, 15));
-console.log(totalVotes);
+let totalVotes = {
+    upVotes: 30,
+    downVotes: 10
+};
+
+console.log(getVoteCount(totalVotes));
 
 //Apartado 20 - Crea una función que recibe un array de tipos de datos mezclados y que devuelva otro array con el tipo
 //de cada uno de los elementos.
@@ -255,7 +254,7 @@ function getTypes (array) {
     return typeArray;
 };
 
-typesArray =["hola", 6, false, "adios"]
+typesArray =["hola", 6, false, "adios", 56]
 console.log(getTypes(typesArray));
 
 //Apartado 21 - Función que dado un array de números con formato string devuelva un array con los números ya
@@ -269,7 +268,7 @@ function getParsedNumbers (array) {
     return parsedArray;
 };
 
-stringNumbers = ["10", "46", "123", "543"]
+stringNumbers = ["10", "46", "123", "543", "36"]
 console.log(getParsedNumbers(stringNumbers));
 
 //Apartado 22 - Crea una función de flecha que devuelva “Positivo” si el número que recibe por argumento es mayor o

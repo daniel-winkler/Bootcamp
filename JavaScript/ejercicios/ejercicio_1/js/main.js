@@ -68,7 +68,6 @@ inputText2.addEventListener("keyup", function () {
 
 const textArea = document.querySelector("#textarea");
 const validarTexto = document.getElementsByTagName("button")[2];
-console.log(textarea);
 
 validarTexto.addEventListener("click", function () {
     if (textArea.textLength > 15) {
