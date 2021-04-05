@@ -210,6 +210,22 @@ function strictEquality(a, b) {
 };
 
 console.log(strictEquality(10, 8));
+console.log(strictEquality(9, 9));
+console.log(strictEquality("7", "3"));
+console.log(strictEquality("6", 6));
+console.log(strictEquality("4", 8));
+console.log(strictEquality("2", "2"));
+
+let strictEquality2 = (a,b) => a == b && typeof a == typeof b;
+
+console.log(strictEquality2(10, 8));
+console.log(strictEquality2(9, 9));
+console.log(strictEquality2("7", "3"));
+console.log(strictEquality2("6", 6));
+console.log(strictEquality2("4", 8));
+console.log(strictEquality2("2", "2"));
+
+
 
 //Apartado 15 - Crea una función que reciba dos strings y devuelva true si tienen la misma longitud y false en caso
 //contrario.
@@ -224,6 +240,11 @@ function stringLength (str1, str2) {
 
 console.log(stringLength ("hola", "adios"));
 
+let stringLength2 = (str1, str2) => str1.length === str2.length;
+
+console.log(stringLength2("holii", "adios"));
+console.log(stringLength2("hola", "adios"));
+
 //Apartado 16 - Crea una función que reciba un string y determine si está vacío sin utilizar la propiedad length.
 
 function emptyString (str) {
@@ -235,6 +256,23 @@ function emptyString (str) {
 };
 
 emptyString("");
+
+let emptyString2 = str => str === "" ? "el string está vacío" : str;
+
+console.log(emptyString2("hola mundo"));
+console.log(emptyString2(""));
+
+const isEmpty = function (str) { //funcion anónima que solo devuelve si es verdadero o falso
+    return str === "";
+};
+
+console.log(isEmpty(""));
+
+const isEmpty2 = function (str) {
+    return str ? false : true; //truthy & falsy values
+};
+
+console.log(isEmpty2("prueba"));
 
 //Apartado 17 - Imprimir elemento a elemento el array del apartado 1 de cuatro formas diferentes:
 
@@ -248,7 +286,7 @@ while (i < stringArray.length) {
 
 // For
 
-for (i = 0 ; i < stringArray.length ; i++) {
+for (let i = 0 ; i < stringArray.length ; i++) { //volvemos a definir i, ya que pertenece al bloque de la funcion, aunque no esté estrictamente escrito entre {}
     console.log("Con bucle 'for':", stringArray[i]);
 };
 
@@ -272,6 +310,16 @@ function repeatString (str, N) {
 
 repeatString("hola", 4);
 
+function repeatString2 (str, N) {
+    let finalString = str;
+    for (i = 1 ; i < N ; i++) {
+        finalString += str;
+    };
+    return finalString;
+};
+
+console.log(repeatString2("hola", 4));
+
 //Apartado 19 - Crea una función que recibe un objeto con dos campos, votos positivos y votos negativos y que devuelva
 //la cuenta final.
 
@@ -286,6 +334,7 @@ let totalVotes = {
 };
 
 console.log(getVoteCount(totalVotes));
+console.log(getVoteCount({upVotes: 15, downVotes: 10}));
 
 //Apartado 20 - Crea una función que recibe un array de tipos de datos mezclados y que devuelva otro array con el tipo
 //de cada uno de los elementos.
@@ -298,8 +347,16 @@ function getTypes (array) {
     return typeArray;
 };
 
-typesArray =["hola", 6, false, "adios", 56]
+typesArray =["hola", 6, false, "adios", 56, undefined, {}]
 console.log(getTypes(typesArray));
+
+function getTypes2 (array) {
+    let typeArray = [];
+    array.forEach(element => typeArray.push(typeof element));
+    return typeArray;
+};
+
+console.log(getTypes2(typesArray));
 
 //Apartado 21 - Función que dado un array de números con formato string devuelva un array con los números ya
 //parseados.
@@ -315,12 +372,20 @@ function getParsedNumbers (array) {
 stringNumbers = ["10", "46", "123", "543", "36"]
 console.log(getParsedNumbers(stringNumbers));
 
+function getParsedNumbers2 (array) {
+    let parsedArray = [];
+    array.forEach(element => parsedArray.push(Number(element)));
+    return parsedArray;
+};
+
+console.log(getParsedNumbers2(stringNumbers));
+
 //Apartado 22 - Crea una función de flecha que devuelva “Positivo” si el número que recibe por argumento es mayor o
 //igual que cero y “Negativo” en caso contrario. Usa el operador ternario.
 
 let checkPositive = value => value >= 0 ? "Positivo" : "Negativo";
 
-console.log(checkPositive(4));
+console.log(checkPositive(-2));
 
 //Apartado 23 - Crea una función que dado un array cualquiera y un índice, borre el elemento guardado en ese índice.
 
@@ -332,11 +397,35 @@ function deleteIndex (array, index) {
     myArray.splice(index, 1);
     return myArray;
 };
-auxArray = [1,2,3,4,5,6,7,8,9]
-console.log(deleteIndex(auxArray, 4));
+auxArray = [1,2,3,4]
+console.log(deleteIndex(auxArray, 2));
+
+function deleteIndex2 (array, index) {
+    array.splice(index, 1);
+    return array;
+};
+
+console.log(deleteIndex2(auxArray, 2));
+
+let deleteIndex3 = (array, index) => array.splice(index, 1);
+
+console.log(deleteIndex3(auxArray, 2));
 
 //Apartado 24 - Usando la función del apartado anterior, crea otra función que dado un array de números y un número a
 //filtrar, devuelva un array borrando todos las apariciones de dicho número.
+
+const filterItem = (array, numberToFilter) => {
+
+    array.forEach((element, index) => {
+
+        if (element === numberToFilter) {
+            deleteIndex3(array, index);
+        } 
+    })
+}
+let filterArray = [23, 12, 54, 75, 43]
+filterItem(filterArray, 12);
+console.log(filterArray);
 
 //Apartado 25 - Crea dos funciones que recibirán un objeto, la primera devolverá un array con los nombres de todas sus
 //propiedades. La segunda devolverá un array con los valores de dichas propiedades.
@@ -399,7 +488,7 @@ function capitalize (str) {
     return words.join(" ");
 }
 
-console.log(capitalize("hola mundo adios mundo que tal estas"));
+console.log(capitalize("el veloz murciélago hindú comía feliz cardillo y kiwi."));
 
 //Apartado 29 - Crea una función en una única línea que reciba un valor lógico y devuelva el opuesto.
 
