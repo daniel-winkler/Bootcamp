@@ -397,19 +397,21 @@ function deleteIndex (array, index) {
     myArray.splice(index, 1);
     return myArray;
 };
-auxArray = [1,2,3,4]
+let auxArray = [1,2,3,4,5];
 console.log(deleteIndex(auxArray, 2));
 
 function deleteIndex2 (array, index) {
     array.splice(index, 1);
     return array;
 };
+let auxArray2 = [1,2,3,4,5];
+console.log(deleteIndex2(auxArray2, 2));
 
-console.log(deleteIndex2(auxArray, 2));
+let deleteItem = (array, index) => array.splice(index, 1);
 
-let deleteIndex3 = (array, index) => array.splice(index, 1);
-
-console.log(deleteIndex3(auxArray, 2));
+let auxArray3 = [1,2,3,4,5];
+console.log(deleteItem(auxArray3, 2));
+console.log(auxArray3);
 
 //Apartado 24 - Usando la función del apartado anterior, crea otra función que dado un array de números y un número a
 //filtrar, devuelva un array borrando todos las apariciones de dicho número.
@@ -419,13 +421,25 @@ const filterItem = (array, numberToFilter) => {
     array.forEach((element, index) => {
 
         if (element === numberToFilter) {
-            deleteIndex3(array, index);
+            deleteItem(array, index); //este metodo tiene el problema que si el numero filtrado está dos veces seguidas, el segundo se lo salta
         } 
     })
 }
 let filterArray = [23, 12, 54, 75, 43]
 filterItem(filterArray, 12);
 console.log(filterArray);
+
+const filterItem2 = (array, numberToFilter) => {
+    for (i = array.length - 1 ; i >= 0 ; i--) {
+        if (array[i] === numberToFilter) {
+            deleteItem(array, i); //llendo de "arriba a abajo" al eliminar un numero el indice no se altera, por tanto es la mejor solucion
+        };
+    };
+};
+
+let filterArray2 = [23, 12, 12, 54, 75, 43, 12]
+filterItem2(filterArray2, 12);
+console.log(filterArray2);
 
 //Apartado 25 - Crea dos funciones que recibirán un objeto, la primera devolverá un array con los nombres de todas sus
 //propiedades. La segunda devolverá un array con los valores de dichas propiedades.
