@@ -1,6 +1,7 @@
 //Apartado 1 - Define e inicializa un array con 5 elementos string en una sola línea.
 
 let stringArray = ["esto", "es", "un", "string", "nuevo"];
+console.log(stringArray);
 
 //Apartado 2 - Define un array inicialmente vacío . Añade tres elementos de tipo number posteriormente. Elimina por
 //completo el primero y añade dos nuevos números al inicio. En cada paso, imprime la longitud y el array
@@ -33,7 +34,15 @@ function myFunction(x) {
     }
 }
 
-console.log(myFunction("hola"));
+console.log(myFunction("boolean"));
+console.log(myFunction(45));
+console.log(myFunction(true));
+
+let booleanCheck = arg => typeof arg === "boolean" ? true : false; //a partir de ? es redundante, porque queremos que nos devuelva true o false, que es justamente lo que nos devuelve la comparación
+
+console.log(booleanCheck(false));
+console.log(booleanCheck("hola"));
+
 
 //Apartado 4 - Escribe una función que devuelva la longitud de un string recibido por argumento.
 
@@ -42,6 +51,10 @@ function stringFunction(string) {
 };
 
 stringFunction("hola soy un string");
+
+let stringFunction2 = string => string.length;
+
+console.log(stringFunction2("hola soy un string"));
 
 //Apartado 5 - Crea una función de flecha que reciba una cantidad de minutos y lo devuelva convertido en segundos.
 
@@ -61,6 +74,12 @@ function giveEven(num) {
 };
 
 console.log(giveEven(11));
+console.log(giveEven(14));
+
+let giveEven2 = num => num % 2 === 0 ? num : num+1;
+
+console.log(giveEven2(9));
+console.log(giveEven2(6));
 
 //Apartado 7 - Crea una función que reciba una edad y devuelva la cantidad de días que esa persona ha vivido. Puedes
 //obviar los años bisiestos.
@@ -73,11 +92,15 @@ console.log(yearsToDays(20));
 //de diferentes longitudes.
 
 function lastValue(array) {
-    return array.slice(array.length-1);
-}
+    return array.slice(array.length-1); //slice tiene mas sentido si devuelve más de un elemento.
+};
 
-slicedArray = [3,15,76,23,46,"hola"]
+slicedArray = [3,15,76,23,46,"hola", 223]
 console.log(lastValue(slicedArray));
+
+let lastValue2 = array => array[array.length-1];
+
+console.log(lastValue2(slicedArray));
 
 //Apartado 9 - Un granjero necesita contar la cantidad de patas de los animales en sus diferentes granjas muy
 //frecuentemente, pero tiene tres especies: pollos (2 patas), vacas (4 patas) y cerdos (4 patas). Tu función
@@ -85,19 +108,25 @@ console.log(lastValue(slicedArray));
 
 let countLegs = (chicken, cows, pigs) => (chicken*2) + (cows*4) + (pigs*4);
 
-console.log(countLegs(5, 2, 8));
+console.log(countLegs(5, 2, 10));
 
 //Apartado 10 - Crea una función que determine si dos datos recibidos por argumentos son del mismo tipo.
 
 function checkType(a, b) {
     if (typeof a === typeof b) {
-        console.log("A y B son del mismo tipo");
+        return "A y B son del mismo tipo";
     } else {
-        console.log("A y B NO son del mismo tipo");
+        return "A y B NO son del mismo tipo";
     }
 };
 
-checkType(6, "hola");
+console.log(checkType(9, "hola"));
+console.log(checkType("hola", "adios"));
+
+let checkType2 = (a, b) => typeof a === typeof b ? "mismo tipo" : "tipo distinto";
+
+console.log(checkType2(6, 8));
+console.log(checkType2("hola", 4));
 
 //Apartado 11 - Crea una función que reciba un string con una frase y devuelva un array donde cada elemento será una
 //palabra de la frase original. Investigar método existente de los strings para este fin.
@@ -149,9 +178,24 @@ function parseDomain(str) {
     website.domain = webArray[0];
     website.tld = webArray[1];
     return website;
-}
+};
 
 console.log(parseDomain("google.com"));
+
+function parseDomain2(str) {
+    let webArray = str.split(".");
+    let object = {
+        domain: webArray[0],
+        tld: webArray[1]
+    }
+    return object;
+};
+
+console.log(parseDomain2("tesla.com"));
+
+let parseDomain3 = str => {return {domain: str.split(".")[0], tld: str.split(".")[1]}}
+
+console.log(parseDomain3("codespace.com"));
 
 //Apartado 14 - Nos han prohibido el uso del operador de igualdad estricta (===), pero queremos poder seguir utilizando
 //dicha esa funcionalidad. Crea una función que devuelva true si dos números tienen el mismo valor y el

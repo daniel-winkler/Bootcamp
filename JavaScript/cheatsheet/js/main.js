@@ -14,6 +14,7 @@ console.log("Mensaje");
 //------------- VARIABLES -------------
 // var -> function scope 
 // let / const -> block scope {}
+//const puede modificarse, pero nunca se puede REDEFINIR (volver a asignarle un calor con signo =)
 
 function saludar() {
 
