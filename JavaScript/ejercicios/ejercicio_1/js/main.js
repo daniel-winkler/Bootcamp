@@ -1,5 +1,5 @@
-//Apartado 1 - Partimos de un HTML con un div vacío y con JS añadimos
-//dos elementos p con texto dentro.
+/*Apartado 1 - Partimos de un HTML con un div vacío y con JS añadimos
+dos elementos p con texto dentro.*/
 
 const voidDiv = document.getElementsByTagName("div")[0];
 
@@ -14,7 +14,7 @@ const newP2 = newP.cloneNode(true);
 
 voidDiv.append(newP, newP2);
 
-//Apartado 2 - Al pulsar un botón, cambiar el color del fondo del cuerpo de HTML.
+/*Apartado 2 - Al pulsar un botón, cambiar el color del fondo del cuerpo de HTML.*/
 
 const colorButton = document.getElementsByTagName("button")[0];
 
@@ -22,8 +22,8 @@ colorButton.addEventListener("click", function () {
     document.body.classList.toggle("bg-green");
 });
 
-//Apartado 3 - Partimos de un HTML con una lista de 3 URLs(texto) de imágenes y un elementimg.
-//Al hacer clicken cada URL, cambiará la imagen a la que contenga dicha URL
+/*Apartado 3 - Partimos de un HTML con una lista de 3 URLs(texto) de imágenes y un elementimg.
+Al hacer clicken cada URL, cambiará la imagen a la que contenga dicha URL*/
 
 const img = document.getElementsByTagName("img")[0];
 
@@ -39,32 +39,39 @@ list.addEventListener("click", function (e) {
     // } else if (e.target === list.children[2]) {
     //     img.setAttribute("src", "https://www.hibridosyelectricos.com/media/hibridos/images/2019/05/24/2019052410514142475.jpg")
     //     img.setAttribute("height", "300px")
-    // }
+    // } LOL
     img.setAttribute("src", e.target.textContent)
-    img.setAttribute("height", "300px")
 });
 
-//Apartado 4 - Añadir un input de tipo texto y un botón. Al pulsar el botón debe 
-//escribirse el texto del input en un párrafo.
+/*Apartado 4 - Añadir un input de tipo texto y un botón. Al pulsar el botón debe 
+escribirse el texto del input en un párrafo.*/
 
 const changeText = document.getElementsByTagName("button")[1];
 const inputText = document.getElementsByTagName("input")[0];
-// const h3 = document.getElementsByTagName("h3")[0];
 
-changeText.addEventListener("click", function () {
-    document.getElementsByTagName("h3")[0].textContent = inputText.value;
+// changeText.addEventListener("click", function () {
+//     document.getElementsByTagName("h3")[0].textContent = inputText.value;
+//      inputText.value = "";
+// });
+
+const h3 = document.getElementsByTagName("h3")[0];
+
+changeText.addEventListener("click", () => {
+    h3.textContent = inputText.value;
+    inputText.value = "";
 });
 
-//Apartado 4.2 - Añadir un nuevo input pero esta vez cambiará el texto con cada 
-//pulsación de tecla del usuario.
+
+/*Apartado 4.2 - Añadir un nuevo input pero esta vez cambiará el texto con cada 
+pulsación de tecla del usuario.*/
 
 const inputText2 = document.getElementsByTagName("input")[1];
+const keyInput = document.getElementsByTagName("h3")[1]
 
-inputText2.addEventListener("keyup", function () {
-    document.getElementsByTagName("h3")[1].textContent = this.value;
-});
+inputText2.addEventListener("input", () => keyInput.textContent = inputText2.value);
+                            //keyup o keydown tambien son opciones, pero son menos flexibles
 
-//Apartado 5 - De forma similar al anterior, pero para un textarea y validará si lo introducido es mayor de 15 caracteres.
+/*Apartado 5 - De forma similar al anterior, pero para un textarea y validará si lo introducido es mayor de 15 caracteres.*/
 
 const textArea = document.querySelector("#textarea");
 const validarTexto = document.getElementsByTagName("button")[2];
@@ -77,66 +84,78 @@ validarTexto.addEventListener("click", function () {
     }
 });
 
-//Apartado 6 - Añadir un input de tipo texto con leyenda: “ Escribir un número par”.
-//Añadir un botón. Al pulsar el botón nos validará si el número es par o no. 
-//En caso negativo, cambiar los bordes del input a rojo.
+textArea.addEventListener("input", e => {
+    // if (e.target.value.length > 15) {
+    //     e.target.style.color = "red";
+    // } else {
+    //     e.target.style.color = "green";
+    // }
+
+    e.target.style.color = e.target.value.length > 15 ? "red" : "green";
+});
+
+/*Apartado 6 - Añadir un input de tipo texto con leyenda: “ Escribir un número par”.
+Añadir un botón. Al pulsar el botón nos validará si el número es par o no. 
+En caso negativo, cambiar los bordes del input a rojo.*/
 
 const inputPar = document.querySelector("#inputpar");
 const buttonPar = document.querySelector("#buttonpar");
 
-buttonPar.addEventListener("click", function () {
-    if (inputPar.value % 2 === 0) {
-        // alert("el numero es par");
-        inputPar.style.borderColor = "green";
-    } else {
-        inputPar.style.borderColor = "red";
-        // alert("el numero NO es par");
-    }
+buttonPar.addEventListener("click", function () { //aqui no usamos e.target porque no queremos informacion del boton, sino de los inputs
+    // if (inputPar.value % 2 === 0) {
+    //     // alert("el numero es par");
+    //     inputPar.style.color = "green";
+    // } else {
+    //     inputPar.style.color = "red";
+    //     // alert("el numero NO es par");
+    // }
+    inputPar.style.color = inputPar.value % 2 === 0 ? "green" : "red";
+    //es mejor usar classList.toggle, porque las clases son mas felxibles en vez de hardcodear los estilos directamente
 });
 
-inputPar.addEventListener("keydown", function () {
-    inputPar.style.borderColor = "revert";
-});
+inputPar.addEventListener("keydown", () => inputPar.style.color = "revert");
 
-//Apartado 7 - Partiendo de una lista ul , crear 10 li con un texto indicando el número del elemento (“Elemento X”)
-//usando un bucle for
+/*Apartado 7 - Partiendo de una lista ul , crear 10 li con un texto indicando el número del elemento (“Elemento X”)
+usando un bucle for*/
 
 const list2 = document.getElementsByTagName("ul")[1];
 
 const listItem = document.createElement("li");
 
-for (i = 0; i <= 9; i++) {
+for (i = 0 ; i <= 9 ; i++) {
     list2.appendChild(listItem.cloneNode());
     list2.children[i].textContent = `Elemento ${i + 1}`;
 };
 
-//Apartado 8 - Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. Si pulso primero el
-//botón y luego el enlace, se me abre en una nueva pestaña.
+/*Apartado 8 - Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. Si pulso primero el
+botón y luego el enlace, se me abre en una nueva pestaña.*/
 
 const linkGoogle = document.querySelector("#linkgoogle");
 const buttonGoogle = document.querySelector("#buttongoogle");
-let check = false;
+// let check = false;
 
-buttonGoogle.addEventListener("click", e => check = true);
+// buttonGoogle.addEventListener("click", e => check = true);
 
-linkGoogle.addEventListener("click", function () {
-    if (check) {
-        this.setAttribute("target", "_blank");
-    }
-});
+// linkGoogle.addEventListener("click", function () {
+//     if (check) {
+//         this.setAttribute("target", "_blank");
+//     }
+// });
 
-//Apartado 9 (INCOMPLETO)- Añadir un párrafo y un select con 5 opciones de colores: negro, blanco, rojo, amarillo, verde y azul. Al
-//seleccionar un color del select , cambiar el color del parrafo.
+buttonGoogle.addEventListener("click", () => linkGoogle.target = "_blank");
 
-const parrafo = document.getElementsByTagName("p")[0];
+/*Apartado 9 - Añadir un párrafo y un select con 5 opciones de colores: negro, blanco, rojo, amarillo, verde y azul. Al
+seleccionar un color del select , cambiar el color del parrafo.*/
+
+const parrafo = document.getElementsByTagName("p")[2];
 
 const color = document.getElementsByTagName("select")[0];
 
-color.addEventListener("", function () {
-    console.log(color.target.value);
+color.addEventListener("change", function (e) { // "input" tambien es una opcion
+    parrafo.style.color = e.target.value;
+    parrafo.textContent = `Este texto es de color ${e.target.textContent}`; //???
 });
 
-console.log(color);
 
 //Apartado 10 - Incluir un botón que al pulsarlo genere un número aleatorio y mantenga en una lista actualiza el número
 //de elementos que se han generado, los que son pares y los que son impares.
