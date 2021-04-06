@@ -308,7 +308,7 @@ function repeatString (str, N) {
     };
 };
 
-repeatString("hola", 4);
+repeatString("hola mundo", 4);
 
 function repeatString2 (str, N) {
     let finalString = str;
@@ -318,7 +318,7 @@ function repeatString2 (str, N) {
     return finalString;
 };
 
-console.log(repeatString2("hola", 4));
+console.log(repeatString2("hola mundo", 4));
 
 //Apartado 19 - Crea una función que recibe un objeto con dos campos, votos positivos y votos negativos y que devuelva
 //la cuenta final.
@@ -430,6 +430,19 @@ filterItem(filterArray, 12);
 console.log(filterArray);
 
 const filterItem2 = (array, numberToFilter) => {
+    for (i = 0 ; i < array.length ; i++) {
+        if (array[i] === numberToFilter) {
+            deleteItem(array, i); 
+            i--; //de esta manera corregimos manualmente que se salte un indice al eliminar un numero, restandole 1
+        };
+    };
+};
+
+let filterArray2 = [23, 12, 12, 54, 75, 43, 12]
+filterItem2(filterArray2, 12);
+console.log(filterArray2);
+
+const filterItem3 = (array, numberToFilter) => {
     for (i = array.length - 1 ; i >= 0 ; i--) {
         if (array[i] === numberToFilter) {
             deleteItem(array, i); //llendo de "arriba a abajo" al eliminar un numero el indice no se altera, por tanto es la mejor solucion
@@ -437,8 +450,8 @@ const filterItem2 = (array, numberToFilter) => {
     };
 };
 
-let filterArray2 = [23, 12, 12, 54, 75, 43, 12]
-filterItem2(filterArray2, 12);
+filterArray2 = [23, 12, 12, 54, 75, 43, 12]
+filterItem3(filterArray2, 12);
 console.log(filterArray2);
 
 //Apartado 25 - Crea dos funciones que recibirán un objeto, la primera devolverá un array con los nombres de todas sus
@@ -455,6 +468,7 @@ let getValues = obj => Object.values(obj);
 
 console.log(getKeys(person));
 console.log(getValues(person));
+console.log(Object.entries(person));
 
 //Apartado 26 - Crea una función que invierta un string.
 
@@ -462,7 +476,23 @@ function reverseString (str) {
     return str.split("").reverse().join("")
 };
 
-console.log(reverseString("Hola mundo"));
+console.log(reverseString("odnum aloH"));
+
+let reverseString2 = str => str.split("").reverse().join("");
+
+console.log(reverseString2("odnum aloH"));
+
+function stringReverse (str) {
+    let reversedString = "";
+    for (let i = str.length - 1 ; i >= 0 ; i--) {
+        reversedString += str.charAt(i); //.charAt selecciona el caracter del string indicado con el indice
+    };
+    return reversedString;
+};
+
+console.log(stringReverse("odnum aloH"));
+
+//falta solucion con FOR OF de Luis
 
 //Apartado 27 - Crea una función que compare strings sin tener en cuenta las mayúsculas / minúsculas.
 
@@ -475,6 +505,10 @@ function compareStrings (a, b) {
 };
 
 console.log(compareStrings("HoLa", "hOlA"));
+
+let compareStrings2 = (a, b) => a.toLowerCase() === b.toLowerCase();
+
+console.log(compareStrings2("HoLa", "hOlA"));
 
 //Apartado 28 - Crea una función que convierta en mayúscula sólo la primera letra de cada palabra de un string dado. El
 //apartado 11 será de ayuda. Investigar cómo unir un array de strings en un unico string.
