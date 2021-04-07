@@ -247,8 +247,33 @@ person3.talk();
 console.log(this);
 //output: Window http://127.0.0.1:5500/cheatsheet/ (porque no se encuentra dentro de una variable)
 
-
 console.clear();
+
+// OBJECT CONSTRUCTOR USING FUNCTIONS
+
+function Car(brand, color, weight, topSpeed) {
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.getDescription = function() {
+        return `This ${this.color} ${this.brand} weights ${this.weight} kg and can reach a top speed of ${this.topSpeed} kmh`
+    }
+}; // pre ES5 (los ... de nuestro constructor)
+
+const car1 = new Car("mercedes", "black", 2000, 230);
+const car2 = new Car("bmw", "silver", 2200, 290);
+const car3 = new Car("volkswagen", "blue", 1900, 210);
+            //usamos new para crear el objeto que construye nuestro constructor creado, y asi poder guardarlo en una variable
+
+console.log(car1, car2);
+
+console.log(car2.weight);
+
+console.log(car3.getDescription());
+
+console.log(car1 instanceof Car);
+
 
 
 //----------------- ARRAYS --------------------
