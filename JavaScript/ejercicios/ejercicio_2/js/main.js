@@ -40,17 +40,17 @@ users.forEach(user => {
 //     select.appendChild(option)
 // } ALTERNATIVA FOR OF
 
-for (const key in users[0]) {
-    const value = users[0][key];
-    if (typeof value !== "function") {
-        const newListItem = document.createElement("li");
-        // newListItem.textContent = `${key}: ${value}`;
-        newListItem.innerHTML = `<b>${key}:</b> ${value}`;
-        newListItem.classList.add("list-group-item")
-        list.appendChild(newListItem)
-        // list.innerHTML = `<li class="list-group-item"><b>${key}:</b> ${value}</li>`;
-    };
-};
+// for (const key in users[0]) {
+//     const value = users[0][key];
+//     if (typeof value !== "function") {
+//         const newListItem = document.createElement("li");
+//         //newListItem.textContent = `${key}: ${value}`;
+//         newListItem.innerHTML = `<b>${key}:</b> ${value}`;
+//         newListItem.classList.add("list-group-item")
+//         list.appendChild(newListItem)
+//         // list.innerHTML = `<li class="list-group-item"><b>${key}:</b> ${value}</li>`;
+//     };
+// };
 
 
 /*RELLENAR LA LISTA CON LA INFO DE UN USUARIO*/
@@ -64,8 +64,12 @@ function fillList(user) {
         const value = user[key]; //usamos [] porque va iterando en las propiedades de cada user.
 
         if (typeof value !== "function") {
-
-            list.innerHTML += `<li class="list-group-item"><b>${key}:</b> ${value}</li>`;
+            const newListItem = document.createElement("li");
+            newListItem.innerHTML = `<b>${key}:</b> ${value}`;
+            // newListItem.textContent = `${key}: ${value}`;
+            newListItem.classList.add("list-group-item")
+            list.appendChild(newListItem)
+            // list.innerHTML += `<li class="list-group-item"><b>${key}:</b> ${value}</li>`;
         };
     };
 };
