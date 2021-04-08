@@ -484,6 +484,96 @@ console.log(typeof (() => {}));
 numbersArray.sort((a, b) => a - b); //transformamos la funcion de ordenar anterior a una funcion por flechas.
 console.log(numbersArray);
 
+//----------------- HIGHER ORDER FUNCTIONS --------------------
+
+//MAP
+
+let arr1 = [1, 2, 3];
+let arr2 = [];
+
+// for (let item of arr1) {
+//     arr2.push(item *2); //forma que conociamos
+// };
+
+console.log(arr1, arr2);
+
+arr2 = arr1.map(item => item * 2); //coge arr1 de referencia para hacer cambios iterando el array y guardandolo en un array nuevo arr2
+
+console.log(arr1, arr2);
+
+//Miniejercicio: a partir de un array con años de nacimiento calcular edades.
+
+let birthYears = [1988, 2000, 1957];
+let ages = [];
+
+ages = birthYears.map(item => 2021 - item)
+
+console.log(birthYears, ages);
+
+//FILTER
+
+const prices = [150, 50, 48, 53, 15, 237];
+let expensivePrices = [];
+
+// for (let price of prices) {
+//     if (price >= 50) {
+//     expensivePrices.push(price); //forma que conociamos
+//     };
+// };
+
+expensivePrices = prices.filter(item => item >= 50);
+
+console.log(prices, expensivePrices);
+
+//Miniejercicios
+
+const cars = [
+    {
+        brand: "BMW",
+        year: "2000",
+        plateNumber: "3455ULH",
+        sport: true
+    },
+    {
+        brand: "Mercedes",
+        year: "2010",
+        plateNumber: "8656HEX",
+        sport: false
+    },
+    {
+        brand: "Audi",
+        year: "1990",
+        plateNumber: "0823LIJ",
+        sport: true
+    }
+];
+
+console.log(cars.filter(car => car.year > 2000));
+console.log(cars.filter(car => car.plateNumber.includes("L")));
+
+//crea un nuevo array solo con el nombre de las marcas
+
+let brandNames = cars.map(car => car.brand);
+
+console.log(brandNames);
+
+//SORT 
+
+//ordena los coches segun su año 
+
+cars.sort((car1, car2) => car1.year - car2.year);
+console.log(cars);
+
+cars.sort((car, car2) => car.sport === true ? 1 : -1);
+console.log(cars);
+
+//REDUCE
+
+const arrayToReduce = [10, 7, 13, 20];
+
+console.log(arrayToReduce.reduce((sum, currentNumber) => sum + currentNumber, 0));
+
+
 
 
 //----------------- BUCLES / LOOPS --------------------
