@@ -249,6 +249,16 @@ console.log(this);
 
 console.clear();
 
+//HOW TO COPY OBJECTS / COMO COPIAR OBJETOS (SPREAD)
+
+let obj1 = {firstProperty: 5, secondProperty: "Hello"};
+let obj2 = obj1 //NO es una copia, es el mismo objeto con otro nombre (igual que con los Nodos)
+
+obj2 = JSON.parse(JSON.stringify(obj1)); //copia profunda chapuzera que usaremos en muy pocos casos
+obj2 = {...obj1, thirdProperty: true}; //copia superficial que usaremos la gran mayoria de las veces
+
+console.log(obj2);
+
 // OBJECT CONSTRUCTOR USING FUNCTIONS
 
 function Car(brand, color, weight, topSpeed) {
@@ -557,7 +567,7 @@ let brandNames = cars.map(car => car.brand);
 
 console.log(brandNames);
 
-//SORT 
+//SORT - (IMPORTANTE: ordena el array de manera PERMANENTE, incluso guardandolo en un array nuevo)
 
 //ordena los coches segun su año 
 
