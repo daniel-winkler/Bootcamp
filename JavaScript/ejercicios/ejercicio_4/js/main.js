@@ -42,9 +42,8 @@ function fillRow(bookObject) {
         const td = document.createElement("td");
         td.textContent = value;
         row.appendChild(td);
-        }
+        };
     };
-
     
     const td = document.createElement("td");
     row.appendChild(td);
@@ -57,7 +56,6 @@ function fillRow(bookObject) {
     bookId++
 };
 
-
 function fillTable(books) {
     tbody.innerHTML = "";
     newBookList = [];
@@ -67,7 +65,6 @@ function fillTable(books) {
 
 fillTable(books)
 
-
 // ADD BOOK
 
 const title = document.querySelector("#title");
@@ -76,6 +73,12 @@ const sales = document.querySelector("#sales");
 const price = document.querySelector("#price");
 const submit = document.querySelector("#submit");
 
+// function submitForm() {
+//     const frm = document.querySelector("#form");
+//     frm.submit(); // Submit
+//     frm.reset();  // Reset
+//     return false; // Prevent page refresh
+//  };
 
 submit.addEventListener("click", () => {
     books.push(new Book(title.value, author.value, sales.value, price.value))
@@ -84,7 +87,6 @@ submit.addEventListener("click", () => {
     author.value = "";
     sales.value = "";
     price.value = "";
-    console.log(newBookList);
 });
 
 // REMOVE BOOK
@@ -94,4 +96,4 @@ tbody.addEventListener("click", (e) => {
         books.splice(e.target.id - 1, 1);
         fillTable(books)
     };
-})
+});
