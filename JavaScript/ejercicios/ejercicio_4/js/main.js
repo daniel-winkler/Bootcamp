@@ -29,11 +29,12 @@ function fillRow(bookObject) {
     
     let row = document.createElement("tr");
     tbody.appendChild(row);
- 
-    bookObject = {"id" : bookId, ...bookObject}
     const th = document.createElement("th");
     th.textContent = bookId;
     row.appendChild(th);
+
+    bookObject = {"id" : bookId, ...bookObject}
+    newBookList.push(bookObject);
 
     for (const key in bookObject) {
         if (key !== "id") {
@@ -44,25 +45,28 @@ function fillRow(bookObject) {
         }
     };
 
-    bookId++
-
+    
+    const td = document.createElement("td");
+    row.appendChild(td);
     let button = document.createElement("button");
     button.classList.add("btn", "btn-danger")
-    button.id = "remove"
     button.textContent = "Remove book";
-    row.appendChild(button)
+    button.id = bookId;
+    td.appendChild(button)
+
+    bookId++
 };
 
 
 function fillTable(books) {
     tbody.innerHTML = "";
+    newBookList = [];
     books.forEach(book => fillRow(book))
-    bookId = 1
+    bookId = 1;
 }
 
 fillTable(books)
 
-console.log(books);
 
 // ADD BOOK
 
@@ -80,12 +84,14 @@ submit.addEventListener("click", () => {
     author.value = "";
     sales.value = "";
     price.value = "";
+    console.log(newBookList);
 });
 
 // REMOVE BOOK
 
 tbody.addEventListener("click", (e) => {
-    if (e.target.id === "remove"){
-        console.log(e.target);
-    }
+    if (e.target.textContent === "Remove book"){
+        books.splice(e.target.id - 1, 1);
+        fillTable(books)
+    };
 })
