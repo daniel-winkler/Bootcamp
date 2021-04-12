@@ -47,7 +47,7 @@ const searchBook = document.querySelector("#searchBook");
 let booksToDisplay = books;
 
 
-searchBook.addEventListener("keyup", () => {
+searchBook.addEventListener("input", () => {
     let input = searchBook.value.toLowerCase();
     booksToDisplay = books.filter(book => {
         for (let key in book) {
