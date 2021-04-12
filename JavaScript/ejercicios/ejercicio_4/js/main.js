@@ -34,7 +34,7 @@ function fillRow(bookObject) {
     row.appendChild(th);
 
     bookObject = {"id" : bookId, ...bookObject}
-    // newBookList.push(bookObject);
+    newBookList.push(bookObject);
 
     for (const key in bookObject) {
         if (key !== "id") {
@@ -58,7 +58,7 @@ function fillRow(bookObject) {
 
 function fillTable(books) {
     tbody.innerHTML = "";
-    // newBookList = [];
+    newBookList = [];
     books.forEach(book => fillRow(book))
     bookId = 1;
 }
