@@ -149,12 +149,16 @@ seleccionar un color del select , cambiar el color del parrafo.*/
 
 const parrafo = document.getElementsByTagName("p")[2];
 
-const color = document.getElementsByTagName("select")[0];
+const select = document.getElementsByTagName("select")[0];
 
-color.addEventListener("change", function (e) { // "input" tambien es una opcion
-    parrafo.style.color = e.target.value;
-    parrafo.textContent = `Este texto es de color ${e.target.value}`; //???
-    console.log(e.target);
+select.addEventListener("change", function () { // "input" tambien es una opcion
+    parrafo.style.color = select.value;
+    let options = Array.from(select.children)
+    options.filter(option => {
+        if (option.value === select.value) {
+            parrafo.textContent = `Este texto es de color ${option.textContent.toLowerCase()}`;
+        }
+    })
 });
 
 
