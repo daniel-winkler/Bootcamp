@@ -54,7 +54,7 @@ mySUV.getAge();
 mySUV.getHP();
 
 
-// ---------------- ES6 --------------------
+// -------------------------- ES6 -----------------------------------
 
 class Book {
     constructor(title, author, year) {

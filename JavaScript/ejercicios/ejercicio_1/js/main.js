@@ -153,8 +153,7 @@ const select = document.getElementsByTagName("select")[0];
 
 select.addEventListener("change", function () { // "input" tambien es una opcion
     parrafo.style.color = select.value;
-    let options = Array.from(select.children)
-    options.filter(option => {
+    Array.from(select.children).filter(option => {
         if (option.value === select.value) {
             parrafo.textContent = `Este texto es de color ${option.textContent.toLowerCase()}`;
         }
