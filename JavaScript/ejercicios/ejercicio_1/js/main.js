@@ -122,7 +122,7 @@ const list2 = document.getElementsByTagName("ul")[1];
 
 const listItem = document.createElement("li");
 
-for (i = 0 ; i <= 9 ; i++) {
+for (let i = 0 ; i <= 9 ; i++) {
     list2.appendChild(listItem.cloneNode());
     list2.children[i].textContent = `Elemento ${i + 1}`;
 };
@@ -204,23 +204,25 @@ rngButton.addEventListener("click", function () {
 
 /*APARTADO 11 - Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. Al pulsar
 el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe, lo añadirá al
-principio. AUN PENDIENTE DE HACER*/
+principio.*/
 
 let numList = document.querySelector("#numlist");
 const numButton = document.querySelector("#numbutton");
 const numInput = document.querySelector("#numinput");
 
-let numArray = [];
+let numArray2 = [];
 
 numButton.addEventListener("click", function() {
-    for (i = 0 ; i < numArray.length ; i++) {
-        if (numInput.value !== numArray.slice(i, i+1)) {
-            numArray.push(numInput.value);
-        }
+    const num = numInput.value;
+    if (numArray2.includes(num) || num === "") {
+        alert("No se ha encontrado numero o ya se encuentra en la lista!")
+    } else {
+        numArray2.push(num)
+        const newNum = document.createElement("li");
+        newNum.textContent = num;
+        numList.prepend(newNum);
     }
-    console.log(numArray);
 });
-[].indexOf
 
 /*APARTADO 12 - Crearemos una clase .btnen CSS que le de ciertos estilos a un botón. Al hacer clicken el botón haremos 
 “toggle” o alternaremos esa clase, es decir, si está presente la quitaremos y si no está, la añadiremos*/
