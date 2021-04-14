@@ -44,7 +44,7 @@ fillTable(books);
 // SEARCH BOOK
 const searchBook = document.querySelector("#searchBook");
 
-let booksToDisplay = books;
+let booksToDisplay = Array.from(books); //porque al igual que con los objetos, si simplemente lo asignamos a books, es un objeto con dos nombres distintos
 
 
 searchBook.addEventListener("input", () => {
