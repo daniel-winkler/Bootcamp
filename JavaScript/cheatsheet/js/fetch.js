@@ -43,7 +43,7 @@ async function requestURL(url) {
     console.log(2);
     const response = await fetch(url);
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     // printData(data);
     // printNames(data);
     // printCities(data);
