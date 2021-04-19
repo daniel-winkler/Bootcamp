@@ -83,23 +83,39 @@ function login(e) {
 
     fetch(LOGIN_URL, config)
     .then(r => r.json())
-    .then(data => data.error ? alert(data.error) : fetchUsers())
+    .then(data => data.error ? alert(data.error) : fetchUsersV2(USERS_URL))
+                                                // fetchUsers()
 }
 
 let users = [];
 
-async function fetchUsers() {
-    let response = await fetch(USERS_URL);
-    let data = await response.json();
+// async function fetchUsers() {
+//     let response = await fetch(USERS_URL);
+//     let data = await response.json();
     
-    for (let page = 1 ; page <= data.total_pages ; page++) {
-        response = await fetch(`${USERS_URL}?page=${page}`)
-        data = await response.json();
-        users = users.concat(data.data);
-    }
+//     for (let page = 1 ; page <= data.total_pages ; page++) {
+//         response = await fetch(`${USERS_URL}?page=${page}`)
+//         data = await response.json();
+//         users = users.concat(data.data);
+//     }
 
-    usersList.innerHTML = "";
-    users.forEach(user => {
-        usersList.innerHTML += `<li>${user.first_name} ${user.last_name}</li>`
+//     usersList.innerHTML = "";
+//     users.forEach(user => {
+//         usersList.innerHTML += `<li>${user.first_name} ${user.last_name}</li>`
+//     })
+// }
+
+function fetchUsersV2(url) {
+    fetch(url)
+    .then(r => r.json())
+    .then(data => {
+        users = users.concat(data.data);
+
+        if (data.page < data.total_pages) {
+            fetchUsersV2(`${url}?page=${data.page+1}`)
+        } else {
+            usersList.innerHTML = "";
+            users.forEach(user => usersList.innerHTML += `<li>${user.first_name} ${user.last_name}</li>`)
+        }
     })
 }
