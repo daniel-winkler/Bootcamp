@@ -8,6 +8,7 @@ function App() {
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       <FirstComponent></FirstComponent>
       <FirstComponent />
+      <FirstComponent />
     </div>
   );
 }
