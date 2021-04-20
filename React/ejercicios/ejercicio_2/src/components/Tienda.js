@@ -6,7 +6,7 @@ export default function Tienda() {
         electronica : [
             {id: 27, producto: "Televisor", marca: "LG", modelo: "XPY775", precio: 399},
             {id: 28, producto: "Equipo HIFI", marca: "Samsung", modelo: "VF74", precio: 179},
-            {id: 29, producto: "Televisor", marca: "Sony", modelo: "Bravia-173", precio: 489}
+            {id: 29, producto: "Reproductor BluRay", marca: "Sony", modelo: "BR-345", precio: 489}
         ],
         alimentacion: [
             {id: 30, producto: "Galletas", marca: "Maria", precio: 0.90},
@@ -20,11 +20,18 @@ export default function Tienda() {
         ]
     };
 
+    let category = Object.keys(tienda);
+    // let products = []
+    // for (let key in tienda) {
+    //     products.push(tienda[key])
+    // }
+    // console.log(products[0]);
+
     return (
         <div>
-            <Lista category="electronica" products={tienda.electronica}/>
-            <Lista />
-            <Lista />
+            <Lista category={category[0]} products={tienda.electronica}/>
+            <Lista category={category[1]} products={tienda.alimentacion}/>
+            <Lista category={category[2]} products={tienda.mascotas}/>
         </div>
     )
 }
