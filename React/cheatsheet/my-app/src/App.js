@@ -1,9 +1,11 @@
 import './App.css';
+import Counter from './components/Counter';
 import FirstComponent, {SecondComponent, ThirdComponent} from './components/FirstComponent';
 
 function App() {
   return (
     <div className="App">
+      <Counter />
       <h1>Hola, Mundo</h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       <FirstComponent date="16 de Agosto de 2025"></FirstComponent>

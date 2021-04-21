@@ -26,7 +26,7 @@ export default function Tienda() {
     //     products.push(tienda[key])
     // }
     // console.log(products[0]);
-
+    console.log(tienda.electronica);
     return (
         <div>
             <Lista category={category[0]} products={tienda.electronica}/>
