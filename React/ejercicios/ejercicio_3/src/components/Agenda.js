@@ -3,7 +3,7 @@ export default function Agenda({contacts, setContacts}) {
     // console.log(contacts);
 
     function handleRemoveContact(e) {
-        setContacts(contacts.filter((contact, index) => index != e.target.id))
+        setContacts(contacts.filter(contact => contact.phone != e.target.id))
     }
     
     return (
@@ -17,7 +17,7 @@ export default function Agenda({contacts, setContacts}) {
                             <li className="list-group-item">{contact.lastName}</li>
                             <li className="list-group-item">{contact.phone}</li>
                             <li className="list-group-item">{contact.address}, {contact.zip}, {contact.city}</li>
-                            <li className="list-group-item"><button className="btn btn-warning" onClick={handleRemoveContact} id={index}>Eliminar</button></li>
+                            <li className="list-group-item"><button className="btn btn-warning" onClick={handleRemoveContact} id={contact.phone}>Eliminar</button></li>
                         </ul>
                     )
                 })
