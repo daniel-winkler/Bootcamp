@@ -1,6 +1,10 @@
-export default function Agenda({contacts}) {
+export default function Agenda({contacts, setContacts}) {
 
     // console.log(contacts);
+
+    function handleRemoveContact(e) {
+        setContacts(contacts.filter((contact, index) => index != e.target.id))
+    }
     
     return (
             <div className="row mb-5">
@@ -13,7 +17,7 @@ export default function Agenda({contacts}) {
                             <li className="list-group-item">{contact.lastName}</li>
                             <li className="list-group-item">{contact.phone}</li>
                             <li className="list-group-item">{contact.address}, {contact.zip}, {contact.city}</li>
-                            <li className="list-group-item"><button className="btn btn-warning">Eliminar</button></li>
+                            <li className="list-group-item"><button className="btn btn-warning" onClick={handleRemoveContact} id={index}>Eliminar</button></li>
                         </ul>
                     )
                 })

@@ -43,17 +43,16 @@ export default function Form({setContacts}) {
     const [form, setForm] = useState(initialState)
 
     function handleInput(e) {
-        console.log(e.target.name);
-        const inputName = e.target.name;
-        const newValue = e.target.value;
-        setForm({...form,...{[inputName]: newValue}});
+        // console.log(e.target.name);
+        // const inputName = e.target.name;
+        // const newValue = e.target.value;
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
     function submit(e) {
         e.preventDefault();
 
         // const newContact = {firstName, lastName, address, zip, city, phone} //usamos el nombre de nuestras variables, y automaticamente nos asignará la propiedad con el nombre de esa variable y conteniendo su valor
-        // console.log(newContact);
 
         // const newContact = {
         //     name: name,
@@ -65,7 +64,7 @@ export default function Form({setContacts}) {
         // }
 
         // setContacts([...contacts, newContact]) //Necesitaria recibir los contactos actuales (contacts)
-        // setContacts(currentContacts => [...currentContacts, newContact])
+        setContacts(currentContacts => [...currentContacts, form])
 
         // e.target.reset();
         // setFirstName("");
@@ -74,6 +73,7 @@ export default function Form({setContacts}) {
         // setZip("");
         // setCity("");
         // setPhone("");
+        setForm(initialState);
     }
 
     return (
