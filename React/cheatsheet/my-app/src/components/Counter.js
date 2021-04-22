@@ -10,6 +10,7 @@ export default function Counter() {
 
     const handleClick = function () {
         setCount(count + 1);
+        // setCount(currentCount => currentCount + 1)
         console.log(count, setCount);
     }
 

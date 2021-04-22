@@ -5,7 +5,7 @@ import {useState} from "react";
 
 function App() {
 
-  const contacts = [
+  const initialContactState = [
     {
       firstName: "Jake",
       lastName: "Smith",
@@ -31,14 +31,15 @@ function App() {
       phone: 445714327
     }
   ]
-  // console.log(contacts);
 
-  const [contact, setContact] = useState(0);
+  const [contacts, setContacts] = useState(initialContactState); /* con esto creo una variable llamada contact con el array inicial, y su funcion setContact */
   
   return (
-    <div className="App">
+    <div className="container">
+      <h1 className="my-4">Lista de contactos</h1> {/* dejamos el titulo fuera del componente para dejarlo mas genérico por si lo queremos utlizar varias veces sin ceseidad de título */}
       <Agenda contacts={contacts} />
-      <Form />
+      <h1 className="my-4">Nuevo contacto</h1>
+      <Form setContacts={setContacts}/>
     </div>
   );
 }
