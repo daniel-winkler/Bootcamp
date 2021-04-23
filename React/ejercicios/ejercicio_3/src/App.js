@@ -36,8 +36,10 @@ function App() {
   
   return (
     <div className="container">
+
       <h1 className="my-4">Lista de contactos</h1> {/* dejamos el titulo fuera del componente para dejarlo mas genérico por si lo queremos utlizar varias veces sin ceseidad de título */}
       <Agenda contacts={contacts} setContacts={setContacts} />
+      
       <h1 className="my-4">Nuevo contacto</h1>
       <Form setContacts={setContacts}/>
     </div>
