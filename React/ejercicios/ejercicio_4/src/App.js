@@ -3,10 +3,11 @@ import InputToDo from './components/InputToDo';
 import ToDoList from './components/ToDoList';
 import {useState} from "react";
 
-//https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json
 
 function App() {
-
+  
+  const TODO_URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json"
+  
   const initialState = [
     {
       userID: 29,
