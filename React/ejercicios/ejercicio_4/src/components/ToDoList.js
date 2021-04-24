@@ -1,18 +1,30 @@
 
 export default function ToDoList({todos, setTodos}) {
 
-    function handleCompleted(i) {
-        // console.log(todos[index].completed);
-        return () => setTodos(currentTodos => !currentTodos[i].completed)
+    // const customTodos = [...todos]
+
+    function handleCompleted(e) {
+    //     console.log(customTodos.map((todo, index) => {
+    //         if (index == e.target.id) {
+    //             todo.completed = !todo.completed
+    //         }
+    //     }
+    // ))}
     }
-    console.log(todos[0].completed);
+    
+    function handleRemoveTodo(title) {
+        return () => setTodos(todos.filter(todo => title !== todo.title))
+    }
 
     return (
         <ul className="list-group">
             {
                 todos.map((todo, index) => {
                     return (
-                        <li className="list-group-item" onClick={handleCompleted(index)}>{index}: {todo.title}</li>
+                        <li className="list-group-item d-flex justify-content-between" id={index} onClick={handleCompleted}>
+                            <span>{index}: {todo.title} {JSON.stringify(todo.completed)}</span>
+                            <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
+                        </li>
                     )
                 })
             }
