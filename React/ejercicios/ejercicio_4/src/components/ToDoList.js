@@ -1,6 +1,4 @@
-
 export default function ToDoList({todos, setTodos}) {
-
 
     function handleCompleted(i) {
 
@@ -18,7 +16,6 @@ export default function ToDoList({todos, setTodos}) {
         }
     }
    
-    
     function handleRemoveTodo(title) {
         return () => setTodos(todos.filter(todo => title !== todo.title))
     }
@@ -30,14 +27,14 @@ export default function ToDoList({todos, setTodos}) {
                     if (todo.completed) {
                         return (
                             <li className="list-group-item d-flex justify-content-between bg-light" onClick={handleCompleted(index)}>
-                                <span><del>{index}: {todo.title} {JSON.stringify(todo.completed)}</del></span>
+                                <span><del>{index}: {todo.title}</del></span>
                                 <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
                             </li>
                         )
                     } else {
                         return (
                             <li className="list-group-item d-flex justify-content-between" onClick={handleCompleted(index)}>
-                                <span>{index}: {todo.title} {JSON.stringify(todo.completed)}</span>
+                                <span>{index}: {todo.title}</span>
                                 <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
                             </li>
                         )
