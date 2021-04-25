@@ -1,16 +1,23 @@
 
 export default function ToDoList({todos, setTodos}) {
 
-    // const customTodos = [...todos]
 
-    function handleCompleted(e) {
-    //     console.log(customTodos.map((todo, index) => {
-    //         if (index == e.target.id) {
-    //             todo.completed = !todo.completed
-    //         }
-    //     }
-    // ))}
+    function handleCompleted(i) {
+
+        return (e) => {
+            
+            if (e.target.tagName !== "BUTTON") {
+                setTodos(todos.map((todo, index) => {
+                    if (index == i) {
+                        return todo = {...todo, completed: !todo.completed}
+                    } else {
+                        return todo
+                    }
+                }))
+            }
+        }
     }
+   
     
     function handleRemoveTodo(title) {
         return () => setTodos(todos.filter(todo => title !== todo.title))
@@ -20,12 +27,21 @@ export default function ToDoList({todos, setTodos}) {
         <ul className="list-group">
             {
                 todos.map((todo, index) => {
-                    return (
-                        <li className="list-group-item d-flex justify-content-between" id={index} onClick={handleCompleted}>
-                            <span>{index}: {todo.title} {JSON.stringify(todo.completed)}</span>
-                            <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
-                        </li>
-                    )
+                    if (todo.completed) {
+                        return (
+                            <li className="list-group-item d-flex justify-content-between bg-light" onClick={handleCompleted(index)}>
+                                <span><del>{index}: {todo.title} {JSON.stringify(todo.completed)}</del></span>
+                                <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
+                            </li>
+                        )
+                    } else {
+                        return (
+                            <li className="list-group-item d-flex justify-content-between" onClick={handleCompleted(index)}>
+                                <span>{index}: {todo.title} {JSON.stringify(todo.completed)}</span>
+                                <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
+                            </li>
+                        )
+                    }
                 })
             }
         </ul>

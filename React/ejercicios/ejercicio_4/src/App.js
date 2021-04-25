@@ -13,7 +13,7 @@ function App() {
   async function fetchUrl(url) {
     const response = await fetch(url);
     const data = await response.json();
-    data.splice(5)
+    data.splice(20)
     setTodos(data)
   }
   
