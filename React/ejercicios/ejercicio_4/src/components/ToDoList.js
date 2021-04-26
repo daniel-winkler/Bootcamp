@@ -3,9 +3,7 @@ import "./ToDoList.css";
 export default function ToDoList({todos, setTodos}) {
 
     // function handleCompleted(i) {
-
-    //     return (e) => {
-            
+    //     return (e) => {  
     //         if (e.target.tagName !== "BUTTON") {
     //             setTodos(todos.map((todo, index) => {
     //                 if (index === i) {
