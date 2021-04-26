@@ -16,13 +16,13 @@ export default function InputToDo({todos, setTodos}) {
 
     function submit(e) {
         e.preventDefault()
-        setTodos([input, ...todos])
+        setTodos([input, ...todos]) //setTodos(currentTodos => currentTodos.unshift(input))
         setInput(initialInput)
     }
 
     return (
         <form onSubmit={submit}>
-            <input className="form-control mb-3" placeholder="Type in a new To-Do item" value={input.title} onChange={handleInput} />
+            <input type= "text" className="form-control mb-3" placeholder="Type in a new To-Do item" value={input.title} onChange={handleInput} />
         </form>
     )
 }

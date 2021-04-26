@@ -7,13 +7,15 @@ import {useState, useEffect} from "react";
 function App() {
   
   const TODO_URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json"
+
+  // const TODO_2_URL = "https://jsonplaceholder.typicode.com/todos"
   
   const [todos, setTodos] = useState([])
 
   async function fetchUrl(url) {
     const response = await fetch(url);
     const data = await response.json();
-    data.splice(20)
+    data.splice(20) //data.slice(0,20)
     setTodos(data)
   }
   
