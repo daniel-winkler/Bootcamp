@@ -1,5 +1,5 @@
 .completed {
-    background-color: grey;
+    background-color: #ddd !important; /*entra en conflicto con bootstrap, por eso aplicamos important*/
 }
 
 .completed span {

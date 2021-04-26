@@ -6,9 +6,9 @@ import {useState, useEffect} from "react";
 
 function App() {
   
-  const TODO_URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json"
+  // const EMERGENCY_API = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json"
 
-  // const TODO_2_URL = "https://jsonplaceholder.typicode.com/todos"
+  const TODO_URL = "https://jsonplaceholder.typicode.com/todos"
   
   const [todos, setTodos] = useState([])
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="container w-50 my-5">
       <h1>To-Do List</h1>
-      <InputToDo todos={todos} setTodos={setTodos} />
+      <InputToDo setTodos={setTodos} />
       <ToDoList todos={todos} setTodos={setTodos}/>
     </div>
   );

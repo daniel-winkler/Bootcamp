@@ -1,9 +1,10 @@
 import {useState} from "react";
 
-export default function InputToDo({todos, setTodos}) {
+export default function InputToDo({setTodos}) {
 
     const initialInput = {
         userId: 0,
+        id: 0,
         title: "",
         completed: false
     }
@@ -16,7 +17,8 @@ export default function InputToDo({todos, setTodos}) {
 
     function submit(e) {
         e.preventDefault()
-        setTodos([input, ...todos]) //setTodos(currentTodos => currentTodos.unshift(input))
+        setTodos(currentTodos => [input, ...currentTodos])
+        // con currentTodos no hace falta importar nuestro estado (todos), porque esa informacion ya la tiene nuestra funcion setTodos
         setInput(initialInput)
     }
 
