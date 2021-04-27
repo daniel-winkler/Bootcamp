@@ -22,9 +22,9 @@ export default function Lista({category, products}) {
     // const {category, products} = props
 
     return (
-        <div className="container">
-            <h2>{category}</h2>
-            <ul className="list-group">
+        <div className="container my-4">
+            <h2 className="text-center mb-3">{category}</h2>
+            <ul className="list-group text-center">
                 {/* {JSON.stringify(props.products)} */}
                 {
                     products.map(({id, producto, marca, modelo, precio}) => {

@@ -1,10 +1,27 @@
 import './App.css';
-import Router from './Router';
+import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom";
+import Ejercicio1 from "./pages/Ejercicio1";
+import Ejercicio2 from "./pages/Ejercicio2";
+import Ejercicio3 from "./pages/Ejercicio3";
+import Ejercicio4 from "./pages/Ejercicio4";
 
 function App() {
   return (
     <div className="App">
-      <Router />
+      <BrowserRouter>
+        <nav class="navbar navbar-dark bg-dark justify-content-around font-weight-bold">
+          <NavLink to="/ejercicio1" activeClassName="active" className="text-decoration-none">Ejercicio 1</NavLink>
+          <NavLink to="/ejercicio2" activeClassName="active" className="text-decoration-none">Ejercicio 2</NavLink>
+          <NavLink to="/ejercicio3" activeClassName="active" className="text-decoration-none">Ejercicio 3</NavLink>
+          <NavLink to="/ejercicio4" activeClassName="active" className="text-decoration-none">Ejercicio 4</NavLink>
+        </nav>
+        <Switch>
+            <Route path="/ejercicio1" component={Ejercicio1} />
+            <Route path="/ejercicio2" component={Ejercicio2} />
+            <Route path="/ejercicio3" component={Ejercicio3} />
+            <Route path="/ejercicio4" component={Ejercicio4} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
