@@ -4,22 +4,23 @@ import FirstComponent, {SecondComponent, ThirdComponent} from './components/Firs
 import UseEffectComponent from './components/UseEffectComponent';
 import UseContextComponent from './components/UseContextComponent';
 import { useState, createContext } from "react";
+import Router from './Router';
 
 export const GlobalContext = createContext()
 
 
 function App() {
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
   return (
     <div className="App">
 
-      <GlobalContext.Provider value="Soy un string guardado en un contexto">
+      {/* <GlobalContext.Provider value="Soy un string guardado en un contexto">
         <UseContextComponent />
       </GlobalContext.Provider>
 
-      {/* <h1>useEffect Component</h1>
+      <h1>useEffect Component</h1>
       {show && <UseEffectComponent />}
       <button onClick={() => setShow(!show)}>Show</button>
 
@@ -32,6 +33,8 @@ function App() {
       <FirstComponent title="otro titulo" otherAttr={21} />
       <SecondComponent array={[23, 65]}/>
       <ThirdComponent /> */}
+
+      <Router />
 
     </div>
   );
