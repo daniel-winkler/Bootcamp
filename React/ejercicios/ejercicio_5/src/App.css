@@ -1,5 +1,13 @@
-.active {
-  color: greenyellow;
+.selected {
+  color: greenyellow !important;
+}
+
+.custom * {
+  color: white;
+}
+
+.custom *:hover {
+  color: grey;
 }
 
 /* .App {

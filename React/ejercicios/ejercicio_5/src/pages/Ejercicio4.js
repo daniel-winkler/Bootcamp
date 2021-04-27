@@ -23,7 +23,7 @@ export default function Ejercicio4() {
     //   useFetch(TODO_URL, setTodos)
 
   return (
-    <div className="container w-50 my-5">
+    <div className="container w-50 my-4">
       <h1>To-Do List</h1>
       <InputToDo setTodos={setTodos} />
       <ToDoList todos={todos} setTodos={setTodos}/>
