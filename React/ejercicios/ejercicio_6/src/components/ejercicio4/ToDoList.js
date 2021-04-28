@@ -1,6 +1,10 @@
 import "./ToDoList.css";
+import { useContext } from "react";
+import { GlobalContext}  from "../../App";
 
-export default function ToDoList({todos, setTodos}) {
+export default function ToDoList() {
+
+    const {todos, setTodos} = useContext(GlobalContext)
 
     // function handleCompleted(i) {
     //     return (e) => {  

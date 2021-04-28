@@ -1,11 +1,10 @@
 import './App.css';
-import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import Ejercicio1 from "./pages/Ejercicio1";
 import Ejercicio2 from "./pages/Ejercicio2";
 import Ejercicio3 from "./pages/Ejercicio3";
 import Ejercicio4 from "./pages/Ejercicio4";
 
-import { createContext } from "react";
 
 function App() {
   return (

@@ -1,6 +1,9 @@
-import {useState} from "react";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../../App";
 
-export default function InputToDo({setTodos}) {
+export default function InputToDo() {
+
+    const {setTodos} = useContext(GlobalContext)
 
     const initialInput = {
         userId: 0,

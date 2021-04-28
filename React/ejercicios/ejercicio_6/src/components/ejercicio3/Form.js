@@ -1,6 +1,9 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
+import {GlobalContext} from "../../App";
 
-export default function Form({setContacts}) {
+export default function Form() {
+
+    const {setContacts} = useContext(GlobalContext)
 
     // const [firstName, setFirstName] = useState("");
     // const [lastName, setLastName] = useState("");
