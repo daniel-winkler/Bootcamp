@@ -5,12 +5,14 @@ import { useHistory } from "react-router-dom";
 
 export default function Movies() {
 
-    let page = 5
+    
+    const [page, setPage] = useState(1)
 
     const UPCOMING_URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=7d34055c400374a3555f3a9f651b9d0d&language=en-US&page=${page}`;
     // const UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming?api_key=7d34055c400374a3555f3a9f651b9d0d&language=en-US&page=";
 
     const [movies, setMovies] = useState([])
+
 
     useEffect(() => {
         fetch(UPCOMING_URL)
@@ -23,15 +25,17 @@ export default function Movies() {
 
     // useFetch(setMovies, page)
 
-    // function handlePage(e) {
-    //     if (e.target.innerText === "Previous") {
-    //         page--
-    //         useFetch(setMovies, page)
-    //     } else {
-    //         page++
-    //         useFetch(setMovies, page)
-    //     }
-    // }
+    function handlePage(e) {
+        if (e.target.innerText === "Previous" && page > 1) {
+            setPage(page - 1)
+            console.log(page);
+        } else if (e.target.innerText === "Next" && page < 12) {
+            setPage(page + 1)
+            console.log(page);
+        } else {
+            alert("No hay mas páginas")
+        }
+    }
 
     const history = useHistory()
 
@@ -42,6 +46,10 @@ export default function Movies() {
     return (
         <>
             <h1>Upcoming Movies</h1>
+            <div className="d-flex justify-content-center">
+                    <button className="btn btn-info" onClick={handlePage}>Previous</button>
+                    <button className="btn btn-info" onClick={handlePage}>Next</button>
+            </div>
             <div className="row m-5">
                 {movies.map(movie => {
                     return (
@@ -57,10 +65,10 @@ export default function Movies() {
                     )
                 })}
             </div>
-                {/* <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-center">
                     <button className="btn btn-info" onClick={handlePage}>Previous</button>
                     <button className="btn btn-info" onClick={handlePage}>Next</button>
-                </div> */}
+                </div>
         </>
     )
 }

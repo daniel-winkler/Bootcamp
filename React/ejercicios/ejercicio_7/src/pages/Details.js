@@ -14,7 +14,7 @@ export default function Details() {
         fetch(DETAILS_URL)
         .then(r => r.json())
         .then(data => setMovie(data))
-    }, [id]) //podemos cargarnos el fetch para comprobar que no nos salga ningun error. si no peta, el setState se encargara de actualizar los datos cuando el fetch termine
+    }, [DETAILS_URL]) //podemos cargarnos el fetch para comprobar que no nos salga ningun error. si no peta, el setState se encargara de actualizar los datos cuando el fetch termine
 
     return (
         <div className="d-flex m-5">
@@ -31,7 +31,7 @@ export default function Details() {
                 </p>
                 <p>Release date: {`${movie.release_date}`}</p>
                 <p>{`${movie.vote_average} / 10`}</p>
-                <p><a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank">Go to IMDb page</a></p>
+                <p><a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">Go to IMDb page</a></p>
             </div>
         </div>
     )
