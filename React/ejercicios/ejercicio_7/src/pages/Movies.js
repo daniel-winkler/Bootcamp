@@ -56,9 +56,9 @@ export default function Movies() {
                         <div className="col-3">
                             <img src={`http://image.tmdb.org/t/p/w185${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
                             <div className="">
-                                <h5 className="text-center">{`${movie.title}`}</h5>
-                                <p>Release date: {`${movie.release_date}`}</p>
-                                <p className="overview">{`${movie.overview}`}</p>
+                                <h5 className="text-center">{movie.title}</h5>
+                                <p>Release date: {movie.release_date}</p>
+                                <p className="overview">{movie.overview}</p>
                                 <button className="btn btn-info" onClick={()=>handleDetails(movie.id)}>Leer más</button>
                             </div>
                         </div>

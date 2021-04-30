@@ -20,17 +20,17 @@ export default function Details() {
         <div className="d-flex m-5">
                 <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
             <div>
-                <h1>{`${movie.original_title}`}</h1>
-                <h3>{`${movie.tagline}`}</h3>
-                <p>{`${movie.overview}`}</p>
+                <h1>{movie.original_title}</h1>
+                <h3>{movie.tagline}</h3>
+                <p>{movie.overview}</p>
                 <p>{movie.genres?.map(genre => {
                     return (
-                        <span>{genre.name}</span>
+                        <span className="mx-1">{genre.name}</span>
                     )
                 })}
                 </p>
-                <p>Release date: {`${movie.release_date}`}</p>
-                <p>{`${movie.vote_average} / 10`}</p>
+                <p>Release date: {movie.release_date}</p>
+                <p>{movie.vote_average} / 10</p>
                 <p><a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">Go to IMDb page</a></p>
             </div>
         </div>

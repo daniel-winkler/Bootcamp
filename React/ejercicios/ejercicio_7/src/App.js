@@ -11,7 +11,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Movies}/>
           <Route path="/movie/:id" component={Details}/>
-       </Switch>
+        </Switch>
       </BrowserRouter>
       <Footer />
     </div>
