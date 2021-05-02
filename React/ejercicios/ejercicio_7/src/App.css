@@ -5,7 +5,6 @@
 .overview {
   height: 100px;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
 }
 
 .title {
@@ -24,9 +23,6 @@
   background-color: whitesmoke;
 }
 
-.moviecard img {
-  height: 450px;
-}
 
 .moviedetails {
   width: 500px;
