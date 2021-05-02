@@ -15,13 +15,13 @@ export default function Details() {
     }, [DETAILS_URL]) //podemos cargarnos el fetch para comprobar que no nos salga ningun error. si no peta, el setState se encargara de actualizar los datos cuando el fetch termine
 
     return (
-        <div className="d-flex mt-5 justify-content-center">
-                <img src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
-            <div className="moviedetails">
+        <div className="moviedetails">
+            <img src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
+            <div className="detailsinfo">
                 <h1>{movie.original_title}</h1>
-                <h3>{movie.tagline}</h3>
+                <h4>{movie.tagline}</h4>
                 <p>{movie.overview}</p>
-                <p>{movie.genres?.map(genre => {
+                <p className="genres">{movie.genres?.map(genre => {
                     return (
                         <span className="mx-1">{genre.name}</span>
                     )

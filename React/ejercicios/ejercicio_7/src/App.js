@@ -18,7 +18,7 @@ function App() {
   }, [UPCOMING_URL])
 
   return (
-    <div className="App text-center">
+    <div className="App">
       <GlobalContext.Provider value={{page, setPage, movies}}>
         <Router />
       </GlobalContext.Provider>
