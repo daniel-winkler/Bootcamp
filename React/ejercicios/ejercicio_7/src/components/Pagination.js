@@ -23,14 +23,14 @@ export default function Pagination() {
     }
 
     return (
-            <div className="d-flex justify-content-center">
-                <button className="btn btn-info leftbutton" onClick={handlePage}>&larr;</button>
+            <div className="pagination">
+                <button className="leftbutton" onClick={handlePage}>&larr;</button>
                 {pages.map(page => {
                     return(
-                        <button className="btn btn-info pagebutton" onClick={handlePage}>{page}</button>
+                        <button className="pagebutton" onClick={handlePage}>{page}</button>
                     )
                 })}
-                <button className="btn btn-info rightbutton" onClick={handlePage}>&rarr;</button>
+                <button className="rightbutton" onClick={handlePage}>&rarr;</button>
             </div>
     )
 }

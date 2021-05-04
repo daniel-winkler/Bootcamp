@@ -22,7 +22,9 @@ export default function Upcoming() {
                                 <h5 className="title">{movie.title}</h5>
                                 <p>Release date: {movie.release_date}</p>
                                 <p className="overview">{movie.overview}</p>
-                                <button className="btn btn-info" onClick={()=>handleDetails(movie.id)}>+ Info</button>
+                                <div>
+                                    <button className="" onClick={()=>handleDetails(movie.id)}>+ Info</button>
+                                </div>
                             </div>
                         </div>
                     )

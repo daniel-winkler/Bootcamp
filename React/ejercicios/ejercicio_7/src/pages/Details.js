@@ -1,6 +1,7 @@
 import React from 'react'
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
+import imdb from "../images/imdb.png";
 
 export default function Details() {
 
@@ -23,13 +24,17 @@ export default function Details() {
                 <p>{movie.overview}</p>
                 <p className="genres">{movie.genres?.map(genre => {
                     return (
-                        <span className="mx-1">{genre.name}</span>
+                        <span>{genre.name}</span>
                     )
                 })}
                 </p>
-                <p>Release date: {movie.release_date}</p>
-                <p>{movie.vote_average} / 10</p>
-                <p><a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">Go to IMDb page</a></p>
+                <p className="release">Release date: {movie.release_date}</p>
+                <p className="rating">{movie.vote_average} / 10</p>
+                <p>
+                    <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">
+                        <img src={imdb} height={100} alt={`IMDb Link`}/>
+                    </a>
+                </p>
             </div>
         </div>
     )
