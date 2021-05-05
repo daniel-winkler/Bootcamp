@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useState, useHistory } from "react"
 
-export default function Input({search}) {
+export default function Input({input}) {
 
     const [page, setPage] = useState(1)
-    const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=7d34055c400374a3555f3a9f651b9d0d&language=en-US&query=${search}&page=${page}`
+    const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=7d34055c400374a3555f3a9f651b9d0d&language=en-US&query=${input}&page=${page}`
     const [movies, setMovies] = useState([])
 
     useEffect(() => {

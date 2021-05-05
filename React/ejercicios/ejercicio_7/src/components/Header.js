@@ -7,16 +7,16 @@ export default function Header() {
 
     let { searching, setSearching, setPage } = useContext(GlobalContext)
 
-    const [search, setSearch] = useState("")
+    const [input, setInput] = useState("")
 
     function handleInput(e) {
         setSearching(true)
-        setSearch(e.target.value)
+        setInput(e.target.value)
     }
 
     function handleReset() {
         setSearching(false)
-        setSearch("")
+        setInput("")
         setPage(1)
     }
 
@@ -25,10 +25,10 @@ export default function Header() {
             <div className="header">
                 <h1 onClick={()=>handleReset()}>UPCOMING MOVIES</h1>
                 <div>
-                    <input type="text" class="form-control" placeholder="Search for a movie.." value={search} onChange={handleInput}/>
+                    <input type="text" class="form-control" placeholder="Search for a movie.." value={input} onChange={handleInput}/>
                 </div>
             </div>
-                {searching && <Input search={search} />}
+                {searching && <Input input={input} />}
         </>
     )
 }
