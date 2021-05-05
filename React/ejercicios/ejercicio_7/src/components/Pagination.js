@@ -14,6 +14,8 @@ export default function Pagination() {
             setPage(page + 1)
         } else if (e.target.classList.contains("pagebutton")) {
             setPage(Number(e.target.innerText))
+        } else {
+            alert("No more pages available!")
         }
     }
 

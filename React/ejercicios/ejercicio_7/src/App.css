@@ -51,6 +51,7 @@ button {
 
 .header h1 {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .header input {

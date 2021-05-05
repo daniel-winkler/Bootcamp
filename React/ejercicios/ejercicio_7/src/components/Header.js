@@ -5,7 +5,7 @@ import Input from "../components/Input"
 
 export default function Header() {
 
-    let { searching, setSearching } = useContext(GlobalContext)
+    let { searching, setSearching, setPage } = useContext(GlobalContext)
 
     const [search, setSearch] = useState("")
 
@@ -14,10 +14,16 @@ export default function Header() {
         setSearch(e.target.value)
     }
 
+    function handleReset() {
+        setSearching(false)
+        setSearch("")
+        setPage(1)
+    }
+
     return (
         <>
             <div className="header">
-                <h1>UPCOMING MOVIES</h1>
+                <h1 onClick={()=>handleReset()}>UPCOMING MOVIES</h1>
                 <div>
                     <input type="text" class="form-control" placeholder="Search for a movie.." value={search} onChange={handleInput}/>
                 </div>

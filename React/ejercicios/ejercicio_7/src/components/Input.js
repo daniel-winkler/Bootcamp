@@ -19,6 +19,8 @@ export default function Input({search}) {
             setPage(page - 1)
         } else if (e.target.classList.contains("rightbutton") && page < movies.total_pages) {
             setPage(page + 1)
+        } else {
+            alert("No more pages available!")
         }
     }
 
