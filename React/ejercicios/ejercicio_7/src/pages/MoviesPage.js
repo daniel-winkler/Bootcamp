@@ -3,7 +3,7 @@ import Upcoming from '../components/Upcoming';
 import Pagination from '../components/Pagination';
 import Header from '../components/Header';
 
-export default function Movies() {
+export default function MoviesPage() {
 
     return (
         <>

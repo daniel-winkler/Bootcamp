@@ -19,7 +19,7 @@ export default function Details() {
         <div className="moviedetails">
             <img src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
             <div className="detailsinfo">
-                <h1>{movie.original_title}</h1>
+                <h1>{movie.original_title?.toUpperCase()}</h1>
                 <h4>{movie.tagline}</h4>
                 <p>{movie.overview}</p>
                 <p className="genres">{movie.genres?.map(genre => {
