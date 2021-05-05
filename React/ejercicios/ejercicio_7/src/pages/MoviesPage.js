@@ -2,7 +2,7 @@ import React from 'react'
 import Upcoming from '../components/Upcoming';
 // import Pagination from '../components/Pagination';
 import Header from '../components/Header';
-import Input from "../components/Input"
+// import Input from "../components/Input"
 
 import { useContext } from "react";
 import { GlobalContext } from "../App"
@@ -16,7 +16,7 @@ export default function MoviesPage() {
             <Header />
             {/* <Pagination /> */}
             {/* <Upcoming /> */}
-            {searching ? <Input /> : <Upcoming /> }
+            {searching === false && <Upcoming /> }
             {/* <Pagination /> */}
         </>
     )
