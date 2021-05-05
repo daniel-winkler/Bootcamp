@@ -17,9 +17,11 @@ function App() {
       .then(data => setMovies(data))
   }, [UPCOMING_URL])
 
+  const [searching, setSearching] = useState(false)
+
   return (
     <div className="App">
-      <GlobalContext.Provider value={{page, setPage, movies}}>
+      <GlobalContext.Provider value={{page, setPage, movies, searching, setSearching}}>
         <Router />
       </GlobalContext.Provider>
       <Footer />

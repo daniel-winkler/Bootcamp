@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { GlobalContext } from '../App';
+import Pagination from './Pagination';
 
 export default function Upcoming() {
 
@@ -13,22 +14,26 @@ export default function Upcoming() {
     }
 
     return (
+        <>
+            <Pagination />
             <div className="moviegrid">
                 {movies.results?.map(movie => {
                     return (
                         <div className="moviecard">
-                            <img src={`http://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={`Poster of ${movie.title}`} />
+                            <img src={`http://image.tmdb.org/t/p/w300${movie.poster_path}`} height={450} alt={`Poster of ${movie.title}`} />
                             <div className="movieinfo">
-                                <h5 className="title">{movie.title}</h5>
-                                <p>Release date: {movie.release_date}</p>
+                                <h4 className="title">{movie.title}</h4>
+                                <p><span>Release date: </span>{movie.release_date}</p>
                                 <p className="overview">{movie.overview}</p>
                                 <div>
-                                    <button className="" onClick={()=>handleDetails(movie.id)}>+ Info</button>
+                                    <button onClick={()=>handleDetails(movie.id)}>+ Info</button>
                                 </div>
                             </div>
                         </div>
                     )
                 })}
             </div>
+            <Pagination />
+        </>
     )
 }

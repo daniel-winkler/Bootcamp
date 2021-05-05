@@ -17,7 +17,7 @@ export default function Details() {
 
     return (
         <div className="moviedetails">
-            <img src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className="" alt={`Poster of ${movie.title}`}/>
+            <img src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster of ${movie.title}`}/>
             <div className="detailsinfo">
                 <h1>{movie.original_title?.toUpperCase()}</h1>
                 <h4>{movie.tagline}</h4>
@@ -28,7 +28,7 @@ export default function Details() {
                     )
                 })}
                 </p>
-                <p className="release">Release date: {movie.release_date}</p>
+                <p className="release"><span>Release date: </span>{movie.release_date}</p>
                 <p className="rating">{movie.vote_average} / 10</p>
                 <p>
                     <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">

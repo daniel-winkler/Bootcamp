@@ -7,6 +7,7 @@
 }
 
 .moviecard img {
+  width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -24,24 +25,36 @@ button {
 .movieinfo > div > button {
   width: 75px;
   border-bottom-left-radius: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 
 .movieinfo > div {
   box-shadow: 0px -35px 30px whitesmoke;
 }
 
+.movieinfo span {
+  font-weight: bold;
+  color: #042541;
+}
+
 .header {
-  height: 100px;
+  height: 180px;
   width: 100%;
   background-color: #042541;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .header h1 {
   font-weight: bold;
+}
+
+.header input {
+  margin-top: 20px;
 }
 
 .pagination {
@@ -66,18 +79,23 @@ button {
 
 .title {
   text-align: center;
+  font-weight: bold;
+  color: #042541;
 }
 
 
 .moviecard {
   /* height: 700px; */
-  width: 300px;
+  /* width: 300px; */
   background-color: whitesmoke;
+  border: solid 1px #042541;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .movieinfo {
@@ -142,6 +160,11 @@ button {
   font-size: 18px;
 }
 
+.release span {
+  font-weight: bold;
+  color: #042541;
+}
+
 
 .footer {
   width: 100%;
@@ -152,4 +175,15 @@ button {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+}
+
+.error {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.error * {
+  color: #042541;
+  margin-top: 100px;
 }

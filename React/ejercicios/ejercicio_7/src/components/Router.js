@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MoviesPage from "../pages/MoviesPage"
 import DetailsPage from "../pages/DetailsPage"
-import SearchPage from "../pages/SearchPage"
+import Error from "../components/Error"
 
 export default function Router() {
     return (
@@ -10,8 +10,8 @@ export default function Router() {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={MoviesPage}/>
-                    <Route path="/search" component={SearchPage}/>
                     <Route path="/movie/:id" component={DetailsPage}/>
+                    <Route component={Error} />
                 </Switch>
             </BrowserRouter>
         </div>
