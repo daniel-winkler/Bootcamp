@@ -27,7 +27,8 @@ button:hover {
 }
 
 .movieinfo > div > button {
-  width: 75px;
+  width: 100px;
+  border: #042541 1px solid;
   border-bottom-left-radius: 20px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -72,8 +73,8 @@ button:hover {
 
 .moviegrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   align-items: center;
   margin-top: 50px;
 }

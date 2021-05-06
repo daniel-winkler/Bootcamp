@@ -26,7 +26,7 @@ export default function Upcoming() {
                                 <p><span>Release date: </span>{movie.release_date}</p>
                                 <p className="overview">{movie.overview}</p>
                                 <div>
-                                    <button onClick={()=>handleDetails(movie.id)}>+ Info</button>
+                                    <button onClick={()=>handleDetails(movie.id)}>More info</button>
                                 </div>
                             </div>
                         </div>

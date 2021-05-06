@@ -1,5 +1,6 @@
 import React from 'react'
-import { useEffect, useState, useHistory } from "react"
+import { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom";
 
 export default function Input({input}) {
 
@@ -24,10 +25,10 @@ export default function Input({input}) {
         }
     }
 
-    // const history = useHistory()
-    // function handleMovieDetails(id) {
-    //     history.push(`/movie/${id}`)
-    // }
+    const history = useHistory()
+    function handleMovieDetails(id) {
+        history.push(`/movie/${id}`)
+    }
 
     return (
         <div>
@@ -44,9 +45,9 @@ export default function Input({input}) {
                                 <h4 className="title">{movie.title}</h4>
                                 <p><span>Release date: </span>{movie.release_date}</p>
                                 <p className="overview">{movie.overview}</p>
-                                {/* <div>
-                                    <button onClick={()=>handleMovieDetails(movie.id)}>+ Info</button>
-                                </div> */}
+                                <div>
+                                    <button onClick={()=>handleMovieDetails(movie.id)}>More info</button>
+                                </div>
                             </div>
                         </div>
                     )
