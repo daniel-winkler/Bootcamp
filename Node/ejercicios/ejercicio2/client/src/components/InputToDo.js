@@ -3,10 +3,9 @@ import {useState} from "react";
 export default function InputToDo({setTodos}) {
 
     const initialInput = {
-        userId: 0,
-        id: 0,
         title: "",
-        completed: false
+        completed: false,
+        active: true
     }
 
     const [input, setInput] = useState(initialInput);
@@ -15,8 +14,23 @@ export default function InputToDo({setTodos}) {
         setInput({...input, title: e.target.value})
     }
 
+    const MY_TODOS_DB = "http://127.0.0.1:3050/todos/"
+
+    const http = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(input)
+    };
+    
     function submit(e) {
         e.preventDefault()
+        fetch(MY_TODOS_DB, http)
+            .then(r => r.json())
+            .then(data => console.log(data))
+        ;
+
         setTodos(currentTodos => [input, ...currentTodos])
         // con currentTodos no hace falta importar nuestro estado (todos), porque esa informacion ya la tiene nuestra funcion setTodos
         setInput(initialInput)

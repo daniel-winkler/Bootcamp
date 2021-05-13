@@ -9,7 +9,7 @@ function App() {
 
   // const TODO_URL = "https://jsonplaceholder.typicode.com/todos/"
 
-  const MY_TODOS_DB = "http://127.0.0.1:3050/todos"
+  const MY_TODOS_DB = "http://127.0.0.1:3050/todos/"
   
   const [todos, setTodos] = useState([])
 
