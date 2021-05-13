@@ -6,24 +6,28 @@ import {useState, useEffect} from "react";
 
 
 function App() {
-  
-  // const EMERGENCY_API = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json"
 
-  const TODO_URL = "https://jsonplaceholder.typicode.com/todos"
+  // const TODO_URL = "https://jsonplaceholder.typicode.com/todos/"
+
+  const MY_TODOS_DB = "http://localhost:3001/todos"
   
   const [todos, setTodos] = useState([])
 
-  async function fetchUrl(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    data.splice(20) //data.slice(0,20)
-    setTodos(data)
-  }
+  // async function fetchUrl(url) {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   // data.splice(20)
+  //   console.log(data);
+  //   setTodos(data.todos)
+  // }
   useEffect(() => {
-    fetchUrl(TODO_URL)
+    // fetchUrl(MY_TODO_DB)
+    fetch(MY_TODOS_DB)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setTodos(data)});
   }, [])
-
-  // useFetch(TODO_URL, setTodos)
 
   return (
     <div className="container w-50 my-5">
