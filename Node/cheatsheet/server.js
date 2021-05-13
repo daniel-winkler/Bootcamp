@@ -1,3 +1,6 @@
+require("./config/config");
+
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
@@ -5,39 +8,22 @@ const app = express();
 app.use(express.json());
 
 
-// app.get("/", (req,res) => res.send("Hola Mundo"));
+const users = require("./routes/users")
 
-app.get("/", (req,res) => {
-    res.json({message: "Peticion GET recibida correctamente"});
+app.use("/users", users)
+
+mongoose.connect("mongodb://localhost:27017/users", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+
+const db = mongoose.connection;
+
+db.on("error", err => console.log(`Connection to DB failed: ${err}`));
+
+db.once("open", () => console.log("Connection to DB successful"));
+
+app.listen(process.env.PORT, () => {
+    console.log(`Listening on port: ${process.env.PORT}`);
 });
-
-app.get("/:id", (req,res) => {
-    let id = req.params.id;
-    res.json({message: `Peticion GET recibida con parámetro: ${id}`});
-});
-
-app.post("/", (req,res) => {
-    console.log(req.body);
-
-    let body = req.body;
-
-    if (body.username) {
-        res.status(200).json({
-            message: `Recibido username: ${body.username}`,
-        });
-    } else {
-        res.status(400).json({
-            ok: false,
-            message: "Username No recibido",
-        });
-    }
-
-    // res.json({
-    //     message: "Peticion POST recibida correctamente",
-    //     username: body.username
-    // });
-});
- 
-
-
-app.listen(3050);
