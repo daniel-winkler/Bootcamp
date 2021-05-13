@@ -45,7 +45,7 @@ router.post("/", (req,res) => {
         } else {
             res.status(201).json({
                 ok: true,
-                savedUser
+                user: savedUser
             })
         }
     })
