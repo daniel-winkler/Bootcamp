@@ -9,7 +9,7 @@ function App() {
 
   // const TODO_URL = "https://jsonplaceholder.typicode.com/todos/"
 
-  const MY_TODOS_DB = "http://localhost:3001/todos"
+  const MY_TODOS_DB = "http://127.0.0.1:3050/todos"
   
   const [todos, setTodos] = useState([])
 
@@ -25,8 +25,8 @@ function App() {
     fetch(MY_TODOS_DB)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      setTodos(data)});
+      console.log(data.todos);
+      setTodos(data.todos)});
   }, [])
 
   return (

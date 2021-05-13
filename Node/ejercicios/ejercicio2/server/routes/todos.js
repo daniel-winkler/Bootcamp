@@ -13,7 +13,7 @@ router.get("/", (req,res) => {
                 err
             })
         } else {
-            res.status(201).json({
+            res.status(200).json({
                 ok: true,
                 todos
             })
