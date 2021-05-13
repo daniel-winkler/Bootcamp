@@ -11,6 +11,10 @@ let todoSchema = new Schema({
     completed: {
         type: Boolean,
         default: false
+    },
+    active: {
+        type: Boolean,
+        default: true
     }
 });
 

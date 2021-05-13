@@ -29,6 +29,9 @@ function App() {
       setTodos(data.todos)});
   }, [])
 
+  //ERROR: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:3050/todos. (Reason: CORS header 'Access-Control-Allow-Origin' missing).
+  //ERROR: Uncaught (in promise) TypeError: NetworkError when attempting to fetch resource.
+
   return (
     <div className="container w-50 my-5">
       <h1>To-Do List</h1>
