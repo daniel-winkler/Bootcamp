@@ -9,8 +9,11 @@ app.use(express.json());
 
 
 const users = require("./routes/users")
+const login = require("./routes/login")
 
 app.use("/users", users)
+app.use("/login", login)
+
 
 mongoose.connect("mongodb://localhost:27017/users", {
     useNewUrlParser: true,

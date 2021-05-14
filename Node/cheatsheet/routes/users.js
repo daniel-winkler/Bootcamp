@@ -1,13 +1,23 @@
 const express = require("express");
 const ramda = require("ramda")
+const bcrypt = require("bcrypt")
 const router = express.Router();
 
 const User = require("../models/user");
 
 router.get("/", (req,res) => {
+
+    const PAGE_SIZE = 2;
+    const page = req.query.page || 1;
+    // const count = User.count({})
+    // console.log(count);
+
     //similar al find de Mongo, si el filtro está vacio devolvera
     //todos los documentos de la coleccion.
-    User.find({}).exec((err, users) => {
+    User.find({ active: true })
+    .skip( ( page - 1 ) * PAGE_SIZE ) //numero de docuemntos que saltara
+    .limit(PAGE_SIZE) //numero de documentos que devolvera
+    .exec((err, users) => {
         if (err) {
             res.status(400).json({
                 ok: false,
@@ -16,15 +26,12 @@ router.get("/", (req,res) => {
         } else {
             res.status(201).json({
                 ok: true,
+                page: page,
+                // total_pages: count / PAGE_SIZE,
                 results: users
             })
         }
     })
-});
-
-router.get("/:id", (req,res) => {
-    let id = req.params.id;
-    res.json({message: `Peticion GET recibida con parámetro: ${id}`});
 });
 
 router.post("/", (req,res) => {
@@ -34,7 +41,7 @@ router.post("/", (req,res) => {
     const user = new User({
         username: body.username,
         email: body.email,
-        password: body.password
+        password: bcrypt.hashSync(body.password, 10)
     });
 
     user.save((err, savedUser) => {
