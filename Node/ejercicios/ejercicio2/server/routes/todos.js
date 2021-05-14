@@ -15,7 +15,7 @@ router.get("/", (req,res) => {
         } else {
             res.status(200).json({
                 ok: true,
-                todos
+                results: todos
             })
         }
     })
@@ -38,7 +38,7 @@ router.post("/", (req,res) => {
         } else {
             res.status(201).json({
                 ok: true,
-                todo: savedTodo
+                results: savedTodo
             })
         }
     })

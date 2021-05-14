@@ -35,6 +35,17 @@ let userSchema = new Schema({
     }
 });
 
+//para hacer invisible la contraseña al cliente
+userSchema.methods.toJSON = function() {
+    const user = this;
+
+    const userObject = user.toObject();
+
+    delete userObject.password;
+
+    return userObject
+}
+
 userSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
 
 module.exports = mongoose.model("User", userSchema);
