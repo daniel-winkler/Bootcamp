@@ -6,6 +6,7 @@ let Schema = mongoose.Schema;
 let todoSchema = new Schema({
     title: {
         type: String,
+        unique: true,
         required: [true, "Title is required"]
     },
     completed: {

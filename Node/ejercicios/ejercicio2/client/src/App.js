@@ -1,33 +1,17 @@
 import './App.css';
 import InputToDo from './components/InputToDo';
 import ToDoList from './components/ToDoList';
-import {useState, useEffect} from "react";
+import {useState} from "react";
 // import useFetch from './hooks/useFetch';
+import { MY_TODOS_DB } from "./settings"
+import useFetch from './hooks/useFetch';
 
 
 function App() {
 
-  // const TODO_URL = "https://jsonplaceholder.typicode.com/todos/"
-
-  const MY_TODOS_DB = "http://127.0.0.1:3050/todos/"
-  
   const [todos, setTodos] = useState([])
 
-  // async function fetchUrl(url) {
-  //   const response = await fetch(url);
-  //   const data = await response.json();
-  //   // data.splice(20)
-  //   console.log(data);
-  //   setTodos(data.todos)
-  // }
-  useEffect(() => {
-    // fetchUrl(MY_TODO_DB)
-    fetch(MY_TODOS_DB)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.todos);
-      setTodos(data.todos)});
-  }, [])
+  useFetch(MY_TODOS_DB, setTodos, todos)
 
   //ERROR: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:3050/todos. (Reason: CORS header 'Access-Control-Allow-Origin' missing).
   //ERROR: Uncaught (in promise) TypeError: NetworkError when attempting to fetch resource.
@@ -36,7 +20,7 @@ function App() {
     <div className="container w-50 my-5">
       <h1>To-Do List</h1>
       <InputToDo setTodos={setTodos} />
-      <ToDoList todos={todos} setTodos={setTodos}/>
+      <ToDoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

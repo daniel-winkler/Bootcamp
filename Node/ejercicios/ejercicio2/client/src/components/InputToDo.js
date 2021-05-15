@@ -1,20 +1,19 @@
-import {useState} from "react";
+import { useState } from "react";
+import { MY_TODOS_DB } from "../settings"
+import useFetch from '../hooks/useFetch';
 
 export default function InputToDo({setTodos}) {
 
     const initialInput = {
-        title: "",
-        completed: false,
-        active: true
+        title: ""
     }
 
     const [input, setInput] = useState(initialInput);
 
     function handleInput(e) {
         setInput({...input, title: e.target.value})
+        // setInput(e.target.value)
     }
-
-    const MY_TODOS_DB = "http://127.0.0.1:3050/todos/"
 
     const http = {
         method: "POST",
@@ -30,8 +29,8 @@ export default function InputToDo({setTodos}) {
             .then(r => r.json())
             .then(data => console.log(data))
         ;
-
-        setTodos(currentTodos => [input, ...currentTodos])
+        // useFetch(MY_TODOS_DB, setTodos)
+        // setTodos(currentTodos => [input, ...currentTodos])
         // con currentTodos no hace falta importar nuestro estado (todos), porque esa informacion ya la tiene nuestra funcion setTodos
         setInput(initialInput)
     }
