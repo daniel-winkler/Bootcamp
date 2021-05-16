@@ -49,6 +49,7 @@ router.put("/:id", (req, res) => {
     const id = req.params.id;
     // const completed = ramda.pick(["completed"], req.body);
     const body = req.body;
+    console.log(body._id);
     // let completedTodo = body.completed ? false : true;
     // const completed = body.completed;
 

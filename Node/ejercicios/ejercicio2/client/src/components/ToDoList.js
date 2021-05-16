@@ -5,11 +5,26 @@ import { MY_TODOS_DB } from "../settings";
 export default function ToDoList({todos, setTodos}) {
 
     function toggleCompleted (e, i) {
-        if (e.target.tagName !== "BUTTON") {
-            const newTodos = [...todos];
-            newTodos[i].completed = !newTodos[i].completed
-            setTodos(newTodos)
+
+        let id
+        if (e.target.tagName === "SPAN") {
+            id = e.target.parentElement.id
+        } else {
+            id = e.target.id
         }
+
+        if (e.target.tagName !== "BUTTON") {
+
+            fetch(MY_TODOS_DB + id, { method: "PUT" })
+                .then(r => r.json())
+                .then(data => console.log(data))
+            ;
+        }
+        // if (e.target.tagName !== "BUTTON") {
+        //     const newTodos = [...todos];
+        //     newTodos[i].completed = !newTodos[i].completed
+        //     setTodos(newTodos)
+        // }
     }
     
    

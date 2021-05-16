@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MY_TODOS_DB } from "../settings"
-import useFetch from '../hooks/useFetch';
+// import useFetch from '../hooks/useFetch';
 
 export default function InputToDo({setTodos}) {
 
