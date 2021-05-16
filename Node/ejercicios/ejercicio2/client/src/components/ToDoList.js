@@ -1,4 +1,6 @@
 import "./ToDoList.css";
+import { MY_TODOS_DB } from "../settings";
+
 
 export default function ToDoList({todos, setTodos}) {
 
@@ -8,20 +10,27 @@ export default function ToDoList({todos, setTodos}) {
             newTodos[i].completed = !newTodos[i].completed
             setTodos(newTodos)
         }
-        
     }
+    
    
-    function handleRemoveTodo(title) {
-        return () => setTodos(todos.filter(todo => title !== todo.title))
+
+    function handleRemoveTodo(e) {
+        //declaro la id del elemento LI que contiene el boton correspondiente
+        const id = e.target.parentElement.id
+        //como el metodo delete es por parametros, hago fetch a la url más la id como parametro
+        fetch(MY_TODOS_DB + id, { method: "DELETE" })
+            .then(r => r.json())
+            .then(data => console.log(data))
+        ;
     }
 
     return (
         <ul className="list-group">
             {todos.map((todo, index) => {
                     return (
-                        <li key={todo.title+index} className={`list-group-item d-flex justify-content-between ${todo.completed ? "completed" : ""}`} onClick={e => toggleCompleted(e, index)}>
+                        <li key={todo._id} id={todo._id} className={`list-group-item d-flex justify-content-between ${todo.completed ? "completed" : ""}`} onClick={e => toggleCompleted(e, index)}>
                             <span>{index}: {todo.title}</span>
-                            <button className="btn btn-danger" onClick={handleRemoveTodo(todo.title)}>X</button>
+                            <button className="btn btn-danger" onClick={e => handleRemoveTodo(e)}>X</button>
                         </li>
                     )
                 })}

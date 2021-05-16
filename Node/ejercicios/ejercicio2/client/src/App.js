@@ -1,7 +1,7 @@
 import './App.css';
 import InputToDo from './components/InputToDo';
 import ToDoList from './components/ToDoList';
-import {useState} from "react";
+import { useState } from "react";
 // import useFetch from './hooks/useFetch';
 import { MY_TODOS_DB } from "./settings"
 import useFetch from './hooks/useFetch';

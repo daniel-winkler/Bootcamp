@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 export default function useFetch(url, setState, state) { //useFetch es un hook que hemos creado personalizado, con los argumentos que veamos necesarios
     useEffect(() => {
