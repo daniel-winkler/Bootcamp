@@ -14,9 +14,9 @@ function App() {
 
   useEffect(() => {
     fetch(MY_TODOS_DB)
-    .then(response => response.json())
+    .then(r => r.json())
     .then(data => setTodos(data.results))
-}, [todos]);
+}, [todos]); // ¿?
 
   //ERROR: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:3050/todos. (Reason: CORS header 'Access-Control-Allow-Origin' missing).
   //ERROR: Uncaught (in promise) TypeError: NetworkError when attempting to fetch resource.

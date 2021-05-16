@@ -12,7 +12,7 @@ export default function ToDoList({todos, setTodos}) {
         } else {
             id = e.target.id
         }
-
+        console.log(e.target);
         if (e.target.tagName !== "BUTTON") {
 
             fetch(MY_TODOS_DB + id, { method: "PUT" })

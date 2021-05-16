@@ -48,14 +48,10 @@ router.post("/", (req,res) => {
 router.put("/:id", (req, res) => {
     const id = req.params.id;
     // const completed = ramda.pick(["completed"], req.body);
-    const body = req.body;
-    console.log(body._id);
-    // let completedTodo = body.completed ? false : true;
-    // const completed = body.completed;
-
+  
     Todo.findByIdAndUpdate(
         id,
-        {completed: true},
+        { completed: true },
         { new: true, runValidators: true, context: "query" }, //options
         (error, updatedTodo) => {
             if (error) {
