@@ -47,7 +47,8 @@ router.post("/", (req,res) => {
 
 router.put("/:id", (req, res) => {
     const id = req.params.id;
-    // const completed = ramda.pick(["completed"], req.body);
+    // const body = ramda.pick(["completed"], req.body);
+    const body = req.body;
   
     Todo.findByIdAndUpdate(
         id,

@@ -8,11 +8,13 @@ const app = express();
 app.use(express.json());
 
 
-const users = require("./routes/users")
-const login = require("./routes/login")
+// const users = require("./routes/users")
+// const login = require("./routes/login")
 
-app.use("/users", users)
-app.use("/login", login)
+// app.use("/users", users)
+// app.use("/login", login)
+
+app.use(require("./routes/index"))
 
 
 mongoose.connect("mongodb://localhost:27017/users", {

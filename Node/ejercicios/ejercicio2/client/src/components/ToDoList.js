@@ -7,7 +7,7 @@ export default function ToDoList({todos, setFetched, fetched}) {
     function toggleCompleted (e) {
 
         let id = e.target.tagName === "LI" ? e.target.id : e.target.parentElement.id
-        // let checked = e.target.classList.contains("completed") ? false : true;
+        // let checked = e.target.classList.contains("completed") ? true : false;
         // let body = {
         //     completed: checked
         // }
