@@ -4,25 +4,35 @@ const bcrypt = require("bcrypt")
 const router = express.Router();
 
 const User = require("../models/user");
+const verifyToken = require("../middlewares/auth")
 
-router.get("/", async (req,res) => {
+// const middleware1 = (req, res, next) => {
+//     console.log("hola desde el middleware1");
+//     next()
+// };
 
+// const middleware2 = (req, res, next) => {
+//     console.log("hola desde el middleware2");
+//     next()
+// };
+
+router.get("/", verifyToken, async (req,res) => {
+    console.log("hola desde dentro del GET");
     const PAGE_SIZE = 2;
     const page = req.query.page || 1;
 
     const count = await User.count({})
-    // console.log(count);
 
     //similar al find de Mongo, si el filtro está vacio devolvera
     //todos los documentos de la coleccion.
     User.find({ active: true })
     .skip( ( page - 1 ) * PAGE_SIZE ) //numero de docuemntos que saltara
     .limit(PAGE_SIZE) //numero de documentos que devolvera
-    .exec((err, users) => {
-        if (err) {
+    .exec((error, users) => {
+        if (error) {
             res.status(400).json({
                 ok: false,
-                err
+                error
             })
         } else {
             res.status(201).json({
