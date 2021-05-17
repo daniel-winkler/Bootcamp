@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MY_TODOS_DB } from "../settings"
 // import useFetch from '../hooks/useFetch';
 
-export default function InputToDo({setTodos}) {
+export default function InputToDo({setFetched, fetched}) {
 
     const initialInput = {
         title: ""
@@ -27,12 +27,12 @@ export default function InputToDo({setTodos}) {
         e.preventDefault()
         fetch(MY_TODOS_DB, http)
             .then(r => r.json())
-            .then(data => console.log(data))
+            .then(data => setFetched(!fetched))
         ;
         // useFetch(MY_TODOS_DB, setTodos)
         // setTodos(currentTodos => [input, ...currentTodos])
         // con currentTodos no hace falta importar nuestro estado (todos), porque esa informacion ya la tiene nuestra funcion setTodos
-        setInput(initialInput)
+        setInput(initialInput);
     }
 
     return (

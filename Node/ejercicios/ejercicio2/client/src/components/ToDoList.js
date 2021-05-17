@@ -2,24 +2,25 @@ import "./ToDoList.css";
 import { MY_TODOS_DB } from "../settings";
 
 
-export default function ToDoList({todos, setTodos}) {
+export default function ToDoList({todos, setFetched, fetched}) {
 
-    function toggleCompleted (e, i) {
+    function toggleCompleted (e) {
 
-        let id
-        if (e.target.tagName === "SPAN") {
-            id = e.target.parentElement.id
-        } else {
-            id = e.target.id
-        }
-        console.log(e.target);
+        let id = e.target.tagName === "LI" ? e.target.id : e.target.parentElement.id
+        // let checked = e.target.classList.contains("completed") ? false : true;
+        // let body = {
+        //     completed: checked
+        // }
         if (e.target.tagName !== "BUTTON") {
 
-            fetch(MY_TODOS_DB + id, { method: "PUT" })
+            fetch(MY_TODOS_DB + id, { method: "PUT" }) //body: JSON.stringify(body)
                 .then(r => r.json())
-                .then(data => console.log(data))
+                .then(data => setFetched(!fetched))
             ;
+
+            // getFetched(!fetched);
         }
+
         // if (e.target.tagName !== "BUTTON") {
         //     const newTodos = [...todos];
         //     newTodos[i].completed = !newTodos[i].completed
@@ -35,8 +36,10 @@ export default function ToDoList({todos, setTodos}) {
         //como el metodo delete es por parametros, hago fetch a la url más la id como parametro
         fetch(MY_TODOS_DB + id, { method: "DELETE" })
             .then(r => r.json())
-            .then(data => console.log(data))
+            .then(data => setFetched(!fetched))
         ;
+
+        // setFetched(!fetched);
     }
 
     return (

@@ -51,7 +51,7 @@ router.put("/:id", (req, res) => {
   
     Todo.findByIdAndUpdate(
         id,
-        { completed: true },
+        { completed: true }, //body
         { new: true, runValidators: true, context: "query" }, //options
         (error, updatedTodo) => {
             if (error) {
