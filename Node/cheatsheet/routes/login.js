@@ -20,7 +20,8 @@ router.post("/", (req,res) => {
         } else {
             const token = jwt.sign(
                 { user: userDB }, //payload
-                process.env.SEED
+                process.env.SEED,
+                { expiresIn: 20 } // segundos
             );
             res.status(200).json({ ok: true, token, user: userDB });
         }
