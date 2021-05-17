@@ -5,11 +5,12 @@ const router = express.Router();
 
 const User = require("../models/user");
 
-router.get("/", (req,res) => {
+router.get("/", async (req,res) => {
 
     const PAGE_SIZE = 2;
     const page = req.query.page || 1;
-    // const count = User.count({})
+
+    const count = await User.count({})
     // console.log(count);
 
     //similar al find de Mongo, si el filtro está vacio devolvera
@@ -27,7 +28,8 @@ router.get("/", (req,res) => {
             res.status(201).json({
                 ok: true,
                 page: page,
-                // total_pages: count / PAGE_SIZE,
+                count,
+                total_pages: count / PAGE_SIZE,
                 results: users
             })
         }

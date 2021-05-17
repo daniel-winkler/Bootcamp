@@ -25,8 +25,8 @@ function App() {
   return (
     <div className="container w-50 my-5">
       <h1>To-Do List</h1>
-      <InputToDo setTodos={setTodos} fetched={fetched} setFetched={setFetched}/>
-      <ToDoList todos={todos} setTodos={setTodos} fetched={fetched} setFetched={setFetched} />
+      <InputToDo fetched={fetched} setFetched={setFetched} />
+      <ToDoList todos={todos} fetched={fetched} setFetched={setFetched} />
     </div>
   );
 }

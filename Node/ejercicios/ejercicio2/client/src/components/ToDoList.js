@@ -17,8 +17,6 @@ export default function ToDoList({todos, setFetched, fetched}) {
                 .then(r => r.json())
                 .then(data => setFetched(!fetched))
             ;
-
-            // getFetched(!fetched);
         }
 
         // if (e.target.tagName !== "BUTTON") {
@@ -28,8 +26,6 @@ export default function ToDoList({todos, setFetched, fetched}) {
         // }
     }
     
-   
-
     function handleRemoveTodo(e) {
         //declaro la id del elemento LI que contiene el boton correspondiente
         const id = e.target.parentElement.id
@@ -38,8 +34,6 @@ export default function ToDoList({todos, setFetched, fetched}) {
             .then(r => r.json())
             .then(data => setFetched(!fetched))
         ;
-
-        // setFetched(!fetched);
     }
 
     return (

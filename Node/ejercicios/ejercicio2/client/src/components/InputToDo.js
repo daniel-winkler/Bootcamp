@@ -29,7 +29,6 @@ export default function InputToDo({setFetched, fetched}) {
             .then(r => r.json())
             .then(data => setFetched(!fetched))
         ;
-        // useFetch(MY_TODOS_DB, setTodos)
         // setTodos(currentTodos => [input, ...currentTodos])
         // con currentTodos no hace falta importar nuestro estado (todos), porque esa informacion ya la tiene nuestra funcion setTodos
         setInput(initialInput);
