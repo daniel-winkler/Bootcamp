@@ -2,7 +2,7 @@
 //utiliza el puerto 3000
 
 // PORT
-process.env.PORT = process.env.PORT || 5000;
+process.env.PORT = process.env.PORT || 4000;
 
 //SEED
 // require("crypto").randomBytes(64).toString("hex"); o SHA256
