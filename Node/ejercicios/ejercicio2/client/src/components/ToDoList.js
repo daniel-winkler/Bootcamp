@@ -7,13 +7,22 @@ export default function ToDoList({todos, setFetched, fetched}) {
     function toggleCompleted (e) {
 
         let id = e.target.tagName === "LI" ? e.target.id : e.target.parentElement.id
-        // let checked = e.target.classList.contains("completed") ? true : false;
-        // let body = {
-        //     completed: checked
-        // }
+        let checked = e.target.classList.contains("completed") ? false : true;
+        let body = {
+            completed: checked
+        }
+        
+        const http = {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(body)
+        };
+
         if (e.target.tagName !== "BUTTON") {
 
-            fetch(MY_TODOS_DB + id, { method: "PUT" }) //body: JSON.stringify(body)
+            fetch(MY_TODOS_DB + id, http)
                 .then(r => r.json())
                 .then(data => setFetched(!fetched))
             ;

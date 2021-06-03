@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const ramda = require("ramda");
+const ramda = require("ramda");
 
 const Todo = require("../models/todo");
 
@@ -47,12 +47,12 @@ router.post("/", (req,res) => {
 
 router.put("/:id", (req, res) => {
     const id = req.params.id;
-    // const body = ramda.pick(["completed"], req.body);
-    const body = req.body;
+    const body = ramda.pick(["completed"], req.body);
+    // const body = req.body;
   
     Todo.findByIdAndUpdate(
         id,
-        { completed: true }, //body
+        body, //body
         { new: true, runValidators: true, context: "query" }, //options
         (error, updatedTodo) => {
             if (error) {
