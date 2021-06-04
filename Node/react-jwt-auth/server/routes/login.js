@@ -2,7 +2,7 @@ require("../config/config")
 
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
@@ -23,6 +23,7 @@ router.post("/", (req,res) => {
                 process.env.SEED,
                 { expiresIn: 20 } // segundos
             );
+            console.log(userDB.username, "has logged in!");
             res.status(200).json({ ok: true, token, user: userDB });
         }
     })
